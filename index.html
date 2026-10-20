@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>McKenzie Campbell · Data Scientist</title>
+<meta name="description" content="McKenzie Campbell is a data scientist in Bend, Oregon who builds data pipelines, dashboards and statistical tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    /* Editorial palette: ivory backgrounds (55-65%), ink for the signature, type
+       and navigation (20-25%), chartreuse for accents and buttons (8-12%), olive
+       and stone as quiet secondary tones (3-5% each). */
+    --ivory: #F5F3EB;           /* left column background; tags, stat tile */
+    --paper: #FBFAF6;           /* cards: a lighter ivory */
+    --ink: #20211D;             /* signature, text, navigation, dividing line */
+    --ink-hover: #3A3B35;
+    --chartreuse: #C6D82E;      /* buttons, the open tab, highlights (ink text on it) */
+    --olive: #898B70;           /* link hover underline, stat tile */
+    --stone: #D2CDBF;           /* right-side background; list dividers */
+    --muted: #4A4B45;           /* secondary text (5.6:1 on stone) */
+    --white: #FFFFFF;
+
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'DM Mono', ui-monospace, monospace;
+    --radius-lg: 20px;
+    --radius-md: 12px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--stone); /* right side */
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+  a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--ink); text-decoration-color: var(--olive); text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 4px; }
+
+  .skip-link {
+    position: absolute; left: -9999px; top: 0;
+    background: var(--ink); color: var(--ivory); padding: 12px 16px; z-index: 10;
+  }
+  .skip-link:focus { left: 16px; top: 16px; }
+
+  .mono { font-family: var(--font-mono); }
+  .label {
+    font-family: var(--font-mono); font-weight: 500; font-size: 13px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);
+    margin: 0 0 24px;
+  }
+
+  /* ---------- Layout ---------- */
+  .layout {
+    max-width: 1240px; margin: 0 auto; padding: 0 24px;
+    display: flex; flex-wrap: wrap; gap: 64px;
+  }
+  /* Left column: a chartreuse name band, then a sand section with the contact
+     buttons and (desktop, Projects tab) the project list. Full-bleed on mobile. */
+  .sidebar {
+    flex: 1 1 360px; margin: 0 -24px;
+    display: flex; flex-direction: column;
+    background: var(--ivory); color: var(--ink);
+  }
+  .sidebar-name { background: var(--ivory); padding: 40px 24px 32px; }
+  .sidebar-contact { padding: 0 24px 24px; }
+  /* Holds the project list, which only shows on desktop, so the section is hidden on mobile */
+  .sidebar-body { display: none; flex-direction: column; gap: 32px; padding: 24px 24px 32px; }
+  .content { flex: 999 1 560px; min-width: 0; padding: 0 0 72px; }
+
+  @media (min-width: 1024px) {
+    /* Full-width split: sidebar 1/4, content 3/4 */
+    .layout { max-width: none; padding: 0; gap: 0; flex-wrap: nowrap; }
+    .sidebar {
+      position: sticky; top: 0; height: 100vh;
+      /* 1/4 of the page, but never so narrow that the contact pills wrap */
+      --sidebar-pad: clamp(24px, 2.5vw, 48px);
+      flex: 0 0 max(25%, 360px); min-width: 0; margin: 0;
+      border-right: 1.5px solid var(--ink); /* line separating left from right */
+    }
+    .sidebar-name { padding: 56px var(--sidebar-pad) 40px; }
+    .sidebar-contact { padding: 0 var(--sidebar-pad) 8px; }
+    .sidebar-body { display: flex; flex: 1; padding: 32px var(--sidebar-pad) 48px; }
+    .content { --content-pad: clamp(40px, 6vw, 112px); flex: 1 1 0; padding: 0 var(--content-pad) 96px; }
+    /* Keep line lengths readable on wide screens */
+    .content > * { max-width: 920px; }
+    /* Section nav already names each section on desktop */
+    .label--mobile {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap;
+    }
+  }
+
+  /* ---------- Sidebar ---------- */
+  .name { margin: 0; line-height: 0; }
+  /* Signature image (wine strokes on transparent): spans the full width of its
+     chartreuse band, edge to edge (cancels the band's side padding) */
+  .name img { display: block; width: calc(100% + 48px); max-width: none; height: auto; margin-left: -24px; }
+  @media (min-width: 1024px) {
+    .name img { width: calc(100% + 2 * var(--sidebar-pad)); margin-left: calc(-1 * var(--sidebar-pad)); }
+  }
+
+  /* ---------- Section nav (top of right column, desktop only) ---------- */
+  .section-nav { display: none; }
+  @media (min-width: 1024px) {
+    .section-nav {
+      display: flex; align-items: flex-end; gap: 6px;
+      position: sticky; top: 0; z-index: 5;
+      background: color-mix(in srgb, var(--ivory) 45%, #FFFFFF); /* a lighter cream strip behind the tabs */
+      padding: 24px 0 0; margin-bottom: 56px;
+      /* Bleed past the content padding so the line spans the whole right side */
+      max-width: none; margin-inline: calc(-1 * var(--content-pad)); padding-inline: var(--content-pad);
+      border-bottom: 1.5px solid var(--ink);
+    }
+    /* Tabs: show one section at a time (class set by the script below) */
+    .tabs-ready section:not(.is-active) { display: none; }
+    .tabs-ready section + section { margin-top: 0; }
+  }
+  /* Folder tabs: light tabs with a Vintage Wine strip along the top edge. The open
+     tab is page-colored and overlaps the bar's bottom line, so it reads as joined
+     to the page; closed tabs sit a shade darker, behind it. */
+  .section-nav a {
+    position: relative;
+    padding: 12px 20px 10px; margin-bottom: -1.5px;
+    font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em;
+    color: var(--muted); text-decoration: none;
+    background: rgba(32, 33, 29, .07);
+    border: 1.5px solid var(--ink); border-bottom-color: transparent;
+    border-radius: 12px 12px 0 0;
+    box-shadow: inset 0 5px 0 var(--chartreuse);
+    transition: color .2s ease, background .2s ease;
+  }
+  .section-nav a:hover { color: var(--ink); background: rgba(32, 33, 29, .12); }
+  .section-nav a.active {
+    color: var(--ink); font-weight: 500; z-index: 1;
+    background: var(--stone); border-bottom-color: var(--stone);
+    box-shadow: inset 0 5px 0 var(--ink);
+    padding-top: 16px; /* open tab stands a little taller */
+  }
+
+  .links { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-left: 40px; }
+  /* Contact pills on the wine band: identical Raspberry pills; switch to a sand outline on hover or while open */
+  .links .btn {
+    padding: 6px 14px; font-size: 14px; border: 1.5px solid var(--chartreuse);
+    background: var(--chartreuse); color: var(--ink);
+    transition: background .2s ease, color .2s ease;
+  }
+  .links .btn:hover, .links .btn[aria-expanded="true"] { background: var(--ink); border-color: var(--ink); color: var(--chartreuse); }
+
+  /* Link pop-up under the pills: the full address plus a copy button */
+  .contact { display: flex; flex-direction: column; gap: 12px; }
+  /* Fixed size so it doesn't jump between Email, LinkedIn and GitHub */
+  .link-pop {
+    width: 360px; max-width: 100%; height: 52px;
+    display: flex; align-items: center; gap: 8px;
+    background: var(--white); border-radius: var(--radius-md); padding: 8px 8px 8px 12px;
+    box-shadow: 0 8px 20px -14px rgba(32, 33, 29, .5);
+  }
+  .link-pop[hidden] { display: none; }
+  .link-pop-url {
+    flex: 1; min-width: 0;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    font-family: var(--font-mono); font-size: 12px;
+  }
+  .link-pop-copy {
+    flex: none; width: 36px; height: 36px; padding: 0; border: 0; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 999px; background: var(--ink); color: var(--ivory);
+  }
+  .link-pop-copy:hover { background: var(--ink-hover); }
+  .link-pop-copy svg { width: 16px; height: 16px; }
+  .link-pop-copy .icon-check, .link-pop-copy.is-copied .icon-copy { display: none; }
+  .link-pop-copy.is-copied .icon-check { display: block; }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+
+  /* Project list: below the contact buttons, separated by a rule (desktop, Projects tab only) */
+  .project-nav { display: none; }
+  @media (min-width: 1024px) {
+    html[data-tab="projects"] .project-nav {
+      display: flex; flex-direction: column;
+      padding-top: 0;
+    }
+  }
+  .project-nav-label {
+    margin: 0 0 20px; font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.12em;
+  }
+  /* Rows: chartreuse dot (open project only) · number · title, with editorial spacing */
+  .project-nav a {
+    display: grid; grid-template-columns: 8px 28px 1fr; align-items: center; column-gap: 10px;
+    padding: 18px 12px; margin: 0 -12px;
+    color: var(--ink); text-decoration: none;
+    border-top: 1px solid var(--stone); border-radius: 6px;
+    transition: background .2s ease;
+  }
+  .project-nav a:last-child { border-bottom: 1px solid var(--stone); }
+  .project-nav a::before {
+    content: ""; width: 7px; height: 7px; border-radius: 50%; background: transparent;
+    transition: background .2s ease;
+  }
+  .project-nav .num { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+  .project-nav .title { font-size: 15px; line-height: 1.3; }
+  .project-nav a:hover { background: rgba(210, 205, 191, .3); }
+  .project-nav a.active { background: rgba(210, 205, 191, .45); }
+  .project-nav a.active::before { background: var(--chartreuse); box-shadow: 0 0 0 1px rgba(32, 33, 29, .25); }
+  .project-nav a.active .title { font-weight: 600; }
+
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 500;
+    padding: 12px 20px; border-radius: 999px;
+  }
+  .btn-chartreuse { background: var(--chartreuse); color: var(--ink); transition: background .2s ease, color .2s ease; }
+  .btn-chartreuse:hover { background: var(--ink); color: var(--chartreuse); }
+
+  /* ---------- About + stat tiles ---------- */
+  .about-text { margin: 0; font-size: 18px; line-height: 1.7; color: var(--muted); }
+  .about-text strong { color: var(--ink); font-weight: 500; }
+
+  .stats {
+    display: grid; grid-template-columns: 1fr;
+    gap: 14px; margin-top: 36px;
+  }
+  @media (min-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat {
+    border-radius: var(--radius-lg); padding: 24px; min-height: 150px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .stat p { margin: 0; }
+  .stat .stat-label { font-family: var(--font-mono); font-size: 12px; }
+  .stat .stat-value { font-size: 52px; font-weight: 700; line-height: 1; }
+  .stat .stat-note { font-size: 14px; margin-top: 6px; }
+  .stat--chartreuse { background: var(--chartreuse); }
+  .stat--ink { background: var(--ink); color: var(--ivory); }
+  .stat--ink .stat-label { color: var(--chartreuse); }
+  .stat--ink .stat-note { color: var(--stone); }
+  .stat--olive { background: var(--olive); }
+  .stat--ivory { background: var(--ivory); }
+
+  section + section { margin-top: 96px; }
+
+  /* ---------- Experience ---------- */
+  .jobs { display: flex; flex-direction: column; gap: 12px; }
+  .job {
+    display: flex; flex-wrap: wrap; gap: 8px 28px; padding: 16px 0;
+    border-radius: 16px; transition: background .2s ease;
+  }
+  @media (min-width: 1024px) {
+    /* Bleed the hover card outward so text stays aligned with the section label */
+    .job { padding: 22px; margin: 0 -22px; }
+    .job:hover { background: var(--paper); }
+  }
+  .job-date { flex: 0 0 120px; margin: 3px 0 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+  .job-body { flex: 1 1 320px; min-width: 0; }
+  .job h3 { margin: 0; font-size: 18px; }
+  .job p { margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
+  .tag { font-family: var(--font-mono); font-size: 12px; background: var(--ivory); color: var(--ink); padding: 4px 10px; border-radius: 999px; }
+  .tag--outline { background: transparent; border: 1px solid var(--ink); color: var(--ink); padding: 3px 10px; }
+
+  .more-link { display: inline-block; padding: 12px 0; margin-top: 8px; font-weight: 700; }
+
+  /* ---------- Projects ---------- */
+  .projects { display: flex; flex-direction: column; gap: 14px; }
+  .project {
+    background: var(--paper); border-radius: var(--radius-lg); padding: 28px;
+    display: flex; flex-wrap: wrap; gap: 28px; align-items: center;
+    scroll-margin-top: 110px; /* land below the sticky section nav */
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .project-text { flex: 1 1 300px; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px; }
+  .project:hover { transform: translateY(-3px); box-shadow: 0 10px 24px -12px rgba(32, 33, 29, .35); }
+  .project h3 { margin: 6px 0 0; font-size: 20px; }
+  .project p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
+  /* Bottom row of each card: code link on the left, "Try it" button in the bottom-right corner */
+  .project-actions { margin-top: auto; display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+  .project-actions .btn, .detail-actions .btn { font-weight: 700; }
+  /* Secondary button: ink outline, fills ink on hover */
+  .btn-outline { border: 1.5px solid var(--ink); color: var(--ink); padding: 10.5px 18.5px; transition: background .2s ease, color .2s ease; }
+  .btn-outline:hover { background: var(--ink); color: var(--ivory); }
+
+  /* ---------- Project detail view ---------- */
+  .project-detail { background: var(--paper); border-radius: var(--radius-lg); padding: clamp(24px, 4vw, 48px); }
+  .project-detail[hidden], .projects[hidden] { display: none; }
+  .back-link { display: inline-block; margin-bottom: 24px; font-family: var(--font-mono); font-size: 13px; letter-spacing: .04em; color: var(--ink); }
+  .project-detail .eyebrow { font-family: var(--font-mono); font-size: 12px; margin: 0; color: var(--muted); }
+  .project-detail h2 { margin: 8px 0 0; font-size: clamp(28px, 3vw, 36px); line-height: 1.15; }
+  .project-detail h2 .project-num { font-family: var(--font-mono); font-size: .55em; font-weight: 500; color: var(--muted); margin-right: 14px; vertical-align: .2em; }
+  .project-detail .lede { margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 60ch; }
+  .detail-shot { display: block; width: 100%; height: auto; margin-top: 28px; border-radius: var(--radius-md); border: 1px solid var(--stone); }
+  .detail-grid { display: grid; grid-template-columns: 1fr; gap: 8px 48px; margin-top: 32px; }
+  @media (min-width: 760px) { .detail-grid { grid-template-columns: 3fr 2fr; } }
+  .detail-grid h3 { margin: 0 0 10px; font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+  .detail-grid h3 + .tags { margin-top: 0; }
+  .detail-grid .tags + h3 { margin-top: 28px; }
+  .detail-grid p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
+  .detail-list { margin: 0 0 24px; padding-left: 18px; font-size: 15px; line-height: 1.6; color: var(--muted); }
+  .detail-list li + li { margin-top: 8px; }
+  .detail-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--stone); }
+
+  .shot {
+    flex: 1 1 260px; aspect-ratio: 4 / 3; border-radius: var(--radius-md); background: var(--ivory);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-size: 12px; color: var(--ink);
+    overflow: hidden;
+  }
+  .shot img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Mono date line above each project title */
+  .project .eyebrow { font-family: var(--font-mono); font-size: 12px; margin: 0; color: var(--muted); }
+  /* Project number set before the title, in mono, like an editorial index */
+  .project h3 .project-num {
+    font-family: var(--font-mono); font-size: .72em; font-weight: 500; color: var(--muted);
+    margin-right: 12px; vertical-align: .12em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+    .project:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+
+<div class="layout">
+
+  <header class="sidebar">
+    <div class="sidebar-name">
+      <h1 class="name"><img src="images/signature.png" alt="McKenzie Campbell" width="1200" height="389"></h1>
+    </div>
+
+    <div class="sidebar-contact">
+    <div class="contact">
+      <div class="links">
+        <a class="btn" href="mailto:mckenzie.kay.campbell@gmail.com" data-copy="mckenzie.kay.campbell@gmail.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/mckenzie-campbell-2b5394128/" data-copy="https://www.linkedin.com/in/mckenzie-campbell-2b5394128/">LinkedIn</a>
+        <a class="btn" href="https://github.com/McKenzieKay" data-copy="https://github.com/McKenzieKay">GitHub</a>
+      </div>
+      <div class="link-pop" id="link-pop" hidden>
+        <a class="link-pop-url" href=""></a>
+        <button type="button" class="link-pop-copy" aria-label="Copy link" title="Copy">
+          <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        </button>
+        <span class="visually-hidden" aria-live="polite"></span>
+      </div>
+    </div>
+    </div>
+
+    <div class="sidebar-body">
+    <nav class="project-nav" aria-labelledby="project-nav-label">
+      <p class="project-nav-label" id="project-nav-label">SELECTED WORK</p>
+      <a href="#project-org" class="active"><span class="num">03</span><span class="title">Org Structure Visualizer</span></a>
+      <a href="#project-payday"><span class="num">02</span><span class="title">Payday Budget Calculator</span></a>
+      <a href="#project-sample-size"><span class="num">01</span><span class="title">Sample Size Calculator</span></a>
+    </nav>
+    </div>
+  </header>
+
+  <main id="content" class="content">
+
+    <nav class="section-nav" aria-label="Sections">
+      <a href="#projects" class="active">PROJECTS</a>
+      <a href="#experience">EXPERIENCE</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" class="label label--mobile">Projects</h2>
+      <div class="projects">
+
+        <article class="project" id="project-org">
+          <div class="shot"><img src="images/org-structure.jpg" alt="Org Structure Visualizer loaded with a sample team of 20 operators and buffers, showing PM, group lead and team lead summaries and operational stats" loading="lazy"></div>
+          <div class="project-text">
+            <p class="eyebrow"><time datetime="2026-07">JUL 2026</time></p>
+            <h3><span class="project-num">03</span>Org Structure Visualizer</h3>
+            <p>[One line: the problem it solves.]</p>
+            <ul class="tags">
+              <li class="tag tag--outline">Visualization</li>
+            </ul>
+            <div class="project-actions">
+              <a class="btn btn-outline" href="#details-org">More info</a>
+              <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/org-structure-visualizer/">Try it</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" id="project-payday">
+          <div class="shot"><img src="images/payday.jpg" alt="Payday Budget Calculator showing a $1,840 starting balance, a $500 buffer, and projected balances for each paycheck period from October to December 2026" loading="lazy"></div>
+          <div class="project-text">
+            <p class="eyebrow"><time datetime="2026-05">MAY 2026</time></p>
+            <h3><span class="project-num">02</span>Payday Budget Calculator</h3>
+            <p>Projects your balance paycheck to paycheck, with a safety buffer, so shortfalls show up before they happen.</p>
+            <ul class="tags">
+              <li class="tag tag--outline">Projections</li><li class="tag tag--outline">Personal Finance</li>
+            </ul>
+            <div class="project-actions">
+              <a class="btn btn-outline" href="#details-payday">More info</a>
+              <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/payday_budget_calculator/">Try it</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" id="project-sample-size">
+          <div class="shot"><img src="images/sample-size.jpg" alt="Sample Size Calculator with a batch of 2,500 assets, high risk and high quality expectations, recommending 242 assets to inspect (9.7% of the batch)" loading="lazy"></div>
+          <div class="project-text">
+            <p class="eyebrow"><time datetime="2026-04">APR 2026</time></p>
+            <h3><span class="project-num">01</span>Sample Size Calculator</h3>
+            <p>Inspection recommendations from batch size, risk tolerance and defect rate.</p>
+            <ul class="tags">
+              <li class="tag tag--outline">Statistics</li><li class="tag tag--outline">Six Sigma</li>
+            </ul>
+            <div class="project-actions">
+              <a class="btn btn-outline" href="#details-sample-size">More info</a>
+              <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/Sample-Size-Calculator/">Try it</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Detail views: one per project, shown in place of the list (see the tab script) -->
+      <article class="project-detail" id="details-org" hidden aria-labelledby="details-org-title">
+        <a class="back-link" href="#projects">← All projects</a>
+        <p class="eyebrow"><time datetime="2026-07">JUL 2026</time></p>
+        <h2 id="details-org-title"><span class="project-num">03</span>Org Structure Visualizer</h2>
+        <p class="lede">[One or two sentences: the problem it solves and who it's for.]</p>
+        <img class="detail-shot" src="images/org-structure.jpg" alt="Org Structure Visualizer loaded with a sample team of 20 operators and buffers, showing PM, group lead and team lead summaries and operational stats">
+        <div class="detail-grid">
+          <div>
+            <h3>What it does</h3>
+            <ul class="detail-list">
+              <li>Loads a team list CSV and maps it into project manager, group lead, team lead, operator and buffer roles.</li>
+              <li>Summarizes headcount by manager and workstream, with operational stats like team size, co-location and work-from-home counts.</li>
+              <li>Flags data issues, such as missing or mismatched employee IDs.</li>
+              <li>Lets you reassign people and auto-balance team leads, then exports a CSV with the same rows, columns and column order as the import.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Built with</h3>
+            <ul class="tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JavaScript</li><li class="tag">CSV</li></ul>
+            <h3>Why I built it</h3>
+            <p>[What prompted it and what it changed.]</p>
+          </div>
+        </div>
+        <div class="detail-actions">
+          <a class="btn btn-outline" href="https://github.com/McKenzieKay/org-structure-visualizer">View code on GitHub</a>
+          <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/org-structure-visualizer/">Try it</a>
+        </div>
+      </article>
+
+      <article class="project-detail" id="details-payday" hidden aria-labelledby="details-payday-title">
+        <a class="back-link" href="#projects">← All projects</a>
+        <p class="eyebrow"><time datetime="2026-05">MAY 2026</time></p>
+        <h2 id="details-payday-title"><span class="project-num">02</span>Payday Budget Calculator</h2>
+        <p class="lede">Projects your balance paycheck to paycheck, with a safety buffer, so shortfalls show up before they happen.</p>
+        <img class="detail-shot" src="images/payday.jpg" alt="Payday Budget Calculator showing a $1,840 starting balance, a $500 buffer, and projected balances for each paycheck period from October to December 2026">
+        <div class="detail-grid">
+          <div>
+            <h3>What it does</h3>
+            <ul class="detail-list">
+              <li>Starts from a saved balance and a safety buffer you choose.</li>
+              <li>Tracks recurring expenses and income sources, including paychecks that follow a schedule like every two weeks.</li>
+              <li>Breaks the months ahead into pay periods and shows each period's income, expenses and projected balance.</li>
+              <li>Saves everything in your browser, so nothing leaves your device.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Built with</h3>
+            <ul class="tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JavaScript</li></ul>
+            <h3>Why I built it</h3>
+            <p>[What prompted it and what it changed.]</p>
+          </div>
+        </div>
+        <div class="detail-actions">
+          <a class="btn btn-outline" href="https://github.com/McKenzieKay/payday_budget_calculator">View code on GitHub</a>
+          <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/payday_budget_calculator/">Try it</a>
+        </div>
+      </article>
+
+      <article class="project-detail" id="details-sample-size" hidden aria-labelledby="details-sample-size-title">
+        <a class="back-link" href="#projects">← All projects</a>
+        <p class="eyebrow"><time datetime="2026-04">APR 2026</time></p>
+        <h2 id="details-sample-size-title"><span class="project-num">01</span>Sample Size Calculator</h2>
+        <p class="lede">Inspection recommendations from batch size, risk tolerance and defect rate.</p>
+        <img class="detail-shot" src="images/sample-size.jpg" alt="Sample Size Calculator with a batch of 2,500 assets, high risk and high quality expectations, recommending 242 assets to inspect (9.7% of the batch)">
+        <div class="detail-grid">
+          <div>
+            <h3>What it does</h3>
+            <ul class="detail-list">
+              <li>Takes a batch size, a risk tolerance and a quality expectation.</li>
+              <li>Recommends how many assets to inspect, as a count and as a share of the batch, with a plain-language explanation.</li>
+              <li>Built for asset quality control using simple random sampling.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Built with</h3>
+            <ul class="tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JavaScript</li><li class="tag">Statistics</li></ul>
+            <h3>Why I built it</h3>
+            <p>[What prompted it and what it changed.]</p>
+          </div>
+        </div>
+        <div class="detail-actions">
+          <a class="btn btn-outline" href="https://github.com/McKenzieKay/Sample-Size-Calculator">View code on GitHub</a>
+          <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/Sample-Size-Calculator/">Try it</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading" class="label label--mobile">Experience</h2>
+      <div class="jobs">
+
+        <article class="job">
+          <p class="job-date">2024 — NOW</p>
+          <div class="job-body">
+            <h3>Data Scientist · iMerit</h3>
+            <p>Built S3 → BigQuery pipelines and Looker Studio dashboards across Autonomous Vehicles, RevOps and Medical teams. Led cleanup of 16,000+ Salesforce records.</p>
+            <ul class="tags">
+              <li class="tag">Python</li><li class="tag">BigQuery</li><li class="tag">Looker Studio</li><li class="tag">Salesforce</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <p class="job-date">2022 — 2024</p>
+          <div class="job-body">
+            <h3>Solutions Architect · iMerit</h3>
+            <p>Evaluated and deployed data tooling matched to each client's scope and budget, then refined workflows with delivery after launch.</p>
+            <ul class="tags">
+              <li class="tag">Ango</li><li class="tag">V7</li><li class="tag">Dataloop</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <p class="job-date">2021</p>
+          <div class="job-body">
+            <h3>Data Science Intern · Inference Analytics</h3>
+            <p>Prepared medical data for CNN models and built Tableau dashboards for patient follow-up scheduling.</p>
+            <ul class="tags">
+              <li class="tag">TensorFlow</li><li class="tag">Tableau</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <p class="job-date">2017 — 2020</p>
+          <div class="job-body">
+            <h3>Account Manager · Jet International</h3>
+            <p>Managed global order fulfillment and inventory programs; $2.2M in gross sales in 2019.</p>
+          </div>
+        </article>
+
+        <a class="more-link" href="resume.pdf">View full resume →</a>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="label label--mobile">About</h2>
+      <p class="about-text">
+        I started in operations and sales, so I know what the people reading a dashboard need from it.
+        Today I'm a data scientist at <strong>iMerit</strong>, building the pipelines and reporting behind
+        autonomous-vehicle data projects. I have an MS in Analytics from the <strong>University of Chicago</strong>.
+        [A line about life outside work.]
+      </p>
+
+      <div class="stats">
+        <div class="stat stat--chartreuse">
+          <p class="stat-label">manual reporting</p>
+          <div><p class="stat-value">−89%</p><p class="stat-note">45 min → 5 min</p></div>
+        </div>
+        <div class="stat stat--ink">
+          <p class="stat-label">salesforce cleanup</p>
+          <div><p class="stat-value">16,000+</p><p class="stat-note">records fixed · gaps down 60%</p></div>
+        </div>
+        <div class="stat stat--olive">
+          <p class="stat-label">pilot optimization</p>
+          <div><p class="stat-value">&gt;50%</p><p class="stat-note">less annotation time · became recurring</p></div>
+        </div>
+        <div class="stat stat--ivory">
+          <p class="stat-label">account management</p>
+          <div><p class="stat-value">$2.2M</p><p class="stat-note">gross sales in 2019</p></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Section nav as tabs: show one section at a time on desktop (CSS hides the
+  // rest). The URL hash tracks the tab so links and the Back button work.
+  (function () {
+    var links = document.querySelectorAll('.section-nav a');
+    var sections = document.querySelectorAll('main section');
+    if (!links.length) return;
+
+    // Map a hash (a section, or something inside one like a project) to its tab
+    function tabFor(hash) {
+      var el = hash && document.getElementById(hash);
+      var section = el && el.closest('main section');
+      return section ? section.id : 'projects';
+    }
+
+    function show(id) {
+      sections.forEach(function (s) { s.classList.toggle('is-active', s.id === id); });
+      links.forEach(function (a) {
+        var on = a.getAttribute('href') === '#' + id;
+        a.classList.toggle('active', on);
+        if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+      });
+      document.documentElement.setAttribute('data-tab', id);
+    }
+
+    // Project detail views replace the card list inside the Projects tab
+    var list = document.querySelector('.projects');
+    var details = document.querySelectorAll('.project-detail');
+    function route(hash) {
+      show(tabFor(hash));
+      var detail = hash && document.getElementById(hash);
+      var isDetail = !!(detail && detail.classList.contains('project-detail'));
+      details.forEach(function (d) { d.hidden = d !== detail; });
+      if (list) list.hidden = isDetail;
+      return isDetail;
+    }
+
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var id = a.getAttribute('href').slice(1);
+        history.pushState(null, '', '#' + id);
+        route(id);
+        window.scrollTo(0, 0);
+      });
+    });
+    window.addEventListener('popstate', function () { route(location.hash.slice(1)); });
+    // "More info" and "← All projects" are plain hash links: open the view at the top
+    window.addEventListener('hashchange', function () {
+      route(location.hash.slice(1));
+      var h = location.hash.slice(1);
+      if (h === 'projects' || h.indexOf('details-') === 0) window.scrollTo(0, 0);
+    });
+
+    var hash = location.hash.slice(1);
+    route(hash);
+    document.documentElement.classList.add('tabs-ready');
+    // Opening a #section link: start the tab at the top instead of the browser's anchor jump
+    if ((hash === tabFor(hash) || hash.indexOf('details-') === 0) && window.matchMedia('(min-width: 1024px)').matches) {
+      window.addEventListener('load', function () { window.scrollTo(0, 0); });
+    }
+  })();
+
+  // Contact pills: clicking one shows its address below with a copy button
+  // instead of leaving the page. Without JS the pills are plain links.
+  (function () {
+    var pills = document.querySelectorAll('.links [data-copy]');
+    var pop = document.getElementById('link-pop');
+    if (!pills.length || !pop) return;
+    var url = pop.querySelector('.link-pop-url');
+    var copyBtn = pop.querySelector('.link-pop-copy');
+    var status = pop.querySelector('[aria-live]');
+    var current = null, resetTimer;
+
+    function close() {
+      pop.hidden = true;
+      if (current) current.setAttribute('aria-expanded', 'false');
+      current = null;
+    }
+
+    pills.forEach(function (pill) {
+      pill.setAttribute('role', 'button');
+      pill.setAttribute('aria-expanded', 'false');
+      pill.setAttribute('aria-controls', 'link-pop');
+      pill.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (current === pill) { close(); return; }
+        if (current) current.setAttribute('aria-expanded', 'false');
+        current = pill;
+        pill.setAttribute('aria-expanded', 'true');
+        var text = pill.getAttribute('data-copy');
+        // Show the address without the https:// noise; copy the full value.
+        // The title shows the whole thing if it's cut off.
+        url.textContent = text.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, '');
+        url.title = text;
+        url.href = pill.href;
+        var external = pill.href.indexOf('mailto:') !== 0;
+        if (external) { url.target = '_blank'; url.rel = 'noopener'; }
+        else { url.removeAttribute('target'); url.removeAttribute('rel'); }
+        copyBtn.classList.remove('is-copied');
+        copyBtn.setAttribute('aria-label', 'Copy ' + pill.textContent.trim() + ' link');
+        pop.hidden = false;
+      });
+    });
+
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute'; ta.style.left = '-9999px';
+      document.body.appendChild(ta); ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (err) {}
+      document.body.removeChild(ta);
+      return ok ? Promise.resolve() : Promise.reject();
+    }
+
+    copyBtn.addEventListener('click', function () {
+      if (!current) return;
+      var text = current.getAttribute('data-copy');
+      var copied = navigator.clipboard && window.isSecureContext
+        ? navigator.clipboard.writeText(text).catch(function () { return fallbackCopy(text); })
+        : fallbackCopy(text);
+      copied.then(function () {
+        copyBtn.classList.add('is-copied');
+        copyBtn.title = 'Copied!';
+        status.textContent = 'Copied to clipboard';
+      }, function () {
+        // Copy blocked: select the address so it can be copied by hand
+        status.textContent = 'Press Command C to copy';
+        var range = document.createRange(); range.selectNodeContents(url);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      });
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(function () {
+        copyBtn.classList.remove('is-copied'); copyBtn.title = 'Copy'; status.textContent = '';
+      }, 2000);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && current) { var p = current; close(); p.focus(); }
+    });
+  })();
+
+  // Sidebar project list: highlight the project currently in view.
+  (function () {
+    var links = document.querySelectorAll('.project-nav a');
+    if (!links.length) return;
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    function setActive(id) {
+      links.forEach(function (a) { a.classList.toggle('active', a === map[id]); });
+    }
+    links.forEach(function (a) {
+      a.addEventListener('click', function () { setActive(a.getAttribute('href').slice(1)); });
+    });
+    if (!('IntersectionObserver' in window)) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  })();
+</script>
+</body>
+</html>
