@@ -15,6 +15,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="McKenzie Campbell's signature framed in chartreuse, with the words Selected Works">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap">
@@ -127,6 +129,14 @@
       max-width: none; margin-inline: calc(-1 * var(--content-pad)); padding-inline: var(--content-pad);
       border-bottom: 1.5px solid var(--ink);
     }
+    /* Soft fade below the tab line so content scrolling up dissolves into the stone
+       instead of being cut off at a hard edge */
+    .section-nav::after {
+      content: ""; position: absolute; left: 0; right: 0; top: calc(100% + 1.5px); height: 50px;
+      /* 10px of solid stone right under the line, then a 40px fade */
+      background: linear-gradient(var(--stone) 10px, rgba(210, 205, 191, 0));
+      pointer-events: none;
+    }
     /* Tabs: show one section at a time (class set by the script below) */
     .tabs-ready section:not(.is-active) { display: none; }
     .tabs-ready section + section { margin-top: 0; }
@@ -154,13 +164,15 @@
   }
 
   .links { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-left: 40px; }
-  /* Contact pills on the wine band: identical Raspberry pills; switch to a sand outline on hover or while open */
+  /* Contact buttons: chartreuse squares with softly rounded corners that match the
+     tab strips and the selected-project bar; ink on hover or while open */
   .links .btn {
-    padding: 6px 14px; font-size: 14px; border: 1.5px solid var(--chartreuse);
+    padding: 7.5px 13.5px; font-size: 14px; border-radius: 10px; text-align: center;
     background: var(--chartreuse); color: var(--ink);
     transition: background .2s ease, color .2s ease;
   }
-  .links .btn:hover, .links .btn[aria-expanded="true"] { background: var(--ink); border-color: var(--ink); color: var(--chartreuse); }
+  .links .btn:hover, .links .btn[aria-expanded="true"] { background: var(--ink); color: var(--chartreuse); }
+  .links .btn-email { min-width: 74px; } /* same width as GitHub */
 
   /* Link pop-up under the pills: the full address plus a copy button */
   .contact { display: flex; flex-direction: column; gap: 12px; }
@@ -203,31 +215,32 @@
     margin: 0 0 20px; font-family: var(--font-mono); font-size: 12px; font-weight: 500;
     letter-spacing: 0.12em;
   }
-  /* Rows: chartreuse dot (open project only) · number · title, with editorial spacing */
+  /* Rows: number · title, with editorial spacing. The selected row gets a chartreuse bar
+     down its left edge that curves with the corners, like the strips on the folder tabs. */
   .project-nav a {
-    display: grid; grid-template-columns: 8px 28px 1fr; align-items: center; column-gap: 10px;
-    padding: 18px 12px; margin: 0 -12px;
+    display: grid; grid-template-columns: 28px 1fr; align-items: center; column-gap: 10px;
+    padding: 18px 12px 18px 18px; margin: 0 -12px 0 -18px;
     color: var(--ink); text-decoration: none;
     border-top: 1px solid var(--stone); border-radius: 6px;
     transition: background .2s ease;
   }
   .project-nav a:last-child { border-bottom: 1px solid var(--stone); }
-  .project-nav a::before {
-    content: ""; width: 7px; height: 7px; border-radius: 50%; background: transparent;
-    transition: background .2s ease;
-  }
   .project-nav .num { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
   .project-nav .title { font-size: 15px; line-height: 1.3; }
   .project-nav a:hover { background: rgba(210, 205, 191, .3); }
-  .project-nav a.active { background: rgba(210, 205, 191, .45); }
-  .project-nav a.active::before { background: var(--chartreuse); box-shadow: 0 0 0 1px rgba(32, 33, 29, .25); }
+  .project-nav a.active {
+    background: rgba(210, 205, 191, .45);
+    border-radius: 12px 6px 6px 12px;
+    box-shadow: inset 5px 0 0 var(--chartreuse);
+  }
   .project-nav a.active .title { font-weight: 600; }
 
   .btn {
     display: inline-block; text-decoration: none; font-weight: 500;
-    padding: 12px 20px; border-radius: 999px;
+    padding: 12px 20px; border-radius: 10px; /* same soft corners as the contact buttons */
   }
-  .btn-chartreuse { background: var(--chartreuse); color: var(--ink); transition: background .2s ease, color .2s ease; }
+  /* Ink border matches More Info; padding trimmed by the border width so the size is unchanged */
+  .btn-chartreuse { background: var(--chartreuse); color: var(--ink); border: 1.5px solid var(--ink); padding: 10.5px 18.5px; transition: background .2s ease, color .2s ease; }
   .btn-chartreuse:hover { background: var(--ink); color: var(--chartreuse); }
 
   /* ---------- About + stat tiles ---------- */
@@ -274,25 +287,26 @@
 
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
   .tag { font-family: var(--font-mono); font-size: 12px; background: var(--ivory); color: var(--ink); padding: 4px 10px; border-radius: 999px; }
-  .tag--outline { background: transparent; border: 1px solid var(--ink); color: var(--ink); padding: 3px 10px; }
 
   .more-link { display: inline-block; padding: 12px 0; margin-top: 8px; font-weight: 700; }
 
   /* ---------- Projects ---------- */
   .projects { display: flex; flex-direction: column; gap: 14px; }
   .project {
-    background: var(--paper); border-radius: var(--radius-lg); padding: 28px;
+    /* No outline by default (transparent border keeps the size steady); only the selected card gets one */
+    background: var(--paper); border: 1px solid transparent; border-radius: var(--radius-lg); padding: 28px;
     display: flex; flex-wrap: wrap; gap: 28px; align-items: center;
     scroll-margin-top: 110px; /* land below the sticky section nav */
-    transition: transform .2s ease, box-shadow .2s ease;
+    transition: border-color .2s ease, box-shadow .2s ease;
   }
+  /* The project selected in SELECTED WORK: a thin (1px) ink outline, subtle but noticeable */
+  .project.is-selected { border-color: var(--ink); }
   .project-text { flex: 1 1 300px; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px; }
-  .project:hover { transform: translateY(-3px); box-shadow: 0 10px 24px -12px rgba(32, 33, 29, .35); }
   .project h3 { margin: 6px 0 0; font-size: 20px; }
   .project p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
-  /* Bottom row of each card: code link on the left, "Try it" button in the bottom-right corner */
+  /* Bottom row of each card: code link on the left, "Try It" button in the bottom-right corner */
   .project-actions { margin-top: auto; display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
-  .project-actions .btn, .detail-actions .btn { font-weight: 700; }
+  .project-actions .btn, .detail-actions .btn { font-weight: 700; min-width: 120px; text-align: center; } /* More Info and Try It share one width */
   /* Secondary button: ink outline, fills ink on hover */
   .btn-outline { border: 1.5px solid var(--ink); color: var(--ink); padding: 10.5px 18.5px; transition: background .2s ease, color .2s ease; }
   .btn-outline:hover { background: var(--ink); color: var(--ivory); }
@@ -305,7 +319,7 @@
   .project-detail h2 { margin: 8px 0 0; font-size: clamp(28px, 3vw, 36px); line-height: 1.15; }
   .project-detail h2 .project-num { font-family: var(--font-mono); font-size: .55em; font-weight: 500; color: var(--muted); margin-right: 14px; vertical-align: .2em; }
   .project-detail .lede { margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 60ch; }
-  .detail-shot { display: block; width: 100%; height: auto; margin-top: 28px; border-radius: var(--radius-md); border: 1px solid var(--stone); }
+  .detail-shot { display: block; width: 100%; height: auto; margin-top: 28px; border-radius: var(--radius-md); border: 1px solid var(--ink); }
   .detail-grid { display: grid; grid-template-columns: 1fr; gap: 8px 48px; margin-top: 32px; }
   @media (min-width: 760px) { .detail-grid { grid-template-columns: 3fr 2fr; } }
   .detail-grid h3 { margin: 0 0 10px; font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
@@ -318,6 +332,8 @@
 
   .shot {
     flex: 1 1 260px; aspect-ratio: 4 / 3; border-radius: var(--radius-md); background: var(--ivory);
+    border: 1px solid var(--ink); /* thin black frame around each thumbnail */
+    box-shadow: -8px 8px 0 rgba(32, 33, 29, .18); /* soft offset shadow to the left */
     display: flex; align-items: center; justify-content: center;
     font-family: var(--font-mono); font-size: 12px; color: var(--ink);
     overflow: hidden;
@@ -335,7 +351,6 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     * { transition: none !important; }
-    .project:hover { transform: none; }
   }
 </style>
 </head>
@@ -352,7 +367,7 @@
     <div class="sidebar-contact">
     <div class="contact">
       <div class="links">
-        <a class="btn" href="mailto:mckenzie.kay.campbell@gmail.com" data-copy="mckenzie.kay.campbell@gmail.com">Email</a>
+        <a class="btn btn-email" href="mailto:mckenzie.kay.campbell@gmail.com" data-copy="mckenzie.kay.campbell@gmail.com">Email</a>
         <a class="btn" href="https://www.linkedin.com/in/mckenzie-campbell-2b5394128/" data-copy="https://www.linkedin.com/in/mckenzie-campbell-2b5394128/">LinkedIn</a>
         <a class="btn" href="https://github.com/McKenzieKay" data-copy="https://github.com/McKenzieKay">GitHub</a>
       </div>
@@ -389,18 +404,15 @@
       <h2 id="projects-heading" class="label label--mobile">Projects</h2>
       <div class="projects">
 
-        <article class="project" id="project-org">
+        <article class="project is-selected" id="project-org">
           <div class="shot"><img src="images/org-structure.jpg" alt="Org Structure Visualizer loaded with a sample team of 20 operators and buffers, showing PM, group lead and team lead summaries and operational stats" loading="lazy"></div>
           <div class="project-text">
             <p class="eyebrow"><time datetime="2026-07">JUL 2026</time></p>
             <h3><span class="project-num">03</span>Org Structure Visualizer</h3>
             <p>[One line: the problem it solves.]</p>
-            <ul class="tags">
-              <li class="tag tag--outline">Visualization</li>
-            </ul>
             <div class="project-actions">
-              <a class="btn btn-outline" href="#details-org">More info</a>
-              <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/org-structure-visualizer/">Try it</a>
+              <a class="btn btn-outline" href="#details-org">More Info</a>
+              <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/org-structure-visualizer/">Try It</a>
             </div>
           </div>
         </article>
@@ -411,12 +423,9 @@
             <p class="eyebrow"><time datetime="2026-05">MAY 2026</time></p>
             <h3><span class="project-num">02</span>Payday Budget Calculator</h3>
             <p>Projects your balance paycheck to paycheck, with a safety buffer, so shortfalls show up before they happen.</p>
-            <ul class="tags">
-              <li class="tag tag--outline">Projections</li><li class="tag tag--outline">Personal Finance</li>
-            </ul>
             <div class="project-actions">
-              <a class="btn btn-outline" href="#details-payday">More info</a>
-              <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/payday_budget_calculator/">Try it</a>
+              <a class="btn btn-outline" href="#details-payday">More Info</a>
+              <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/payday_budget_calculator/">Try It</a>
             </div>
           </div>
         </article>
@@ -427,12 +436,9 @@
             <p class="eyebrow"><time datetime="2026-04">APR 2026</time></p>
             <h3><span class="project-num">01</span>Sample Size Calculator</h3>
             <p>Inspection recommendations from batch size, risk tolerance and defect rate.</p>
-            <ul class="tags">
-              <li class="tag tag--outline">Statistics</li><li class="tag tag--outline">Six Sigma</li>
-            </ul>
             <div class="project-actions">
-              <a class="btn btn-outline" href="#details-sample-size">More info</a>
-              <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/Sample-Size-Calculator/">Try it</a>
+              <a class="btn btn-outline" href="#details-sample-size">More Info</a>
+              <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/Sample-Size-Calculator/">Try It</a>
             </div>
           </div>
         </article>
@@ -465,7 +471,7 @@
         </div>
         <div class="detail-actions">
           <a class="btn btn-outline" href="https://github.com/McKenzieKay/org-structure-visualizer">View code on GitHub</a>
-          <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/org-structure-visualizer/">Try it</a>
+          <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/org-structure-visualizer/">Try It</a>
         </div>
       </article>
 
@@ -494,7 +500,7 @@
         </div>
         <div class="detail-actions">
           <a class="btn btn-outline" href="https://github.com/McKenzieKay/payday_budget_calculator">View code on GitHub</a>
-          <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/payday_budget_calculator/">Try it</a>
+          <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/payday_budget_calculator/">Try It</a>
         </div>
       </article>
 
@@ -522,7 +528,7 @@
         </div>
         <div class="detail-actions">
           <a class="btn btn-outline" href="https://github.com/McKenzieKay/Sample-Size-Calculator">View code on GitHub</a>
-          <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/Sample-Size-Calculator/">Try it</a>
+          <a class="btn btn-chartreuse" href="https://mckenziekay.github.io/Sample-Size-Calculator/">Try It</a>
         </div>
       </article>
     </section>
@@ -655,7 +661,7 @@
       });
     });
     window.addEventListener('popstate', function () { route(location.hash.slice(1)); });
-    // "More info" and "← All projects" are plain hash links: open the view at the top
+    // "More Info" and "← All projects" are plain hash links: open the view at the top
     window.addEventListener('hashchange', function () {
       route(location.hash.slice(1));
       var h = location.hash.slice(1);
@@ -751,27 +757,29 @@
     });
   })();
 
-  // Sidebar project list: highlight the project currently in view.
+  // Selected project: changes only when a list entry or a project card is clicked
+  // (never on scroll).
   (function () {
     var links = document.querySelectorAll('.project-nav a');
     if (!links.length) return;
     var map = {};
     links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    // Highlight the list entry and outline the matching card
     function setActive(id) {
-      links.forEach(function (a) { a.classList.toggle('active', a === map[id]); });
+      links.forEach(function (a) {
+        var on = a === map[id];
+        a.classList.toggle('active', on);
+        var card = document.getElementById(a.getAttribute('href').slice(1));
+        if (card) card.classList.toggle('is-selected', on);
+      });
     }
     links.forEach(function (a) {
       a.addEventListener('click', function () { setActive(a.getAttribute('href').slice(1)); });
     });
-    if (!('IntersectionObserver' in window)) return;
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    }, { rootMargin: '-30% 0px -60% 0px' });
+    // Clicking anywhere on a project card (including its buttons) selects it too
     Object.keys(map).forEach(function (id) {
-      var el = document.getElementById(id);
-      if (el) observer.observe(el);
+      var card = document.getElementById(id);
+      if (card) card.addEventListener('click', function () { setActive(id); });
     });
   })();
 </script>
