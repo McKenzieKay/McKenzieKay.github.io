@@ -285,6 +285,18 @@
   .job h3 { margin: 0; font-size: 18px; }
   .job p { margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
 
+  /* Data scientist areas: a small timeline inside one job, a chartreuse dot per area */
+  .areas { list-style: none; margin: 16px 0 0; padding: 0 0 0 20px; border-left: 2px solid var(--olive); }
+  .area { position: relative; }
+  .area + .area { margin-top: 16px; }
+  .area::before {
+    content: ""; position: absolute; left: -28px; top: 5px; width: 14px; height: 14px; box-sizing: border-box;
+    border-radius: 50%; background: var(--chartreuse); border: 2px solid var(--ink);
+  }
+  .area h4 { margin: 0; font-size: 15px; font-weight: 700; color: var(--ink); }
+  .area-date { margin-left: 8px; font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--muted); white-space: nowrap; }
+  .job .area p { margin-top: 4px; }
+
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
   .tag { font-family: var(--font-mono); font-size: 12px; background: var(--ivory); color: var(--ink); padding: 4px 10px; border-radius: 999px; }
 
@@ -541,7 +553,21 @@
           <p class="job-date">2024 — 2026</p>
           <div class="job-body">
             <h3>Data Scientist · iMerit</h3>
-            <p>Built S3 → BigQuery pipelines and Looker Studio dashboards across Autonomous Vehicles, RevOps and Medical teams. Led cleanup of 16,000+ Salesforce records.</p>
+            <p>iMerit's first data scientist. Started on the medical team, then expanded to RevOps and Autonomous Vehicles.</p>
+            <ol class="areas">
+              <li class="area">
+                <h4>Autonomous Vehicles <span class="area-date">Feb – Aug 2026</span></h4>
+                <p>Built near real-time S3 → BigQuery pipelines feeding Looker Studio dashboards for sensor and video annotation. Automated quality reporting, cutting processing time 89%.</p>
+              </li>
+              <li class="area">
+                <h4>RevOps <span class="area-date">Jul 2025 – Feb 2026</span></h4>
+                <p>Reported to the company president, owning revenue data quality. Cleaned 16,000+ Salesforce records with Python, cutting data gaps 60%.</p>
+              </li>
+              <li class="area">
+                <h4>Medical <span class="area-date">Nov 2024 – Jul 2025</span></h4>
+                <p>Linked audio length to time per task in an annotation pilot, cutting annotation time by more than half and simplifying pricing. The pilot became a recurring project.</p>
+              </li>
+            </ol>
             <ul class="tags">
               <li class="tag">Python</li><li class="tag">BigQuery</li><li class="tag">Looker Studio</li><li class="tag">Salesforce</li>
             </ul>
