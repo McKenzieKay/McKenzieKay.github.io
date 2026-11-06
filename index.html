@@ -295,6 +295,8 @@
 
   /* Data scientist areas: a small timeline inside one job, a chartreuse dot per area */
   .areas { list-style: none; margin: 16px 0 0; padding: 0 0 0 20px; border-left: 2px solid var(--olive); }
+  /* Stages (not a time sequence): same dots, no connecting line */
+  .areas--stages { border-left-color: transparent; }
   .area { position: relative; }
   .area + .area { margin-top: 16px; }
   .area::before {
@@ -601,7 +603,7 @@
               <li class="tag">Workflow Design</li><li class="tag">Guidelines Design</li><li class="tag">Ango</li><li class="tag">V7</li><li class="tag">Dataloop</li>
             </ul>
             <p>As a Solutions Architect, I turned what clients needed into optimized workflows our annotation teams could run.</p>
-            <ol class="areas">
+            <ol class="areas areas--stages">
               <li class="area">
                 <h4>Design</h4>
                 <p>Across 15+ client projects spanning text, images, audio, video and medical data, I designed annotation and evaluation workflows and shaped the rubrics and guidelines behind them. For one client, I worked with them to cluster overlapping label classes, cutting time per task by 30% while improving quality, without losing anything they needed.</p>
