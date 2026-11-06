@@ -275,18 +275,18 @@
   section + section { margin-top: 96px; }
 
   /* ---------- Experience ---------- */
-  .jobs { display: flex; flex-direction: column; gap: 12px; }
+  .jobs { display: flex; flex-direction: column; gap: 14px; }
+  /* Each job is a card like the project cards: paper background, thin ink outline.
+     The job selected in the side list also gets a chartreuse edge, like its list row. */
   .job {
-    display: flex; flex-wrap: wrap; gap: 8px 28px; padding: 16px 0;
-    border-radius: 16px; transition: background .2s ease;
+    display: flex; flex-wrap: wrap; gap: 8px 28px; padding: 22px;
+    background: var(--paper); border: 1px solid var(--ink); border-radius: var(--radius-lg);
+    scroll-margin-top: 110px; /* land below the sticky section nav */
+    transition: box-shadow .2s ease;
   }
+  .job.is-selected { box-shadow: inset 6px 0 0 var(--chartreuse); }
   @media (min-width: 1024px) {
-    /* Bleed the hover card outward so text stays aligned with the section label */
-    .job { padding: 22px; margin: 0 -22px; }
-    .job:hover { background: var(--paper); }
-    /* Selected from the side list: a paper card with a chartreuse edge, like the list row */
-    .job.is-selected { background: var(--paper); box-shadow: inset 5px 0 0 var(--chartreuse); }
-    .job { scroll-margin-top: 120px; } /* clear the sticky tab bar when jumped to */
+    .job { padding: 28px; }
   }
   .job-date { flex: 0 0 120px; margin: 3px 0 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
   .job-body { flex: 1 1 320px; min-width: 0; }
