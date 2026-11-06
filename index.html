@@ -275,6 +275,11 @@
     font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--ink);
     padding-bottom: 16px; border-bottom: 1px solid var(--ink);
   }
+  /* Highlighter swipe: chartreuse across the lower part of the word (ink text on chartreuse) */
+  .highlight {
+    color: inherit; padding: 0 .08em;
+    background: linear-gradient(transparent 52%, var(--chartreuse) 52%, var(--chartreuse) 92%, transparent 92%);
+  }
   .bio .bio-sub { margin-top: 16px; font-size: 18px; line-height: 1.6; color: var(--muted); }
   /* Wide screens: keep the second sentence on one line, shrinking it slightly when the
      card is narrow (cqi = 1% of the card's inner width). From 1200px wide it stays
@@ -728,7 +733,7 @@
       <h2 id="about-heading" class="label label--mobile">About</h2>
       <div class="bio">
         <p class="bio-label">ABOUT ME</p>
-        <p class="bio-headline">My Hobby is Having Hobbies</p>
+        <p class="bio-headline">My Hobby is Having <mark class="highlight">Hobbies</mark></p>
         <p class="bio-sub">Cycle through my hyperfixations with me, except Bishop; my love for my puppy is forever.</p>
       </div>
 
