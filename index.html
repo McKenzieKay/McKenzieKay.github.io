@@ -203,10 +203,12 @@
     clip: rect(0 0 0 0); white-space: nowrap;
   }
 
-  /* Project list: below the contact buttons, separated by a rule (desktop, Projects tab only) */
+  /* Side lists: below the contact buttons (desktop only). The project list shows on
+     the Projects tab, the job list (years · role) on the Experience tab. */
   .project-nav { display: none; }
   @media (min-width: 1024px) {
-    html[data-tab="projects"] .project-nav {
+    html[data-tab="projects"] .project-nav[data-for="projects"],
+    html[data-tab="experience"] .project-nav[data-for="experience"] {
       display: flex; flex-direction: column;
       padding-top: 0;
     }
@@ -234,6 +236,9 @@
     box-shadow: inset 5px 0 0 var(--chartreuse);
   }
   .project-nav a.active .title { font-weight: 600; }
+  /* Job list: a wider first column for the years, and the company under the role */
+  .project-nav[data-for="experience"] a { grid-template-columns: 92px 1fr; }
+  .project-nav .org { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); }
 
   .btn {
     display: inline-block; text-decoration: none; font-weight: 500;
@@ -279,6 +284,9 @@
     /* Bleed the hover card outward so text stays aligned with the section label */
     .job { padding: 22px; margin: 0 -22px; }
     .job:hover { background: var(--paper); }
+    /* Selected from the side list: a paper card with a chartreuse edge, like the list row */
+    .job.is-selected { background: var(--paper); box-shadow: inset 5px 0 0 var(--chartreuse); }
+    .job { scroll-margin-top: 120px; } /* clear the sticky tab bar when jumped to */
   }
   .job-date { flex: 0 0 120px; margin: 3px 0 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
   .job-body { flex: 1 1 320px; min-width: 0; }
@@ -395,11 +403,18 @@
     </div>
 
     <div class="sidebar-body">
-    <nav class="project-nav" aria-labelledby="project-nav-label">
+    <nav class="project-nav" data-for="projects" aria-labelledby="project-nav-label">
       <p class="project-nav-label" id="project-nav-label">SELECTED WORK</p>
       <a href="#project-org" class="active"><span class="num">03</span><span class="title">Org Structure Visualizer</span></a>
       <a href="#project-payday"><span class="num">02</span><span class="title">Payday Budget Calculator</span></a>
       <a href="#project-sample-size"><span class="num">01</span><span class="title">Sample Size Calculator</span></a>
+    </nav>
+    <nav class="project-nav" data-for="experience" aria-labelledby="job-nav-label">
+      <p class="project-nav-label" id="job-nav-label">EXPERIENCE</p>
+      <a href="#job-imerit-ds" class="active"><span class="num">2024 — 2026</span><span class="title">Data Scientist<span class="org">iMerit</span></span></a>
+      <a href="#job-imerit-sa"><span class="num">2022 — 2024</span><span class="title">Solutions Architect<span class="org">iMerit</span></span></a>
+      <a href="#job-inference"><span class="num">2021</span><span class="title">Data Science Intern<span class="org">Inference Analytics</span></span></a>
+      <a href="#job-jet"><span class="num">2017 — 2020</span><span class="title">Account Manager<span class="org">Jet International</span></span></a>
     </nav>
     </div>
   </header>
@@ -549,7 +564,7 @@
       <h2 id="experience-heading" class="label label--mobile">Experience</h2>
       <div class="jobs">
 
-        <article class="job">
+        <article class="job is-selected" id="job-imerit-ds">
           <p class="job-date">2024 — 2026</p>
           <div class="job-body">
             <h3>Data Scientist · iMerit</h3>
@@ -574,7 +589,7 @@
           </div>
         </article>
 
-        <article class="job">
+        <article class="job" id="job-imerit-sa">
           <p class="job-date">2022 — 2024</p>
           <div class="job-body">
             <h3>Solutions Architect · iMerit</h3>
@@ -585,7 +600,7 @@
           </div>
         </article>
 
-        <article class="job">
+        <article class="job" id="job-inference">
           <p class="job-date">2021</p>
           <div class="job-body">
             <h3>Data Science Intern · Inference Analytics</h3>
@@ -596,7 +611,7 @@
           </div>
         </article>
 
-        <article class="job">
+        <article class="job" id="job-jet">
           <p class="job-date">2017 — 2020</p>
           <div class="job-body">
             <h3>Account Manager · Jet International</h3>
@@ -783,10 +798,10 @@
     });
   })();
 
-  // Selected project: changes only when a list entry or a project card is clicked
-  // (never on scroll).
-  (function () {
-    var links = document.querySelectorAll('.project-nav a');
+  // Selected project / job: changes only when a side-list entry or its card is
+  // clicked (never on scroll). Each side list keeps its own selection.
+  document.querySelectorAll('.project-nav').forEach(function (nav) {
+    var links = nav.querySelectorAll('a');
     if (!links.length) return;
     var map = {};
     links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
@@ -807,7 +822,7 @@
       var card = document.getElementById(id);
       if (card) card.addEventListener('click', function () { setActive(id); });
     });
-  })();
+  });
 </script>
 </body>
 </html>
