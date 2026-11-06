@@ -31,9 +31,13 @@ window.ABOUT_POSTS = [
       { src: "images/posts/halloween-onesies-2.jpg",
         alt: "The full Ninji onesie: black fleece with pointed ears on the hood and a white face panel with two oval eyes" },
       { src: "images/posts/halloween-onesies-3.jpg",
-        alt: "Two handmade, unpainted white clay buttons with two holes each, resting on a tile counter" }
+        alt: "Two handmade, unpainted white clay buttons with two holes each, resting on a tile counter" },
+      { src: "images/posts/halloween-onesies-ref-waluigi.jpg",
+        alt: "Official Nintendo artwork of Waluigi, for comparison: purple cap, purple shirt, dark overalls with yellow buttons" },
+      { src: "images/posts/halloween-onesies-ref-ninji.jpg",
+        alt: "Official Nintendo artwork of Ninji, for comparison: a round black character with pointed ears, a white face band and two red buttons" }
     ],
-    caption: "For Halloween, I sewed onesies of our favorite Mario Party characters, Waluigi and Ninji. Ninji's buttons started as clay I shaped by hand, then painted red."
+    caption: "For Halloween, I sewed onesies of our favorite Mario Party characters, Waluigi and Ninji. Ninji's buttons started as clay I shaped by hand, then painted red. (Character art © Nintendo.)"
   },
   {
     date: "2026-10-18",
