@@ -13,14 +13,17 @@
          caption:  what you want to say about it
     3. Save, refresh the page to check it, then push.
 
-  The dog and adventures posts below are placeholders. Replace them with real ones.
+  The adventures post below is a placeholder. Replace it with a real one.
 */
 window.ABOUT_POSTS = [
   {
-    date: "2026-11-01",
+    date: "2026-10-13",
     category: "dog",
-    images: [],
-    caption: "[Placeholder: a photo of your dog and a line about them: name, breed, and what they're like.]"
+    images: [
+      { src: "images/posts/bishop-6th-birthday.jpg",
+        alt: "Bishop, a red and white basset hound, lying on a round fleece dog bed in front of a small evergreen tree and a stone fireplace" }
+    ],
+    caption: "Today is Bishop's 6th birthday! I'm getting a lot of enjoyment out of telling him he's a \"Sixy Boy\" in an Australian accent."
   },
   {
     date: "2026-10-31",
