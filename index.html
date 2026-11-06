@@ -305,6 +305,10 @@
   .area-date { margin-left: 8px; font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--muted); white-space: nowrap; }
   .job .area p { margin-top: 4px; }
 
+  /* Job tags sit right under the title, with a little room before the text */
+  .job h3 + .tags { margin-top: 10px; }
+  .job .tags + p { margin-top: 12px; }
+
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
   .tag { font-family: var(--font-mono); font-size: 12px; background: var(--ivory); color: var(--ink); padding: 4px 10px; border-radius: 999px; }
 
@@ -568,6 +572,9 @@
           <p class="job-date">2024 — 2026</p>
           <div class="job-body">
             <h3>Data Scientist · iMerit</h3>
+            <ul class="tags">
+              <li class="tag">Python</li><li class="tag">Amazon S3</li><li class="tag">BigQuery</li><li class="tag">Looker Studio</li><li class="tag">Salesforce</li>
+            </ul>
             <p>As iMerit's first data scientist, my job was building the foundation that turned messy data into something we could make decisions with.</p>
             <ol class="areas">
               <li class="area">
@@ -583,9 +590,6 @@
                 <p>I projected revenue for executive leadership and found client trends to help target new business. Digging into client projects, I spotted high-impact areas that helped close deals. In one pilot, noticing that short audio files took disproportionately long led to a fix that cut annotation time by more than half.</p>
               </li>
             </ol>
-            <ul class="tags">
-              <li class="tag">Python</li><li class="tag">Amazon S3</li><li class="tag">BigQuery</li><li class="tag">Looker Studio</li><li class="tag">Salesforce</li>
-            </ul>
           </div>
         </article>
 
@@ -593,10 +597,10 @@
           <p class="job-date">2022 — 2024</p>
           <div class="job-body">
             <h3>Solutions Architect · iMerit</h3>
-            <p>Across 15+ client projects spanning text, images, audio, video and medical data, I designed the human evaluation workflows and wrote the rubrics and annotation guidelines behind them. On one scraped-image dataset, I flagged NSFW risk and set up pre-screening to protect annotators.</p>
             <ul class="tags">
               <li class="tag">Workflow design</li><li class="tag">Guidelines design</li><li class="tag">Ango</li><li class="tag">V7</li><li class="tag">Dataloop</li>
             </ul>
+            <p>Across 15+ client projects spanning text, images, audio, video and medical data, I designed the human evaluation workflows and wrote the rubrics and annotation guidelines behind them. On one scraped-image dataset, I flagged NSFW risk and set up pre-screening to protect annotators.</p>
           </div>
         </article>
 
@@ -604,10 +608,10 @@
           <p class="job-date">2021</p>
           <div class="job-body">
             <h3>Data Science Intern · Inference Analytics</h3>
-            <p>In my first data science role, I prepared medical data for CNN models and built Tableau dashboards for patient follow-up scheduling.</p>
             <ul class="tags">
               <li class="tag">TensorFlow</li><li class="tag">Tableau</li>
             </ul>
+            <p>In my first data science role, I prepared medical data for CNN models and built Tableau dashboards for patient follow-up scheduling.</p>
           </div>
         </article>
 
