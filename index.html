@@ -257,7 +257,25 @@
   .btn-chartreuse:hover { background: var(--ink); color: var(--chartreuse); }
 
   /* ---------- About ---------- */
-  .about-text { margin: 0; font-size: 18px; line-height: 1.7; color: var(--muted); }
+  /* Bio: its own white card with a thin ink outline. Mono label (desktop; phones
+     already show the ABOUT heading), a bold headline over a thin ink rule, then
+     the rest in body style */
+  .bio {
+    background: var(--white); border: 1px solid var(--ink); border-radius: var(--radius-lg);
+    padding: 22px;
+  }
+  @media (min-width: 1024px) { .bio { padding: 28px; } }
+  .bio p { margin: 0; }
+  .bio-label {
+    display: none;
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.12em;
+  }
+  @media (min-width: 1024px) { .bio-label { display: block; margin-bottom: 14px; } }
+  .bio-headline {
+    font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--ink);
+    padding-bottom: 16px; border-bottom: 1px solid var(--ink);
+  }
+  .bio .bio-sub { margin-top: 16px; font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 60ch; }
 
   /* ---------- About feed ---------- */
   /* Filter chips: shown below desktop width, where the side list is hidden */
@@ -701,7 +719,11 @@
 
     <section id="about" aria-labelledby="about-heading">
       <h2 id="about-heading" class="label label--mobile">About</h2>
-      <p class="about-text">My hobby is having hobbies. Cycle through my hyperfixations with me, except Bishop; my love for my puppy is forever.</p>
+      <div class="bio">
+        <p class="bio-label">ABOUT ME</p>
+        <p class="bio-headline">My hobby is having hobbies.</p>
+        <p class="bio-sub">Cycle through my hyperfixations with me, except Bishop; my love for my puppy is forever.</p>
+      </div>
 
       <!-- Filter chips: phones and tablets (the side list does this on desktop) -->
       <div class="feed-chips" role="group" aria-label="Filter posts">
