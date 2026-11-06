@@ -25,12 +25,12 @@
     /* Editorial palette: ivory backgrounds (55-65%), ink for the signature, type
        and navigation (20-25%), chartreuse for accents and buttons (8-12%), olive
        and stone as quiet secondary tones (3-5% each). */
-    --ivory: #F5F3EB;           /* left column background; tags, stat tile */
+    --ivory: #F5F3EB;           /* left column background; tags, empty photo slots */
     --paper: #FBFAF6;           /* cards: a lighter ivory */
     --ink: #20211D;             /* signature, text, navigation, dividing line */
     --ink-hover: #3A3B35;
     --chartreuse: #C6D82E;      /* buttons, the open tab, highlights (ink text on it) */
-    --olive: #898B70;           /* link hover underline, stat tile */
+    --olive: #898B70;           /* link hover underline, timeline line */
     --stone: #D2CDBF;           /* right-side background; list dividers */
     --muted: #4A4B45;           /* secondary text (5.6:1 on stone) */
     --white: #FFFFFF;
@@ -203,11 +203,13 @@
   }
 
   /* Side lists: below the contact buttons (desktop only). The project list shows on
-     the Projects tab, the job list (years · role) on the Experience tab. */
+     the Projects tab, the job list (years · role) on the Experience tab, and the post
+     filters (count · category) on the About tab. */
   .project-nav { display: none; }
   @media (min-width: 1024px) {
     html[data-tab="projects"] .project-nav[data-for="projects"],
-    html[data-tab="experience"] .project-nav[data-for="experience"] {
+    html[data-tab="experience"] .project-nav[data-for="experience"],
+    html[data-tab="about"] .project-nav[data-for="about"] {
       display: flex; flex-direction: column;
       padding-top: 0;
     }
@@ -218,23 +220,28 @@
   }
   /* Rows: number · title, with editorial spacing. The selected row gets a chartreuse bar
      down its left edge that curves with the corners, like the strips on the folder tabs. */
-  .project-nav a {
+  .project-nav a, .project-nav button {
     display: grid; grid-template-columns: 28px 1fr; align-items: center; column-gap: 10px;
     padding: 18px 12px 18px 18px; margin: 0 -12px 0 -18px;
     color: var(--ink); text-decoration: none;
-    border-top: 1px solid var(--stone); border-radius: 6px;
+    border: 0; border-top: 1px solid var(--stone); border-radius: 6px;
     transition: background .2s ease;
   }
-  .project-nav a:last-child { border-bottom: 1px solid var(--stone); }
+  /* Filter rows are buttons: reset the browser's button look so they match the links */
+  .project-nav button {
+    background: none; font: inherit; text-align: left; cursor: pointer;
+    width: calc(100% + 30px);
+  }
+  .project-nav a:last-child, .project-nav button:last-child { border-bottom: 1px solid var(--stone); }
   .project-nav .num { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
   .project-nav .title { font-size: 15px; line-height: 1.3; }
-  .project-nav a:hover { background: rgba(210, 205, 191, .3); }
-  .project-nav a.active {
+  .project-nav a:hover, .project-nav button:hover { background: rgba(210, 205, 191, .3); }
+  .project-nav a.active, .project-nav button.active {
     background: rgba(210, 205, 191, .45);
     border-radius: 12px 6px 6px 12px;
     box-shadow: inset 5px 0 0 var(--chartreuse);
   }
-  .project-nav a.active .title { font-weight: 600; }
+  .project-nav a.active .title, .project-nav button.active .title { font-weight: 600; }
   /* Job list: a wider first column for the years, and the company under the role */
   .project-nav[data-for="experience"] a { grid-template-columns: 92px 1fr; }
   .project-nav .org { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); }
@@ -247,29 +254,37 @@
   .btn-chartreuse { background: var(--chartreuse); color: var(--ink); border: 1.5px solid var(--ink); padding: 10.5px 18.5px; transition: background .2s ease, color .2s ease; }
   .btn-chartreuse:hover { background: var(--ink); color: var(--chartreuse); }
 
-  /* ---------- About + stat tiles ---------- */
+  /* ---------- About ---------- */
   .about-text { margin: 0; font-size: 18px; line-height: 1.7; color: var(--muted); }
-  .about-text strong { color: var(--ink); font-weight: 500; }
 
-  .stats {
-    display: grid; grid-template-columns: 1fr;
-    gap: 14px; margin-top: 36px;
+  /* ---------- About feed ---------- */
+  /* Filter chips: shown below desktop width, where the side list is hidden */
+  .feed-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; }
+  @media (min-width: 1024px) { .feed-chips { display: none; } }
+  .chip {
+    font: 500 13px var(--font-mono); color: var(--ink); cursor: pointer;
+    background: var(--paper); border: 1px solid var(--ink); border-radius: 999px; padding: 7px 14px;
   }
-  @media (min-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } }
-  .stat {
-    border-radius: var(--radius-lg); padding: 24px; min-height: 150px;
-    display: flex; flex-direction: column; justify-content: space-between;
+  .chip.is-active { background: var(--chartreuse); }
+
+  /* Posts: cards like the job cards, photo on top, tag and date, then the caption.
+     Two columns on wide screens, one on narrow. */
+  .feed { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
+  @media (min-width: 1200px) { .feed { grid-template-columns: repeat(2, 1fr); align-items: start; } }
+  .post {
+    background: var(--paper); border: 1px solid var(--ink); border-radius: var(--radius-lg);
+    overflow: hidden;
   }
-  .stat p { margin: 0; }
-  .stat .stat-label { font-family: var(--font-mono); font-size: 12px; }
-  .stat .stat-value { font-size: 52px; font-weight: 700; line-height: 1; }
-  .stat .stat-note { font-size: 14px; margin-top: 6px; }
-  .stat--chartreuse { background: var(--chartreuse); }
-  .stat--ink { background: var(--ink); color: var(--ivory); }
-  .stat--ink .stat-label { color: var(--chartreuse); }
-  .stat--ink .stat-note { color: var(--stone); }
-  .stat--olive { background: var(--olive); }
-  .stat--ivory { background: var(--ivory); }
+  .post-photo { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--ivory); }
+  .post-photo--empty {
+    display: grid; place-items: center;
+    font-family: var(--font-mono); font-size: 12px; color: var(--muted);
+  }
+  .post-body { padding: 18px 22px 22px; }
+  .post-meta { display: flex; align-items: center; gap: 10px; }
+  .post-meta time { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+  .post-caption { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
+  .feed-empty { margin: 0; font-size: 15px; color: var(--muted); }
 
   section + section { margin-top: 96px; }
 
@@ -421,6 +436,13 @@
       <a href="#job-imerit-sa"><span class="num">2022 — 2024</span><span class="title">Solutions Architect<span class="org">iMerit</span></span></a>
       <a href="#job-inference"><span class="num">2021</span><span class="title">Data Science Intern<span class="org">Inference Analytics</span></span></a>
       <a href="#job-jet"><span class="num">2017 — 2020</span><span class="title">Account Manager<span class="org">Jet International</span></span></a>
+    </nav>
+    <nav class="project-nav" data-for="about" aria-labelledby="feed-nav-label">
+      <p class="project-nav-label" id="feed-nav-label">POSTS</p>
+      <button type="button" class="active" data-filter="all"><span class="num" data-count="all"></span><span class="title">All</span></button>
+      <button type="button" data-filter="dog"><span class="num" data-count="dog"></span><span class="title">My Dog</span></button>
+      <button type="button" data-filter="adventures"><span class="num" data-count="adventures"></span><span class="title">Adventures</span></button>
+      <button type="button" data-filter="crafts"><span class="num" data-count="crafts"></span><span class="title">Crafts</span></button>
     </nav>
     </div>
   </header>
@@ -648,36 +670,115 @@
 
     <section id="about" aria-labelledby="about-heading">
       <h2 id="about-heading" class="label label--mobile">About</h2>
-      <p class="about-text">
-        I started in operations and sales, so I know what the people reading a dashboard need from it.
-        Today I'm a data scientist at <strong>iMerit</strong>, building the pipelines and reporting behind
-        autonomous-vehicle data projects. I have an MS in Analytics from the <strong>University of Chicago</strong>.
-        [A line about life outside work.]
-      </p>
+      <p class="about-text">[Placeholder: a few sentences about you outside of work, in your own words.]</p>
 
-      <div class="stats">
-        <div class="stat stat--chartreuse">
-          <p class="stat-label">manual reporting</p>
-          <div><p class="stat-value">−89%</p><p class="stat-note">45 min → 5 min</p></div>
-        </div>
-        <div class="stat stat--ink">
-          <p class="stat-label">salesforce cleanup</p>
-          <div><p class="stat-value">16,000+</p><p class="stat-note">records fixed · gaps down 60%</p></div>
-        </div>
-        <div class="stat stat--olive">
-          <p class="stat-label">pilot optimization</p>
-          <div><p class="stat-value">&gt;50%</p><p class="stat-note">less annotation time · became recurring</p></div>
-        </div>
-        <div class="stat stat--ivory">
-          <p class="stat-label">account management</p>
-          <div><p class="stat-value">$2.2M</p><p class="stat-note">gross sales in 2019</p></div>
-        </div>
+      <!-- Filter chips: phones and tablets (the side list does this on desktop) -->
+      <div class="feed-chips" role="group" aria-label="Filter posts">
+        <button type="button" class="chip is-active" data-filter="all">All</button>
+        <button type="button" class="chip" data-filter="dog">My Dog</button>
+        <button type="button" class="chip" data-filter="adventures">Adventures</button>
+        <button type="button" class="chip" data-filter="crafts">Crafts</button>
       </div>
+
+      <!-- Posts come from posts.js (see the instructions at the top of that file) -->
+      <div class="feed" id="feed" aria-live="polite"></div>
     </section>
 
   </main>
 </div>
 
+<script src="posts.js"></script>
+<script>
+  // About feed: render posts from posts.js (newest first), fill in the counts, and
+  // filter by category from the side list (desktop) or the chips (smaller screens).
+  (function () {
+    var feed = document.getElementById('feed');
+    if (!feed) return;
+    var posts = (window.ABOUT_POSTS || []).slice().sort(function (a, b) {
+      return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
+    });
+    var LABELS = { dog: 'My Dog', adventures: 'Adventures', crafts: 'Crafts' };
+
+    function fmtDate(iso) {
+      var d = new Date(iso + 'T12:00:00');
+      return isNaN(d) ? iso : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+
+    // Build each post with DOM methods (no innerHTML), so captions show exactly as typed
+    posts.forEach(function (p) {
+      var card = document.createElement('article');
+      card.className = 'post';
+      card.dataset.category = p.category;
+
+      var photo;
+      if (p.image) {
+        photo = document.createElement('img');
+        photo.className = 'post-photo';
+        photo.src = p.image;
+        photo.alt = p.alt || '';
+        photo.loading = 'lazy';
+      } else {
+        photo = document.createElement('div');
+        photo.className = 'post-photo post-photo--empty';
+        photo.textContent = '[photo]';
+      }
+      card.appendChild(photo);
+
+      var body = document.createElement('div');
+      body.className = 'post-body';
+      var meta = document.createElement('div');
+      meta.className = 'post-meta';
+      var tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.textContent = LABELS[p.category] || p.category;
+      var time = document.createElement('time');
+      time.dateTime = p.date;
+      time.textContent = fmtDate(p.date);
+      meta.appendChild(tag);
+      meta.appendChild(time);
+      var caption = document.createElement('p');
+      caption.className = 'post-caption';
+      caption.textContent = p.caption;
+      body.appendChild(meta);
+      body.appendChild(caption);
+      card.appendChild(body);
+      feed.appendChild(card);
+    });
+
+    var empty = document.createElement('p');
+    empty.className = 'feed-empty';
+    empty.textContent = 'No posts here yet.';
+    empty.hidden = true;
+    feed.appendChild(empty);
+
+    // Counts in the side list
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      var c = el.getAttribute('data-count');
+      el.textContent = String(c === 'all' ? posts.length
+        : posts.filter(function (p) { return p.category === c; }).length).padStart(2, '0');
+    });
+
+    var controls = document.querySelectorAll('[data-filter]');
+    function setFilter(f) {
+      var shown = 0;
+      feed.querySelectorAll('.post').forEach(function (card) {
+        var on = f === 'all' || card.dataset.category === f;
+        card.hidden = !on;
+        if (on) shown++;
+      });
+      empty.hidden = shown > 0;
+      controls.forEach(function (b) {
+        var on = b.getAttribute('data-filter') === f;
+        b.classList.toggle(b.classList.contains('chip') ? 'is-active' : 'active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    }
+    controls.forEach(function (b) {
+      b.addEventListener('click', function () { setFilter(b.getAttribute('data-filter')); });
+    });
+    setFilter('all');
+  })();
+</script>
 <script>
   // Section nav as tabs: show one section at a time on desktop (CSS hides the
   // rest). The URL hash tracks the tab so links and the Back button work.
