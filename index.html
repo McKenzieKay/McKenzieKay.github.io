@@ -244,6 +244,8 @@
   .project-nav a.active .title, .project-nav button.active .title { font-weight: 600; }
   /* Job list: a wider first column for the years, and the company under the role */
   .project-nav[data-for="experience"] a { grid-template-columns: 92px 1fr; }
+  /* Post filters: names only, no number column */
+  .project-nav[data-for="about"] button { grid-template-columns: 1fr; }
   .project-nav .org { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); }
 
   .btn {
@@ -469,10 +471,10 @@
     </nav>
     <nav class="project-nav" data-for="about" aria-labelledby="feed-nav-label">
       <p class="project-nav-label" id="feed-nav-label">FILTER POSTS</p>
-      <button type="button" class="active" data-filter="all"><span class="num" data-count="all"></span><span class="title">All</span></button>
-      <button type="button" data-filter="dog"><span class="num" data-count="dog"></span><span class="title">My Dog</span></button>
-      <button type="button" data-filter="adventures"><span class="num" data-count="adventures"></span><span class="title">Adventures</span></button>
-      <button type="button" data-filter="crafts"><span class="num" data-count="crafts"></span><span class="title">Crafts</span></button>
+      <button type="button" class="active" data-filter="all"><span class="title">All</span></button>
+      <button type="button" data-filter="dog"><span class="title">My Dog</span></button>
+      <button type="button" data-filter="adventures"><span class="title">Adventures</span></button>
+      <button type="button" data-filter="crafts"><span class="title">Crafts</span></button>
     </nav>
     </div>
   </header>
@@ -719,8 +721,8 @@
 
 <script src="posts.js"></script>
 <script>
-  // About feed: render posts from posts.js (newest first), fill in the counts, and
-  // filter by category from the side list (desktop) or the chips (smaller screens).
+  // About feed: render posts from posts.js (newest first) and filter by category
+  // from the side list (desktop) or the chips (smaller screens).
   (function () {
     var feed = document.getElementById('feed');
     if (!feed) return;
@@ -837,13 +839,6 @@
     empty.textContent = 'No posts here yet.';
     empty.hidden = true;
     feed.appendChild(empty);
-
-    // Counts in the side list
-    document.querySelectorAll('[data-count]').forEach(function (el) {
-      var c = el.getAttribute('data-count');
-      el.textContent = String(c === 'all' ? posts.length
-        : posts.filter(function (p) { return p.category === c; }).length).padStart(2, '0');
-    });
 
     var controls = document.querySelectorAll('[data-filter]');
     function setFilter(f) {
