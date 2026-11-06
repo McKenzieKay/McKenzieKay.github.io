@@ -2,37 +2,43 @@
   About feed posts
   ----------------
   To add a post:
-    1. Put the photo in images/posts/ (a .jpg around 1200px wide is plenty).
+    1. Put the photo(s) in images/posts/ (a .jpg around 1200px tall is plenty).
+       Remove location data first: phone photos can include GPS coordinates.
     2. Copy one of the posts below, paste it at the top of the list, and fill it in:
          date:     "YYYY-MM-DD" (the feed shows newest first)
          category: "dog", "adventures" or "crafts"
-         image:    "images/posts/your-photo.jpg"  (or "" for no photo yet)
-         alt:      a short description of the photo, for screen readers
+         images:   one or more photos; two or more become a swipeable carousel
+                   { src: "images/posts/your-photo.jpg", alt: "what the photo shows" }
+                   (use images: [] for no photo yet)
          caption:  what you want to say about it
     3. Save, refresh the page to check it, then push.
 
-  The three posts below are placeholders. Replace them with real ones.
+  The dog and adventures posts below are placeholders. Replace them with real ones.
 */
 window.ABOUT_POSTS = [
   {
     date: "2026-11-01",
     category: "dog",
-    image: "",
-    alt: "",
+    images: [],
     caption: "[Placeholder: a photo of your dog and a line about them: name, breed, and what they're like.]"
+  },
+  {
+    date: "2026-10-31",
+    category: "crafts",
+    images: [
+      { src: "images/posts/halloween-onesies-1.jpg",
+        alt: "McKenzie dressed as Waluigi in a purple cap, purple top and dark overalls with yellow buttons, next to someone in a black Ninji onesie with a white face panel and red buttons" },
+      { src: "images/posts/halloween-onesies-2.jpg",
+        alt: "The full Ninji onesie: black fleece with pointed ears on the hood and a white face panel with two oval eyes" },
+      { src: "images/posts/halloween-onesies-3.jpg",
+        alt: "Two handmade, unpainted white clay buttons with two holes each, resting on a tile counter" }
+    ],
+    caption: "For Halloween, I sewed onesies of our favorite Mario Party characters, Waluigi and Ninji. Ninji's buttons started as clay I shaped by hand, then painted red."
   },
   {
     date: "2026-10-18",
     category: "adventures",
-    image: "",
-    alt: "",
+    images: [],
     caption: "[Placeholder: a favorite trip or outing, where you went and what made it great.]"
-  },
-  {
-    date: "2026-10-05",
-    category: "crafts",
-    image: "",
-    alt: "",
-    caption: "[Placeholder: something you made and a line about how you made it.]"
   }
 ];

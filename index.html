@@ -275,7 +275,37 @@
     background: var(--paper); border: 1px solid var(--ink); border-radius: var(--radius-lg);
     overflow: hidden;
   }
-  .post-photo { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--ivory); }
+  /* Portrait 4:5, like a social feed: suits phone photos */
+  .post-photo { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--ivory); }
+
+  /* Carousel: a scroll-snap track (swipe on phones), arrow buttons, and dots */
+  .carousel { position: relative; }
+  .carousel-track {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+  }
+  .carousel-track::-webkit-scrollbar { display: none; }
+  .carousel-track .post-photo { flex: 0 0 100%; scroll-snap-align: start; }
+  .carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 36px; height: 36px; border-radius: 50%; padding: 0 0 3px;
+    display: grid; place-items: center; cursor: pointer;
+    font: 400 22px/1 var(--font-sans); color: var(--ink);
+    background: var(--paper); border: 1px solid var(--ink);
+    transition: opacity .2s ease;
+  }
+  .carousel-btn--prev { left: 12px; }
+  .carousel-btn--next { right: 12px; }
+  .carousel-btn:disabled { opacity: 0; pointer-events: none; }
+  .carousel-dots {
+    position: absolute; left: 0; right: 0; bottom: 12px;
+    display: flex; justify-content: center; gap: 6px; pointer-events: none;
+  }
+  .carousel-dots .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--paper); border: 1px solid var(--ink);
+  }
+  .carousel-dots .dot.is-active { background: var(--chartreuse); }
   .post-photo--empty {
     display: grid; place-items: center;
     font-family: var(--font-mono); font-size: 12px; color: var(--muted);
@@ -704,25 +734,82 @@
       return isNaN(d) ? iso : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     }
 
+    function makeImg(im) {
+      var img = document.createElement('img');
+      img.className = 'post-photo';
+      img.src = im.src;
+      img.alt = im.alt || '';
+      img.loading = 'lazy';
+      return img;
+    }
+
+    // No photos: an empty slot. One photo: the photo. Two or more: a swipeable
+    // carousel (scroll-snap track, arrow buttons, dots).
+    function buildPhotos(images) {
+      if (!images.length) {
+        var slot = document.createElement('div');
+        slot.className = 'post-photo post-photo--empty';
+        slot.textContent = '[photo]';
+        return slot;
+      }
+      if (images.length === 1) return makeImg(images[0]);
+
+      var wrap = document.createElement('div');
+      wrap.className = 'carousel';
+      wrap.setAttribute('role', 'region');
+      wrap.setAttribute('aria-roledescription', 'carousel');
+      wrap.setAttribute('aria-label', 'Photos, ' + images.length + ' total');
+
+      var track = document.createElement('div');
+      track.className = 'carousel-track';
+      track.tabIndex = 0; // arrow keys scroll it when focused
+      images.forEach(function (im) { track.appendChild(makeImg(im)); });
+      wrap.appendChild(track);
+
+      function btn(dir, label, symbol) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'carousel-btn carousel-btn--' + dir;
+        b.setAttribute('aria-label', label);
+        b.textContent = symbol;
+        b.addEventListener('click', function () {
+          track.scrollBy({ left: (dir === 'next' ? 1 : -1) * track.clientWidth, behavior: 'smooth' });
+        });
+        wrap.appendChild(b);
+        return b;
+      }
+      var prev = btn('prev', 'Previous photo', '‹');
+      var next = btn('next', 'Next photo', '›');
+
+      var dots = document.createElement('div');
+      dots.className = 'carousel-dots';
+      dots.setAttribute('aria-hidden', 'true');
+      images.forEach(function () {
+        var d = document.createElement('span');
+        d.className = 'dot';
+        dots.appendChild(d);
+      });
+      wrap.appendChild(dots);
+
+      function update() {
+        var i = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+        dots.childNodes.forEach(function (d, k) { d.classList.toggle('is-active', k === i); });
+        prev.disabled = i <= 0;
+        next.disabled = i >= images.length - 1;
+      }
+      track.addEventListener('scroll', function () { window.requestAnimationFrame(update); });
+      window.addEventListener('resize', update);
+      setTimeout(update, 0);
+      return wrap;
+    }
+
     // Build each post with DOM methods (no innerHTML), so captions show exactly as typed
     posts.forEach(function (p) {
       var card = document.createElement('article');
       card.className = 'post';
       card.dataset.category = p.category;
 
-      var photo;
-      if (p.image) {
-        photo = document.createElement('img');
-        photo.className = 'post-photo';
-        photo.src = p.image;
-        photo.alt = p.alt || '';
-        photo.loading = 'lazy';
-      } else {
-        photo = document.createElement('div');
-        photo.className = 'post-photo post-photo--empty';
-        photo.textContent = '[photo]';
-      }
-      card.appendChild(photo);
+      card.appendChild(buildPhotos(p.images || []));
 
       var body = document.createElement('div');
       body.className = 'post-body';
