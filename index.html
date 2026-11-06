@@ -275,7 +275,14 @@
     font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--ink);
     padding-bottom: 16px; border-bottom: 1px solid var(--ink);
   }
-  .bio .bio-sub { margin-top: 16px; font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 60ch; }
+  .bio .bio-sub { margin-top: 16px; font-size: 18px; line-height: 1.6; color: var(--muted); }
+  /* Wide screens: keep the second sentence on one line, shrinking it slightly when the
+     card is narrow (cqi = 1% of the card's inner width). From 1200px wide it stays
+     about 15px or larger; narrower windows and phones wrap it at full size. */
+  .bio { container-type: inline-size; }
+  @media (min-width: 1200px) {
+    .bio .bio-sub { white-space: nowrap; font-size: min(18px, 2.3cqi); }
+  }
 
   /* ---------- About feed ---------- */
   /* Filter chips: shown below desktop width, where the side list is hidden */
