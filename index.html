@@ -471,7 +471,6 @@
     </nav>
     <nav class="project-nav" data-for="about" aria-labelledby="feed-nav-label">
       <p class="project-nav-label" id="feed-nav-label">FILTER POSTS</p>
-      <button type="button" class="active" data-filter="all"><span class="title">All</span></button>
       <button type="button" data-filter="dog"><span class="title">My Dog</span></button>
       <button type="button" data-filter="adventures"><span class="title">Adventures</span></button>
       <button type="button" data-filter="crafts"><span class="title">Crafts</span></button>
@@ -706,7 +705,6 @@
 
       <!-- Filter chips: phones and tablets (the side list does this on desktop) -->
       <div class="feed-chips" role="group" aria-label="Filter posts">
-        <button type="button" class="chip is-active" data-filter="all">All</button>
         <button type="button" class="chip" data-filter="dog">My Dog</button>
         <button type="button" class="chip" data-filter="adventures">Adventures</button>
         <button type="button" class="chip" data-filter="crafts">Crafts</button>
@@ -840,25 +838,34 @@
     empty.hidden = true;
     feed.appendChild(empty);
 
+    // Filters are toggles: click to add a category, click again to remove it.
+    // Several can be on at once; with none on, every post shows.
     var controls = document.querySelectorAll('[data-filter]');
-    function setFilter(f) {
+    var selected = {};
+    function apply() {
+      var any = Object.keys(selected).length > 0;
       var shown = 0;
       feed.querySelectorAll('.post').forEach(function (card) {
-        var on = f === 'all' || card.dataset.category === f;
+        var on = !any || selected[card.dataset.category];
         card.hidden = !on;
         if (on) shown++;
       });
       empty.hidden = shown > 0;
+      // The side list and the chips stay in sync
       controls.forEach(function (b) {
-        var on = b.getAttribute('data-filter') === f;
+        var on = !!selected[b.getAttribute('data-filter')];
         b.classList.toggle(b.classList.contains('chip') ? 'is-active' : 'active', on);
         b.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
     }
     controls.forEach(function (b) {
-      b.addEventListener('click', function () { setFilter(b.getAttribute('data-filter')); });
+      b.addEventListener('click', function () {
+        var f = b.getAttribute('data-filter');
+        if (selected[f]) delete selected[f]; else selected[f] = true;
+        apply();
+      });
     });
-    setFilter('all');
+    apply();
   })();
 </script>
 <script>
