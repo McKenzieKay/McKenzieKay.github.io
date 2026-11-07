@@ -326,10 +326,14 @@
   .feed { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
   /* Two columns on wide screens; cards side by side always match in height (stretch) */
   @media (min-width: 1200px) { .feed { grid-template-columns: repeat(2, 1fr); align-items: stretch; } }
+  /* Column layout: the photo area takes any spare height (photos centered in it) and
+     the caption stays pinned to the bottom when cards in a row match heights */
   .post {
     background: var(--paper); border: 1px solid var(--ink); border-radius: var(--radius-lg);
-    overflow: hidden;
+    overflow: hidden; display: flex; flex-direction: column;
   }
+  .post-media { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; }
+  .post-media > * { width: 100%; }
   /* Portrait 4:5, like a social feed: suits phone photos */
   .post-photo { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--ivory); }
   /* A photo marked natural: true in posts.js keeps its own shape (e.g. a wide shot) */
@@ -877,7 +881,10 @@
       card.className = 'post';
       card.dataset.category = p.category;
 
-      card.appendChild(buildPhotos(p.images || []));
+      var media = document.createElement('div');
+      media.className = 'post-media';
+      media.appendChild(buildPhotos(p.images || []));
+      card.appendChild(media);
 
       var body = document.createElement('div');
       body.className = 'post-body';
