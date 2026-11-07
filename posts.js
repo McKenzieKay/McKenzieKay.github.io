@@ -37,7 +37,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/bishop-salt-flat.jpg",
         alt: "Bishop the basset hound in a green harness standing on a white salt flat, ears flopping, under a blazing orange and purple sunset" }
     ],
-    caption: "Bishop vs. the sunset. I think he wins."
+    caption: "Bishop is ready to make this his profile picture on Dog Meet Dog!"
   },
   {
     date: "2025-08-30",
