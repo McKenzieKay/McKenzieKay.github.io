@@ -17,6 +17,15 @@
 */
 window.ABOUT_POSTS = [
   {
+    date: "2026-11-06",
+    category: "dog",
+    images: [
+      { src: "images/posts/bishop-pep.jpg",
+        alt: "Bishop the basset hound standing on a gray deck, while a fluffy black dog named Pep holds the end of a long rope leash that loops back to Bishop" }
+    ],
+    caption: "Bishop's not listening, but no worries, Pep is on the case and going to drag him over!"
+  },
+  {
     date: "2026-05-05",
     category: "treats",
     images: [
