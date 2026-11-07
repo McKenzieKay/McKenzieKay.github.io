@@ -93,6 +93,7 @@ window.ABOUT_POSTS = [
     images: [
       { src: "images/posts/bishop-naps-02.jpg", alt: "Bishop lying in bed with one ear flipped up and his spotted paws over a floral duvet" },
       { src: "images/posts/bishop-naps-06.jpg", alt: "Extreme close-up of Bishop's nose peeking out from under his own ear while he sleeps" },
+      { src: "images/posts/bishop-naps-16.jpg", alt: "Bishop asleep draped over McKenzie's partner's head like a hat, while the partner smiles at a laptop on the couch" },
       { src: "images/posts/bishop-naps-11.jpg", alt: "Bishop flat on his back on a yellow armchair, belly up and paws in the air, looking at the camera" },
       { src: "images/posts/bishop-naps-12.jpg", alt: "Bishop curled up on a small fluffy gray dog bed that is far too small for him, one long ear spilling over the edge" },
       { src: "images/posts/bishop-naps-13.jpg", alt: "Bishop asleep with his chin resting on the back of a yellow couch" },
