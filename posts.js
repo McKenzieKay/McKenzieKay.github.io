@@ -94,13 +94,12 @@ window.ABOUT_POSTS = [
       { src: "images/posts/bishop-naps-02.jpg", alt: "Bishop lying in bed with one ear flipped up and his spotted paws over a floral duvet" },
       { src: "images/posts/bishop-naps-06.jpg", alt: "Extreme close-up of Bishop's nose peeking out from under his own ear while he sleeps" },
       { src: "images/posts/bishop-naps-16.jpg", alt: "Bishop asleep draped over McKenzie's partner's head like a hat, while the partner smiles at a laptop on the couch" },
-      { src: "images/posts/bishop-naps-11.jpg", alt: "Bishop flat on his back on a yellow armchair, belly up and paws in the air, looking at the camera" },
       { src: "images/posts/bishop-naps-12.jpg", alt: "Bishop curled up on a small fluffy gray dog bed that is far too small for him, one long ear spilling over the edge" },
-      { src: "images/posts/bishop-naps-13.jpg", alt: "Bishop asleep with his chin resting on the back of a yellow couch" },
-      { src: "images/posts/bishop-naps-14.jpg", alt: "Bishop asleep on a mossy green rug wearing a black hoodie with bat wings" },
       { src: "images/posts/bishop-naps-09.jpg", alt: "Bishop asleep upside down in a curl on the couch, paws in the air" },
+      { src: "images/posts/bishop-naps-11.jpg", alt: "Bishop flat on his back on a yellow armchair, belly up and paws in the air, looking at the camera" },
       { src: "images/posts/bishop-naps-15.jpg", alt: "Bishop lying on the doormat with his head resting on a pair of red sneakers" },
-      { src: "images/posts/bishop-naps-05.jpg", alt: "Bishop napping with his chin on a mossy boulder between big rocks on a hike" }
+      { src: "images/posts/bishop-naps-05.jpg", alt: "Bishop napping with his chin on a mossy boulder between big rocks on a hike" },
+      { src: "images/posts/bishop-naps-13.jpg", alt: "Bishop asleep with his chin resting on the back of a yellow couch" }
     ],
     caption: "Professional napper. Skills include: any surface, any position, any time."
   },
