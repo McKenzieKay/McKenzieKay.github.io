@@ -4,8 +4,10 @@
   To add a post:
     1. Put the photo(s) in images/posts/ (a .jpg around 1200px tall is plenty).
        Remove location data first: phone photos can include GPS coordinates.
-    2. Copy one of the posts below, paste it at the top of the list, and fill it in:
-         date:     "YYYY-MM-DD" (the feed shows newest first)
+    2. Copy one of the posts below, paste it where you want it in the list, and fill
+       it in. The feed shows posts in the order they appear here (no dates).
+       On wide screens posts sit two per row (1-2, 3-4, ...); keep a post with
+       ratio "4 / 3" paired with another 4:3 post so the row lines up.
          category: "dog", "adventures", "crafts" or "treats" (Sweet Treats)
          images:   one or more photos; two or more become a swipeable carousel
                    { src: "images/posts/your-photo.jpg", alt: "what the photo shows" }
@@ -22,7 +24,6 @@
 */
 window.ABOUT_POSTS = [
   {
-    date: "2026-11-06",
     category: "dog",
     images: [
       { src: "images/posts/bishop-naps-02.jpg", alt: "Bishop lying in bed with one ear flipped up and his spotted paws over a floral duvet" },
@@ -38,7 +39,42 @@ window.ABOUT_POSTS = [
     caption: "Professional napper. Skills include: any surface, any position, any time."
   },
   {
-    date: "2026-11-06",
+    category: "crafts",
+    images: [
+      { src: "images/posts/halloween-onesies-1.jpg",
+        alt: "McKenzie dressed as Waluigi in a purple cap, purple top and dark overalls with yellow buttons, next to someone in a black Ninji onesie with a white face panel and red buttons" },
+      { src: "images/posts/halloween-onesies-ref-waluigi.jpg",
+        alt: "Official Nintendo artwork of Waluigi, for comparison: purple cap, purple shirt, dark overalls with yellow buttons" },
+      { src: "images/posts/halloween-onesies-ref-ninji.jpg",
+        alt: "Official Nintendo artwork of Ninji, for comparison: a round black character with pointed ears, a white face band and two red buttons" },
+      { src: "images/posts/halloween-onesies-2.jpg",
+        alt: "The full Ninji onesie: black fleece with pointed ears on the hood and a white face panel with two oval eyes" },
+      { src: "images/posts/halloween-onesies-3.jpg",
+        alt: "Two handmade, unpainted white clay buttons with two holes each, resting on a tile counter" }
+    ],
+    caption: "It's a Mario Party this Halloween!! I handmade both onesies, Waluigi and Ninji! Keeping it comfy this year! (Character art © Nintendo.)"
+  },
+  {
+    category: "adventures",
+    images: [
+      { src: "images/posts/blue-basin-1.jpg",
+        alt: "Blue Basin's blue-green badlands under a blue sky, with juniper trees and dry grass in the foreground and layered hills behind" },
+      { src: "images/posts/blue-basin-2.jpg",
+        alt: "Sunset over a wide valley and distant hills, seen from a grassy ridge under dramatic clouds" },
+      { src: "images/posts/blue-basin-3.jpg",
+        alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
+    ],
+    caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
+  },
+  {
+    category: "treats",
+    images: [
+      { src: "images/posts/juniper-smash-cake.jpg",
+        alt: "A small layered smash cake with white frosting, ringed with blueberries and orange sprinkles, on a lace doily under a glass cake dome" }
+    ],
+    caption: "Juniper's First Birthday SMASH cake!"
+  },
+  {
     category: "dog",
     images: [
       { src: "images/posts/bishop-puppy-5.jpg", alt: "Puppy Bishop resting his chin on his paws at the edge of a gray couch with a teal blanket" },
@@ -51,104 +87,6 @@ window.ABOUT_POSTS = [
     caption: "Throwback to Bishop as a puppy! All ears and no legs... I guess things have not changed there."
   },
   {
-    date: "2026-11-06",
-    category: "dog",
-    images: [
-      { src: "images/posts/bishop-salt-flat.jpg",
-        alt: "Bishop the basset hound in a green harness standing on a white salt flat, ears flopping, under a blazing orange and purple sunset" }
-    ],
-    caption: "Bishop is ready to make this his profile picture on Dog Meet Dog!"
-  },
-  {
-    date: "2025-08-30",
-    category: "adventures",
-    images: [
-      { src: "images/posts/john-day-1.jpg",
-        alt: "Camp chairs on a sandy riverbank with Bishop the basset hound standing by the water, a red-banded painted hill reflected in the John Day River at dusk" },
-      { src: "images/posts/john-day-2.jpg",
-        alt: "Sunset over dark hills along the John Day River, with an orange glow on the horizon under scattered clouds" },
-      { src: "images/posts/john-day-3.jpg",
-        alt: "Bishop the basset hound curled up asleep on a pink fleece blanket inside a tent" }
-    ],
-    caption: "Camping on the John Day River!"
-  },
-  {
-    date: "2025-05-05",
-    category: "crafts",
-    images: [
-      { src: "images/posts/hermit-pillow-1.jpg",
-        alt: "A green-eyed tabby cat lounging on a couch beside a puff quilt pillow with an embroidered Hermit tarot card cat, in front of a pillow printed with a cat" },
-      { src: "images/posts/hermit-pillow-2.jpg",
-        alt: "Close-up of the puff quilt pillow: floral and purple fabric puffs around a hand-embroidered tarot card of a cat in a box, labeled The Hermit" }
-    ],
-    caption: "One cat, two cat, real cat, pillow cat! Gift for my cat lady bestie!"
-  },
-  {
-    date: "2026-11-06",
-    category: "adventures",
-    images: [
-      { src: "images/posts/lake-shastina-2.jpg",
-        alt: "Snow-capped Mount Shasta reflected in the still water of Lake Shastina under a clear blue sky, with a rocky shore in front" },
-      { src: "images/posts/lake-shastina-1.jpg",
-        alt: "A red caboose numbered 21 with glowing windows at dusk, among pine-covered hills with a rocky peak behind" },
-      { src: "images/posts/lake-shastina-3.jpg",
-        alt: "A man in a green sweatshirt standing on the wooden porch of a converted Southern Pacific railcar among tall pines" }
-    ],
-    caption: "Weekend getaway at Lake Shastina!"
-  },
-  {
-    date: "2026-02-28",
-    category: "adventures",
-    images: [
-      { src: "images/posts/ski-day-1.jpg",
-        alt: "View from a snowy ski run over dark evergreen forest to a snow-covered volcanic peak under gray clouds" },
-      { src: "images/posts/ski-day-2.jpg",
-        alt: "Ski tips and a pole in the foreground on a chairlift, looking up the lift line through snowy pine trees toward a white mountain peak" }
-    ],
-    caption: "Snow was a little rough, but the views are unmatched!"
-  },
-  {
-    date: "2026-02-22",
-    category: "treats",
-    images: [
-      { src: "images/posts/tea-party-1.jpg",
-        alt: "A hand holding a pink-bordered tea party menu listing savory bites and sweets, over a table of treats on a pink polka-dot tablecloth" },
-      { src: "images/posts/tea-party-2.jpg",
-        alt: "Overhead view of the tea party table: heart- and flower-shaped tea sandwiches, chocolate cake pops, caprese skewers, scones, shortbread and teacups on a pink tablecloth" }
-    ],
-    caption: "Spill the Tea Party! I'll bring the treats, you bring the fun stories!"
-  },
-  {
-    date: "2026-04-24",
-    category: "dog",
-    images: [
-      { src: "images/posts/bishop-pep.jpg",
-        alt: "Bishop the basset hound standing on a gray deck, while a fluffy black dog named Pep holds the end of a long rope leash that loops back to Bishop" }
-    ],
-    caption: "Bishop's not listening, but no worries, Pep is on the case and going to drag him over! Everyone needs a friend that is looking out."
-  },
-  {
-    date: "2026-05-05",
-    category: "treats",
-    images: [
-      { src: "images/posts/lemon-cake-1.jpg",
-        alt: "A sliced three-layer lemon cake on a wooden cake stand at a sunlit birthday table, with a slice on a plate that says Happy Birthday, candles and vintage floral plates" },
-      { src: "images/posts/lemon-cake-2.jpg",
-        alt: "Close-up of the lemon cake's top: yellow piped birthday writing surrounded by little orange and white meringue mushrooms and green moss-like dots" }
-    ],
-    caption: "Lemon cake for Claire's birthday, complete with little meringue mushrooms on top!"
-  },
-  {
-    date: "2026-10-31",
-    category: "treats",
-    images: [
-      { src: "images/posts/juniper-smash-cake.jpg",
-        alt: "A small layered smash cake with white frosting, ringed with blueberries and orange sprinkles, on a lace doily under a glass cake dome" }
-    ],
-    caption: "Juniper's First Birthday SMASH cake!"
-  },
-  {
-    date: "2026-10-14",
     category: "crafts",
     images: [
       { src: "images/posts/crochet-01.jpg", alt: "The full set of crocheted foods from The Very Hungry Caterpillar laid out on a counter, with the striped red and green caterpillar behind them" },
@@ -172,46 +110,6 @@ window.ABOUT_POSTS = [
     caption: "I crocheted everything The Very Hungry Caterpillar ate, plus the caterpillar himself! Baby shower gift for sweet baby Rainy!"
   },
   {
-    date: "2026-10-13",
-    category: "dog",
-    images: [
-      { src: "images/posts/bishop-6th-birthday.jpg",
-        alt: "Bishop, a red and white basset hound, lying on a round fleece dog bed in front of a small evergreen tree and a stone fireplace" }
-    ],
-    caption: "Today is Bishop's 6th birthday! I'm getting a lot of enjoyment out of telling him he's a \"Sixy Boy\" in an Australian accent."
-  },
-  {
-    date: "2026-10-30",
-    category: "crafts",
-    images: [
-      { src: "images/posts/halloween-onesies-1.jpg",
-        alt: "McKenzie dressed as Waluigi in a purple cap, purple top and dark overalls with yellow buttons, next to someone in a black Ninji onesie with a white face panel and red buttons" },
-      { src: "images/posts/halloween-onesies-ref-waluigi.jpg",
-        alt: "Official Nintendo artwork of Waluigi, for comparison: purple cap, purple shirt, dark overalls with yellow buttons" },
-      { src: "images/posts/halloween-onesies-ref-ninji.jpg",
-        alt: "Official Nintendo artwork of Ninji, for comparison: a round black character with pointed ears, a white face band and two red buttons" },
-      { src: "images/posts/halloween-onesies-2.jpg",
-        alt: "The full Ninji onesie: black fleece with pointed ears on the hood and a white face panel with two oval eyes" },
-      { src: "images/posts/halloween-onesies-3.jpg",
-        alt: "Two handmade, unpainted white clay buttons with two holes each, resting on a tile counter" }
-    ],
-    caption: "It's a Mario Party this Halloween!! I handmade both onesies, Waluigi and Ninji! Keeping it comfy this year! (Character art © Nintendo.)"
-  },
-  {
-    date: "2026-09-23",
-    category: "adventures",
-    images: [
-      { src: "images/posts/blue-basin-1.jpg",
-        alt: "Blue Basin's blue-green badlands under a blue sky, with juniper trees and dry grass in the foreground and layered hills behind" },
-      { src: "images/posts/blue-basin-2.jpg",
-        alt: "Sunset over a wide valley and distant hills, seen from a grassy ridge under dramatic clouds" },
-      { src: "images/posts/blue-basin-3.jpg",
-        alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
-    ],
-    caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
-  },
-  {
-    date: "2026-03-28",
     category: "adventures",
     images: [
       { src: "images/posts/painted-hills-1.jpg",
@@ -222,7 +120,24 @@ window.ABOUT_POSTS = [
     caption: "New tent, who dis? Camping out at the Painted Hills!"
   },
   {
-    date: "2026-05-26",
+    category: "treats",
+    images: [
+      { src: "images/posts/tea-party-1.jpg",
+        alt: "A hand holding a pink-bordered tea party menu listing savory bites and sweets, over a table of treats on a pink polka-dot tablecloth" },
+      { src: "images/posts/tea-party-2.jpg",
+        alt: "Overhead view of the tea party table: heart- and flower-shaped tea sandwiches, chocolate cake pops, caprese skewers, scones, shortbread and teacups on a pink tablecloth" }
+    ],
+    caption: "Spill the Tea Party! I'll bring the treats, you bring the fun stories!"
+  },
+  {
+    category: "dog",
+    images: [
+      { src: "images/posts/bishop-salt-flat.jpg",
+        alt: "Bishop the basset hound in a green harness standing on a white salt flat, ears flopping, under a blazing orange and purple sunset" }
+    ],
+    caption: "Bishop is ready to make this his profile picture on Dog Meet Dog!"
+  },
+  {
     category: "crafts",
     images: [
       { src: "images/posts/flower-blanket.jpg",
@@ -231,7 +146,6 @@ window.ABOUT_POSTS = [
     caption: "Mariah and Eric said \"I do,\" so I said \"I'll crochet!\" A flower blanket for the newlyweds. Congrats!"
   },
   {
-    date: "2025-12-25",
     category: "crafts",
     images: [
       { src: "images/posts/pink-christmas-1.jpg", natural: true,
@@ -244,7 +158,6 @@ window.ABOUT_POSTS = [
     caption: "Santa's got a new favorite color! I sewed the stockings, the reindeer and the garland."
   },
   {
-    date: "2025-10-10",
     category: "adventures",
     ratio: "4 / 3",
     images: [
@@ -260,7 +173,46 @@ window.ABOUT_POSTS = [
     caption: "Went to Ireland for a wedding, stayed for the tetrapod track fossils!"
   },
   {
-    date: "2025-01-07",
+    category: "adventures",
+    images: [
+      { src: "images/posts/john-day-1.jpg",
+        alt: "Camp chairs on a sandy riverbank with Bishop the basset hound standing by the water, a red-banded painted hill reflected in the John Day River at dusk" },
+      { src: "images/posts/john-day-2.jpg",
+        alt: "Sunset over dark hills along the John Day River, with an orange glow on the horizon under scattered clouds" },
+      { src: "images/posts/john-day-3.jpg",
+        alt: "Bishop the basset hound curled up asleep on a pink fleece blanket inside a tent" }
+    ],
+    caption: "Camping on the John Day River!"
+  },
+  {
+    category: "treats",
+    images: [
+      { src: "images/posts/lemon-cake-1.jpg",
+        alt: "A sliced three-layer lemon cake on a wooden cake stand at a sunlit birthday table, with a slice on a plate that says Happy Birthday, candles and vintage floral plates" },
+      { src: "images/posts/lemon-cake-2.jpg",
+        alt: "Close-up of the lemon cake's top: yellow piped birthday writing surrounded by little orange and white meringue mushrooms and green moss-like dots" }
+    ],
+    caption: "Lemon cake for Claire's birthday, complete with little meringue mushrooms on top!"
+  },
+  {
+    category: "dog",
+    images: [
+      { src: "images/posts/bishop-pep.jpg",
+        alt: "Bishop the basset hound standing on a gray deck, while a fluffy black dog named Pep holds the end of a long rope leash that loops back to Bishop" }
+    ],
+    caption: "Bishop's not listening, but no worries, Pep is on the case and going to drag him over! Everyone needs a friend that is looking out."
+  },
+  {
+    category: "crafts",
+    images: [
+      { src: "images/posts/hermit-pillow-1.jpg",
+        alt: "A green-eyed tabby cat lounging on a couch beside a puff quilt pillow with an embroidered Hermit tarot card cat, in front of a pillow printed with a cat" },
+      { src: "images/posts/hermit-pillow-2.jpg",
+        alt: "Close-up of the puff quilt pillow: floral and purple fabric puffs around a hand-embroidered tarot card of a cat in a box, labeled The Hermit" }
+    ],
+    caption: "One cat, two cat, real cat, pillow cat! Gift for my cat lady bestie!"
+  },
+  {
     category: "adventures",
     images: [
       { src: "images/posts/hut-to-hut-1.jpg", alt: "A cross-country skier in a snowy clearing among snow-laden evergreens, backlit by the sun through clouds" },
@@ -271,7 +223,36 @@ window.ABOUT_POSTS = [
     caption: "Cross-country skiing is cool, I swear! Three beautiful days skiing from hut to hut."
   },
   {
-    date: "2025-04-02",
+    category: "adventures",
+    images: [
+      { src: "images/posts/lake-shastina-2.jpg",
+        alt: "Snow-capped Mount Shasta reflected in the still water of Lake Shastina under a clear blue sky, with a rocky shore in front" },
+      { src: "images/posts/lake-shastina-1.jpg",
+        alt: "A red caboose numbered 21 with glowing windows at dusk, among pine-covered hills with a rocky peak behind" },
+      { src: "images/posts/lake-shastina-3.jpg",
+        alt: "A man in a green sweatshirt standing on the wooden porch of a converted Southern Pacific railcar among tall pines" }
+    ],
+    caption: "Weekend getaway at Lake Shastina!"
+  },
+  {
+    category: "dog",
+    images: [
+      { src: "images/posts/bishop-6th-birthday.jpg",
+        alt: "Bishop, a red and white basset hound, lying on a round fleece dog bed in front of a small evergreen tree and a stone fireplace" }
+    ],
+    caption: "Today is Bishop's 6th birthday! I'm getting a lot of enjoyment out of telling him he's a \"Sixy Boy\" in an Australian accent."
+  },
+  {
+    category: "adventures",
+    images: [
+      { src: "images/posts/ski-day-1.jpg",
+        alt: "View from a snowy ski run over dark evergreen forest to a snow-covered volcanic peak under gray clouds" },
+      { src: "images/posts/ski-day-2.jpg",
+        alt: "Ski tips and a pole in the foreground on a chairlift, looking up the lift line through snowy pine trees toward a white mountain peak" }
+    ],
+    caption: "Snow was a little rough, but the views are unmatched!"
+  },
+  {
     category: "adventures",
     images: [
       { src: "images/posts/powder-day.jpg",

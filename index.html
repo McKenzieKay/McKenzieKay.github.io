@@ -377,7 +377,6 @@
   }
   .post-body { padding: 18px 22px 22px; }
   .post-meta { display: flex; align-items: center; gap: 10px; }
-  .post-meta time { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
   .post-caption { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
   .feed-empty { margin: 0; font-size: 15px; color: var(--muted); }
 
@@ -800,15 +799,9 @@
   (function () {
     var feed = document.getElementById('feed');
     if (!feed) return;
-    var posts = (window.ABOUT_POSTS || []).slice().sort(function (a, b) {
-      return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
-    });
+    // Posts show in the order they appear in posts.js (a curated order, not by date)
+    var posts = (window.ABOUT_POSTS || []).slice();
     var LABELS = { dog: 'My Dog', adventures: 'Adventures', crafts: 'Crafts', treats: 'Sweet Treats' };
-
-    function fmtDate(iso) {
-      var d = new Date(iso + 'T12:00:00');
-      return isNaN(d) ? iso : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    }
 
     function makeImg(im) {
       var img = document.createElement('img');
@@ -899,11 +892,7 @@
       var tag = document.createElement('span');
       tag.className = 'tag';
       tag.textContent = LABELS[p.category] || p.category;
-      var time = document.createElement('time');
-      time.dateTime = p.date;
-      time.textContent = fmtDate(p.date);
       meta.appendChild(tag);
-      meta.appendChild(time);
       var caption = document.createElement('p');
       caption.className = 'post-caption';
       caption.textContent = p.caption;
