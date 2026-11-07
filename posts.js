@@ -26,17 +26,10 @@ window.ABOUT_POSTS = [
   {
     category: "dog",
     images: [
-      { src: "images/posts/bishop-naps-02.jpg", alt: "Bishop lying in bed with one ear flipped up and his spotted paws over a floral duvet" },
-      { src: "images/posts/bishop-naps-06.jpg", alt: "Extreme close-up of Bishop's nose peeking out from under his own ear while he sleeps" },
-      { src: "images/posts/bishop-naps-11.jpg", alt: "Bishop flat on his back on a yellow armchair, belly up and paws in the air, looking at the camera" },
-      { src: "images/posts/bishop-naps-12.jpg", alt: "Bishop curled up on a small fluffy gray dog bed that is far too small for him, one long ear spilling over the edge" },
-      { src: "images/posts/bishop-naps-13.jpg", alt: "Bishop asleep with his chin resting on the back of a yellow couch" },
-      { src: "images/posts/bishop-naps-14.jpg", alt: "Bishop asleep on a mossy green rug wearing a black hoodie with bat wings" },
-      { src: "images/posts/bishop-naps-09.jpg", alt: "Bishop asleep upside down in a curl on the couch, paws in the air" },
-      { src: "images/posts/bishop-naps-15.jpg", alt: "Bishop lying on the doormat with his head resting on a pair of red sneakers" },
-      { src: "images/posts/bishop-naps-05.jpg", alt: "Bishop napping with his chin on a mossy boulder between big rocks on a hike" }
+      { src: "images/posts/bishop-6th-birthday.jpg",
+        alt: "Bishop, a red and white basset hound, lying on a round fleece dog bed in front of a small evergreen tree and a stone fireplace" }
     ],
-    caption: "Professional napper. Skills include: any surface, any position, any time."
+    caption: "Bishop turned 6! I'm getting a lot of enjoyment out of calling him a \"Sixy Boy\" in an Australian accent."
   },
   {
     category: "crafts",
@@ -237,10 +230,17 @@ window.ABOUT_POSTS = [
   {
     category: "dog",
     images: [
-      { src: "images/posts/bishop-6th-birthday.jpg",
-        alt: "Bishop, a red and white basset hound, lying on a round fleece dog bed in front of a small evergreen tree and a stone fireplace" }
+      { src: "images/posts/bishop-naps-02.jpg", alt: "Bishop lying in bed with one ear flipped up and his spotted paws over a floral duvet" },
+      { src: "images/posts/bishop-naps-06.jpg", alt: "Extreme close-up of Bishop's nose peeking out from under his own ear while he sleeps" },
+      { src: "images/posts/bishop-naps-11.jpg", alt: "Bishop flat on his back on a yellow armchair, belly up and paws in the air, looking at the camera" },
+      { src: "images/posts/bishop-naps-12.jpg", alt: "Bishop curled up on a small fluffy gray dog bed that is far too small for him, one long ear spilling over the edge" },
+      { src: "images/posts/bishop-naps-13.jpg", alt: "Bishop asleep with his chin resting on the back of a yellow couch" },
+      { src: "images/posts/bishop-naps-14.jpg", alt: "Bishop asleep on a mossy green rug wearing a black hoodie with bat wings" },
+      { src: "images/posts/bishop-naps-09.jpg", alt: "Bishop asleep upside down in a curl on the couch, paws in the air" },
+      { src: "images/posts/bishop-naps-15.jpg", alt: "Bishop lying on the doormat with his head resting on a pair of red sneakers" },
+      { src: "images/posts/bishop-naps-05.jpg", alt: "Bishop napping with his chin on a mossy boulder between big rocks on a hike" }
     ],
-    caption: "Today is Bishop's 6th birthday! I'm getting a lot of enjoyment out of telling him he's a \"Sixy Boy\" in an Australian accent."
+    caption: "Professional napper. Skills include: any surface, any position, any time."
   },
   {
     category: "adventures",
