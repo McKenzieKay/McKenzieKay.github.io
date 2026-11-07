@@ -25,15 +25,6 @@ window.ABOUT_POSTS = [
     date: "2026-11-06",
     category: "dog",
     images: [
-      { src: "images/posts/bishop-beach.jpg",
-        alt: "Bishop the basset hound in his harness walking along wet sand at the water's edge, reflected below him, under a pink sunset sky" }
-    ],
-    caption: "Bishop's beach walk at sunset!"
-  },
-  {
-    date: "2026-11-06",
-    category: "dog",
-    images: [
       { src: "images/posts/bishop-salt-flat.jpg",
         alt: "Bishop the basset hound in a green harness standing on a white salt flat, ears flopping, under a blazing orange and purple sunset" }
     ],
