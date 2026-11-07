@@ -41,54 +41,6 @@ window.ABOUT_POSTS = [
   {
     category: "crafts",
     images: [
-      { src: "images/posts/halloween-onesies-1.jpg",
-        alt: "McKenzie dressed as Waluigi in a purple cap, purple top and dark overalls with yellow buttons, next to someone in a black Ninji onesie with a white face panel and red buttons" },
-      { src: "images/posts/halloween-onesies-ref-waluigi.jpg",
-        alt: "Official Nintendo artwork of Waluigi, for comparison: purple cap, purple shirt, dark overalls with yellow buttons" },
-      { src: "images/posts/halloween-onesies-ref-ninji.jpg",
-        alt: "Official Nintendo artwork of Ninji, for comparison: a round black character with pointed ears, a white face band and two red buttons" },
-      { src: "images/posts/halloween-onesies-2.jpg",
-        alt: "The full Ninji onesie: black fleece with pointed ears on the hood and a white face panel with two oval eyes" },
-      { src: "images/posts/halloween-onesies-3.jpg",
-        alt: "Two handmade, unpainted white clay buttons with two holes each, resting on a tile counter" }
-    ],
-    caption: "It's a Mario Party this Halloween!! I handmade both onesies, Waluigi and Ninji! Keeping it comfy this year! (Character art © Nintendo.)"
-  },
-  {
-    category: "adventures",
-    images: [
-      { src: "images/posts/blue-basin-1.jpg",
-        alt: "Blue Basin's blue-green badlands under a blue sky, with juniper trees and dry grass in the foreground and layered hills behind" },
-      { src: "images/posts/blue-basin-2.jpg",
-        alt: "Sunset over a wide valley and distant hills, seen from a grassy ridge under dramatic clouds" },
-      { src: "images/posts/blue-basin-3.jpg",
-        alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
-    ],
-    caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
-  },
-  {
-    category: "treats",
-    images: [
-      { src: "images/posts/juniper-smash-cake.jpg",
-        alt: "A small layered smash cake with white frosting, ringed with blueberries and orange sprinkles, on a lace doily under a glass cake dome" }
-    ],
-    caption: "Juniper's First Birthday SMASH cake!"
-  },
-  {
-    category: "dog",
-    images: [
-      { src: "images/posts/bishop-puppy-5.jpg", alt: "Puppy Bishop resting his chin on his paws at the edge of a gray couch with a teal blanket" },
-      { src: "images/posts/bishop-puppy-1.jpg", alt: "Tiny newborn Bishop sniffing a white ceramic pumpkin and a glittery orange pumpkin on a fluffy blanket" },
-      { src: "images/posts/bishop-puppy-2.jpg", alt: "Young Bishop sitting on a red cushion in a wicker basket, ears hanging past his chin" },
-      { src: "images/posts/bishop-puppy-3.jpg", alt: "Puppy Bishop asleep on a blue quilted dog bed beside a bookshelf and a potted plant" },
-      { src: "images/posts/bishop-puppy-4.jpg", alt: "Puppy Bishop sitting on a tile floor in a doorway, looking up with big droopy ears" },
-      { src: "images/posts/bishop-puppy-6.jpg", alt: "Puppy Bishop play-wrestling with a black and white puppy on a dog bed in front of a couch" }
-    ],
-    caption: "Throwback to Bishop as a puppy! All ears and no legs... I guess things have not changed there."
-  },
-  {
-    category: "crafts",
-    images: [
       { src: "images/posts/crochet-01.jpg", alt: "The full set of crocheted foods from The Very Hungry Caterpillar laid out on a counter, with the striped red and green caterpillar behind them" },
       { src: "images/posts/crochet-02.jpg", alt: "Crocheted red apple with a brown stem and green leaf" },
       { src: "images/posts/crochet-03.jpg", alt: "Crocheted green pear with a brown stem" },
@@ -112,12 +64,42 @@ window.ABOUT_POSTS = [
   {
     category: "adventures",
     images: [
-      { src: "images/posts/painted-hills-1.jpg",
-        alt: "A new tan two-room tent at a gravel campsite at dusk, with a camp chair, fire pit, folding table and picnic table, under streaky clouds and bare trees" },
-      { src: "images/posts/painted-hills-2.jpg",
-        alt: "The Painted Hills under a bright blue sky with puffy clouds, red and tan banded hills beyond a creek, fence posts and a gravel road" }
+      { src: "images/posts/blue-basin-1.jpg",
+        alt: "Blue Basin's blue-green badlands under a blue sky, with juniper trees and dry grass in the foreground and layered hills behind" },
+      { src: "images/posts/blue-basin-2.jpg",
+        alt: "Sunset over a wide valley and distant hills, seen from a grassy ridge under dramatic clouds" },
+      { src: "images/posts/blue-basin-3.jpg",
+        alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
     ],
-    caption: "New tent, who dis? Camping out at the Painted Hills!"
+    caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
+  },
+  {
+    category: "crafts",
+    images: [
+      { src: "images/posts/halloween-onesies-1.jpg",
+        alt: "McKenzie dressed as Waluigi in a purple cap, purple top and dark overalls with yellow buttons, next to someone in a black Ninji onesie with a white face panel and red buttons" },
+      { src: "images/posts/halloween-onesies-ref-waluigi.jpg",
+        alt: "Official Nintendo artwork of Waluigi, for comparison: purple cap, purple shirt, dark overalls with yellow buttons" },
+      { src: "images/posts/halloween-onesies-ref-ninji.jpg",
+        alt: "Official Nintendo artwork of Ninji, for comparison: a round black character with pointed ears, a white face band and two red buttons" },
+      { src: "images/posts/halloween-onesies-2.jpg",
+        alt: "The full Ninji onesie: black fleece with pointed ears on the hood and a white face panel with two oval eyes" },
+      { src: "images/posts/halloween-onesies-3.jpg",
+        alt: "Two handmade, unpainted white clay buttons with two holes each, resting on a tile counter" }
+    ],
+    caption: "It's a Mario Party this Halloween!! I handmade both onesies, Waluigi and Ninji! Keeping it comfy this year! (Character art © Nintendo.)"
+  },
+  {
+    category: "dog",
+    images: [
+      { src: "images/posts/bishop-puppy-5.jpg", alt: "Puppy Bishop resting his chin on his paws at the edge of a gray couch with a teal blanket" },
+      { src: "images/posts/bishop-puppy-1.jpg", alt: "Tiny newborn Bishop sniffing a white ceramic pumpkin and a glittery orange pumpkin on a fluffy blanket" },
+      { src: "images/posts/bishop-puppy-2.jpg", alt: "Young Bishop sitting on a red cushion in a wicker basket, ears hanging past his chin" },
+      { src: "images/posts/bishop-puppy-3.jpg", alt: "Puppy Bishop asleep on a blue quilted dog bed beside a bookshelf and a potted plant" },
+      { src: "images/posts/bishop-puppy-4.jpg", alt: "Puppy Bishop sitting on a tile floor in a doorway, looking up with big droopy ears" },
+      { src: "images/posts/bishop-puppy-6.jpg", alt: "Puppy Bishop play-wrestling with a black and white puppy on a dog bed in front of a couch" }
+    ],
+    caption: "Throwback to Bishop as a puppy! All ears and no legs... I guess things have not changed there."
   },
   {
     category: "treats",
@@ -130,12 +112,14 @@ window.ABOUT_POSTS = [
     caption: "Spill the Tea Party! I'll bring the treats, you bring the fun stories!"
   },
   {
-    category: "dog",
+    category: "adventures",
     images: [
-      { src: "images/posts/bishop-salt-flat.jpg",
-        alt: "Bishop the basset hound in a green harness standing on a white salt flat, ears flopping, under a blazing orange and purple sunset" }
+      { src: "images/posts/painted-hills-1.jpg",
+        alt: "A new tan two-room tent at a gravel campsite at dusk, with a camp chair, fire pit, folding table and picnic table, under streaky clouds and bare trees" },
+      { src: "images/posts/painted-hills-2.jpg",
+        alt: "The Painted Hills under a bright blue sky with puffy clouds, red and tan banded hills beyond a creek, fence posts and a gravel road" }
     ],
-    caption: "Bishop is ready to make this his profile picture on Dog Meet Dog!"
+    caption: "New tent, who dis? Camping out at the Painted Hills!"
   },
   {
     category: "crafts",
@@ -173,16 +157,12 @@ window.ABOUT_POSTS = [
     caption: "Went to Ireland for a wedding, stayed for the tetrapod track fossils!"
   },
   {
-    category: "adventures",
+    category: "dog",
     images: [
-      { src: "images/posts/john-day-1.jpg",
-        alt: "Camp chairs on a sandy riverbank with Bishop the basset hound standing by the water, a red-banded painted hill reflected in the John Day River at dusk" },
-      { src: "images/posts/john-day-2.jpg",
-        alt: "Sunset over dark hills along the John Day River, with an orange glow on the horizon under scattered clouds" },
-      { src: "images/posts/john-day-3.jpg",
-        alt: "Bishop the basset hound curled up asleep on a pink fleece blanket inside a tent" }
+      { src: "images/posts/bishop-salt-flat.jpg",
+        alt: "Bishop the basset hound in a green harness standing on a white salt flat, ears flopping, under a blazing orange and purple sunset" }
     ],
-    caption: "Camping on the John Day River!"
+    caption: "Bishop is ready to make this his profile picture on Dog Meet Dog!"
   },
   {
     category: "treats",
@@ -195,12 +175,16 @@ window.ABOUT_POSTS = [
     caption: "Lemon cake for Claire's birthday, complete with little meringue mushrooms on top!"
   },
   {
-    category: "dog",
+    category: "adventures",
     images: [
-      { src: "images/posts/bishop-pep.jpg",
-        alt: "Bishop the basset hound standing on a gray deck, while a fluffy black dog named Pep holds the end of a long rope leash that loops back to Bishop" }
+      { src: "images/posts/john-day-1.jpg",
+        alt: "Camp chairs on a sandy riverbank with Bishop the basset hound standing by the water, a red-banded painted hill reflected in the John Day River at dusk" },
+      { src: "images/posts/john-day-2.jpg",
+        alt: "Sunset over dark hills along the John Day River, with an orange glow on the horizon under scattered clouds" },
+      { src: "images/posts/john-day-3.jpg",
+        alt: "Bishop the basset hound curled up asleep on a pink fleece blanket inside a tent" }
     ],
-    caption: "Bishop's not listening, but no worries, Pep is on the case and going to drag him over! Everyone needs a friend that is looking out."
+    caption: "Camping on the John Day River!"
   },
   {
     category: "crafts",
@@ -211,6 +195,22 @@ window.ABOUT_POSTS = [
         alt: "Close-up of the puff quilt pillow: floral and purple fabric puffs around a hand-embroidered tarot card of a cat in a box, labeled The Hermit" }
     ],
     caption: "One cat, two cat, real cat, pillow cat! Gift for my cat lady bestie!"
+  },
+  {
+    category: "dog",
+    images: [
+      { src: "images/posts/bishop-pep.jpg",
+        alt: "Bishop the basset hound standing on a gray deck, while a fluffy black dog named Pep holds the end of a long rope leash that loops back to Bishop" }
+    ],
+    caption: "Bishop's not listening, but no worries, Pep is on the case and going to drag him over! Everyone needs a friend that is looking out."
+  },
+  {
+    category: "treats",
+    images: [
+      { src: "images/posts/juniper-smash-cake.jpg",
+        alt: "A small layered smash cake with white frosting, ringed with blueberries and orange sprinkles, on a lace doily under a glass cake dome" }
+    ],
+    caption: "Juniper's First Birthday SMASH cake!"
   },
   {
     category: "adventures",
@@ -241,16 +241,6 @@ window.ABOUT_POSTS = [
         alt: "Bishop, a red and white basset hound, lying on a round fleece dog bed in front of a small evergreen tree and a stone fireplace" }
     ],
     caption: "Today is Bishop's 6th birthday! I'm getting a lot of enjoyment out of telling him he's a \"Sixy Boy\" in an Australian accent."
-  },
-  {
-    category: "adventures",
-    images: [
-      { src: "images/posts/ski-day-1.jpg",
-        alt: "View from a snowy ski run over dark evergreen forest to a snow-covered volcanic peak under gray clouds" },
-      { src: "images/posts/ski-day-2.jpg",
-        alt: "Ski tips and a pole in the foreground on a chairlift, looking up the lift line through snowy pine trees toward a white mountain peak" }
-    ],
-    caption: "Snow was a little rough, but the views are unmatched!"
   },
   {
     category: "adventures",
