@@ -270,12 +270,11 @@
     display: none;
     font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.12em;
   }
-  /* Desktop: the label sits on the headline's row, left, with its top level with the
-     top of the headline's letters. Baseline-align the row, then lift the label by the
-     difference in cap heights (34px vs 12px text, caps ~0.7em): (34 - 12) * 0.7 = 15.4px */
+  /* Desktop: the label sits on the headline's row, at the left, aligned to the top of
+     the row (level with the top of the "My" flourish) */
   @media (min-width: 1024px) {
-    .bio { display: flex; align-items: baseline; gap: 24px; }
-    .bio-label { display: block; flex: none; transform: translateY(-15.4px); }
+    .bio { display: flex; align-items: flex-start; gap: 24px; }
+    .bio-label { display: block; flex: none; }
   }
   .bio-headline { font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--ink); }
   /* "My" is handwritten: the M from the signature plus a matching y
