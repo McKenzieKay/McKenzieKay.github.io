@@ -49,7 +49,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/bishop-puppy-4.jpg", alt: "Puppy Bishop sitting on a tile floor in a doorway, looking up with big droopy ears" },
       { src: "images/posts/bishop-puppy-6.jpg", alt: "Puppy Bishop play-wrestling with a black and white puppy on a dog bed in front of a couch" }
     ],
-    caption: "Throwback to Bishop as a puppy!"
+    caption: "Throwback to Bishop as a puppy! All ears and no legs."
   },
   {
     date: "2026-11-06",
