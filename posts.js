@@ -15,7 +15,7 @@
 */
 window.ABOUT_POSTS = [
   {
-    date: "2026-11-06",
+    date: "2026-10-31",
     category: "treats",
     images: [
       { src: "images/posts/juniper-smash-cake.jpg",
@@ -57,7 +57,7 @@ window.ABOUT_POSTS = [
     caption: "Today is Bishop's 6th birthday! I'm getting a lot of enjoyment out of telling him he's a \"Sixy Boy\" in an Australian accent."
   },
   {
-    date: "2026-10-31",
+    date: "2026-10-30",
     category: "crafts",
     images: [
       { src: "images/posts/halloween-onesies-1.jpg",
