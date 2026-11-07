@@ -43,6 +43,7 @@ window.ABOUT_POSTS = [
     category: "crafts",
     images: [
       { src: "images/posts/crochet-01.jpg", alt: "The full set of crocheted foods from The Very Hungry Caterpillar laid out on a counter, with the striped red and green caterpillar behind them" },
+      { src: "images/posts/crochet-18.jpg", alt: "The crocheted foods packed in a white gift box with paper shred, the striped caterpillar tucked in the lid" },
       { src: "images/posts/crochet-06.jpg", alt: "Crocheted slice of chocolate layer cake with a cherry on top" },
       { src: "images/posts/crochet-07.jpg", alt: "Crocheted green pickle" },
       { src: "images/posts/crochet-12.jpg", alt: "Crocheted salami with two round slices cut off" },
