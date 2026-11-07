@@ -25,6 +25,23 @@ window.ABOUT_POSTS = [
     date: "2026-11-06",
     category: "dog",
     images: [
+      { src: "images/posts/bishop-naps-01.jpg", alt: "Close-up of Bishop half-asleep on a fuzzy gray blanket, nose to the camera" },
+      { src: "images/posts/bishop-naps-02.jpg", alt: "Bishop lying in bed with one ear flipped up and his spotted paws over a floral duvet" },
+      { src: "images/posts/bishop-naps-03.jpg", alt: "Bishop asleep face-down on a shaggy yellow rug next to a green dinosaur toy" },
+      { src: "images/posts/bishop-naps-04.jpg", alt: "Bishop asleep draped across a couch, his head on the blanket and his ears and front legs dangling" },
+      { src: "images/posts/bishop-naps-05.jpg", alt: "Bishop napping with his chin on a mossy boulder between big rocks on a hike" },
+      { src: "images/posts/bishop-naps-06.jpg", alt: "Extreme close-up of Bishop's nose peeking out from under his own ear while he sleeps" },
+      { src: "images/posts/bishop-naps-07.jpg", alt: "Bishop curled into a tight donut on a teal blanket on the couch" },
+      { src: "images/posts/bishop-naps-08.jpg", alt: "Bishop on his back in a blue dog bed, legs in the air, looking up at the camera" },
+      { src: "images/posts/bishop-naps-09.jpg", alt: "Bishop asleep upside down in a curl on the couch, paws in the air" },
+      { src: "images/posts/bishop-naps-10.jpg", alt: "Bishop sprawled on his back on a cooling mat on a sunny brick patio" }
+    ],
+    caption: "I'm sorry, were you sleeping? Bishop has never met a nap position he couldn't commit to."
+  },
+  {
+    date: "2026-11-06",
+    category: "dog",
+    images: [
       { src: "images/posts/bishop-puppy-1.jpg", alt: "Tiny newborn Bishop sniffing a white ceramic pumpkin and a glittery orange pumpkin on a fluffy blanket" },
       { src: "images/posts/bishop-puppy-2.jpg", alt: "Young Bishop sitting on a red cushion in a wicker basket, ears hanging past his chin" },
       { src: "images/posts/bishop-puppy-3.jpg", alt: "Puppy Bishop asleep on a blue quilted dog bed beside a bookshelf and a potted plant" },
