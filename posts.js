@@ -17,6 +17,30 @@
 */
 window.ABOUT_POSTS = [
   {
+    date: "2026-11-06",
+    category: "crafts",
+    images: [
+      { src: "images/posts/crochet-01.jpg", alt: "The full set of crocheted foods from The Very Hungry Caterpillar laid out on a counter, with the striped red and green caterpillar behind them" },
+      { src: "images/posts/crochet-02.jpg", alt: "Crocheted red apple with a brown stem and green leaf" },
+      { src: "images/posts/crochet-03.jpg", alt: "Crocheted green pear with a brown stem" },
+      { src: "images/posts/crochet-04.jpg", alt: "Crocheted purple plum with a brown stem" },
+      { src: "images/posts/crochet-05.jpg", alt: "Crocheted red strawberry with green leaves" },
+      { src: "images/posts/crochet-06.jpg", alt: "Crocheted slice of chocolate layer cake with a cherry on top" },
+      { src: "images/posts/crochet-07.jpg", alt: "Crocheted green pickle" },
+      { src: "images/posts/crochet-08.jpg", alt: "Crocheted yellow slice of Swiss cheese with holes" },
+      { src: "images/posts/crochet-09.jpg", alt: "Crocheted watermelon slice with pink flesh, black seeds and a green rind" },
+      { src: "images/posts/crochet-10.jpg", alt: "Crocheted orange with green leaves" },
+      { src: "images/posts/crochet-11.jpg", alt: "Crocheted ice cream cone with a pink scoop" },
+      { src: "images/posts/crochet-12.jpg", alt: "Crocheted salami with two round slices cut off" },
+      { src: "images/posts/crochet-13.jpg", alt: "Crocheted blue and yellow swirl lollipop on a brown stick" },
+      { src: "images/posts/crochet-14.jpg", alt: "Crocheted slice of cherry pie with a golden crust" },
+      { src: "images/posts/crochet-15.jpg", alt: "Crocheted brown sausage" },
+      { src: "images/posts/crochet-16.jpg", alt: "Crocheted cupcake with white frosting and a blue wrapper" },
+      { src: "images/posts/crochet-17.jpg", alt: "Crocheted green leaf with a stem" }
+    ],
+    caption: "I crocheted everything The Very Hungry Caterpillar ate, plus the caterpillar himself!"
+  },
+  {
     date: "2026-10-13",
     category: "dog",
     images: [
