@@ -326,14 +326,14 @@
   .feed { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
   /* Two columns on wide screens; cards side by side always match in height (stretch) */
   @media (min-width: 1200px) { .feed { grid-template-columns: repeat(2, 1fr); align-items: stretch; } }
-  /* Column layout: the photo area takes any spare height (photos centered in it) and
-     the caption stays pinned to the bottom when cards in a row match heights */
+  /* Column layout: the photo sits flush at the top, the caption is pinned to the
+     bottom, and any spare height (cards in a row match heights) goes between them */
   .post {
     background: var(--paper); border: 1px solid var(--ink); border-radius: var(--radius-lg);
     overflow: hidden; display: flex; flex-direction: column;
   }
-  .post-media { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; }
   .post-media > * { width: 100%; }
+  .post-body { margin-top: auto; }
   /* Portrait 4:5, like a social feed: suits phone photos */
   /* Frame shape: 4:5 by default; a post can set ratio (e.g. "4 / 3") in posts.js */
   .post-photo { display: block; width: 100%; aspect-ratio: var(--photo-ratio, 4 / 5); object-fit: cover; background: var(--ivory); }
