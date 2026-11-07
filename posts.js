@@ -35,7 +35,7 @@ window.ABOUT_POSTS = [
     caption: "Camping on the John Day River!"
   },
   {
-    date: "2026-11-06",
+    date: "2025-05-05",
     category: "crafts",
     images: [
       { src: "images/posts/hermit-pillow-1.jpg",
