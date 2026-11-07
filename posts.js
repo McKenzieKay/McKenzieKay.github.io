@@ -257,6 +257,6 @@ window.ABOUT_POSTS = [
       { src: "images/posts/powder-day.jpg",
         alt: "McKenzie on skis in a pink-flowered jacket and goggles, standing in fresh powder among heavily snow-covered trees while snow falls" }
     ],
-    caption: "Nothing like a powder day!"
+    caption: "Nothing like a powder day! Calling in sick because it would be sick to not be skiing."
   }
 ];
