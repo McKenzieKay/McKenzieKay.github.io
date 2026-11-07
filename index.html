@@ -165,7 +165,8 @@
     padding-top: 16px; /* open tab stands a little taller */
   }
 
-  .links { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-left: 40px; }
+  /* Four contact buttons in a tidy 2x2 grid of equal widths */
+  .links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding-left: 40px; }
   /* Contact buttons: chartreuse squares with softly rounded corners that match the
      tab strips and the selected-project bar; ink on hover or while open */
   .links .btn {
@@ -431,7 +432,8 @@
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
   .tag { font-family: var(--font-mono); font-size: 12px; background: var(--ivory); color: var(--ink); padding: 4px 10px; border-radius: 999px; }
 
-  .more-link { display: inline-block; padding: 12px 0; margin-top: 8px; font-weight: 700; }
+  /* Resume call to action at the end of the Experience tab */
+  .resume-cta { align-self: flex-start; margin-top: 10px; }
 
   /* ---------- Projects ---------- */
   .projects { display: flex; flex-direction: column; gap: 14px; }
@@ -530,6 +532,7 @@
         <a class="btn btn-email" href="mailto:mckenzie.kay.campbell@gmail.com" data-copy="mckenzie.kay.campbell@gmail.com">Email</a>
         <a class="btn" href="https://www.linkedin.com/in/mckenzie-campbell-2b5394128/" data-copy="https://www.linkedin.com/in/mckenzie-campbell-2b5394128/">LinkedIn</a>
         <a class="btn" href="https://github.com/McKenzieKay" data-copy="https://github.com/McKenzieKay">GitHub</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
       <div class="link-pop" id="link-pop" hidden>
         <a class="link-pop-url" href=""></a>
@@ -796,7 +799,7 @@
           </div>
         </article>
 
-        <a class="more-link" href="resume.pdf" target="_blank" rel="noopener">View full resume →</a>
+        <a class="btn btn-chartreuse resume-cta" href="resume.pdf" target="_blank" rel="noopener">View Full Resume →</a>
       </div>
     </section>
 
