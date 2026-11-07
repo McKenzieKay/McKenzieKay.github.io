@@ -12,8 +12,11 @@
                    (use images: [] for no photo yet)
                    add natural: true to show a photo at its own shape instead of
                    the 4:5 frame (good for a single wide shot)
-         fit:      optional; "whole" shows every photo in the post uncropped inside
-                   the 4:5 frame (good for a mix of wide and tall photos)
+         ratio:    optional frame shape for the post's photos, e.g. "4 / 3" for a
+                   post of mostly wide shots (default is the tall "4 / 5"); crop
+                   photos to that shape so they fill the frame with no bands
+         fit:      optional; "whole" shows every photo uncropped inside the frame
+                   (leaves light bands around photos of a different shape)
          caption:  what you want to say about it
     3. Save, refresh the page to check it, then push.
 */
@@ -181,7 +184,7 @@ window.ABOUT_POSTS = [
   {
     date: "2025-10-10",
     category: "adventures",
-    fit: "whole",
+    ratio: "4 / 3",
     images: [
       { src: "images/posts/ireland-05.jpg", alt: "Wedding guests walking from a ruined castle tower across a green field under a blue sky" },
       { src: "images/posts/ireland-04.jpg", alt: "Wedding guests gathered on the grass beside a ruined stone tower, the bride in a long white gown in sunlight" },
