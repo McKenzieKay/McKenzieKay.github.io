@@ -12,8 +12,6 @@
                    (use images: [] for no photo yet)
          caption:  what you want to say about it
     3. Save, refresh the page to check it, then push.
-
-  The adventures post below is a placeholder. Replace it with a real one.
 */
 window.ABOUT_POSTS = [
   {
@@ -69,7 +67,14 @@ window.ABOUT_POSTS = [
   {
     date: "2026-10-18",
     category: "adventures",
-    images: [],
-    caption: "[Placeholder: a favorite trip or outing, where you went and what made it great.]"
+    images: [
+      { src: "images/posts/blue-basin-1.jpg",
+        alt: "Blue Basin's blue-green badlands under a blue sky, with juniper trees and dry grass in the foreground and layered hills behind" },
+      { src: "images/posts/blue-basin-2.jpg",
+        alt: "Sunset over a wide valley and distant hills, seen from a grassy ridge under dramatic clouds" },
+      { src: "images/posts/blue-basin-3.jpg",
+        alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
+    ],
+    caption: "Exploring the Blue Basin and camping out by the fire tower! That sunset though!"
   }
 ];
