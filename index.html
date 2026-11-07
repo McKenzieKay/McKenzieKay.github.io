@@ -297,7 +297,12 @@
   /* "My" in its own column, so the headline's other words and the subtitle line up
      after it. The column gap stands in for the space after "My". */
   /* align-items: baseline lines "My" up with the headline's first line */
-  .bio-grid { display: grid; grid-template-columns: auto 1fr; column-gap: 9px; align-items: baseline; }
+  /* The "My" + text block hugs its content and sits at the right of the card (the
+     ABOUT ME label stays top left); inside it, the subtitle still lines up under "Hobby" */
+  .bio-grid {
+    display: grid; grid-template-columns: auto 1fr; column-gap: 9px; align-items: baseline;
+    width: fit-content; margin-left: auto;
+  }
   .bio-my { font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--ink); white-space: nowrap; }
   .bio-grid .bio-headline { font-size: 34px; }
 
