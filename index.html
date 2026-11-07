@@ -462,14 +462,20 @@
   .detail-shot { display: block; width: 100%; height: auto; margin-top: 28px; border-radius: var(--radius-md); border: 1px solid var(--ink); }
   .detail-grid { display: grid; grid-template-columns: 1fr; gap: 8px 48px; margin-top: 32px; }
   @media (min-width: 760px) { .detail-grid { grid-template-columns: 3fr 2fr; } }
-  /* Each section starts with a thin ink rule above its heading, so the sections read
-     as separate blocks */
+  /* Each section is its own card, like the Experience and About cards: thin ink outline,
+     rounded corners, a background one step lighter than the detail page */
+  .detail-grid { align-items: start; gap: 14px; }
+  .detail-card {
+    background: var(--white); border: 1px solid var(--ink); border-radius: var(--radius-lg);
+    padding: 22px;
+  }
+  .detail-stack { display: flex; flex-direction: column; gap: 14px; }
   .detail-grid h3 {
-    margin: 0 0 12px; padding-top: 14px; border-top: 1px solid var(--ink);
+    margin: 0 0 12px;
     font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
   }
   .detail-grid h3 + .tags { margin-top: 0; }
-  .detail-grid .tags + h3 { margin-top: 32px; }
+  .detail-card .detail-list { margin-bottom: 0; }
   .detail-grid p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
   .detail-list { margin: 0 0 24px; padding-left: 18px; font-size: 15px; line-height: 1.6; color: var(--muted); }
   .detail-list li + li { margin-top: 8px; }
@@ -612,7 +618,7 @@
         <p class="lede">Turns a team roster CSV into a clear org structure, with summary stats that inform staffing decisions. Restructure teams with drag and drop, then export an updated CSV in the original format.</p>
         <img class="detail-shot" src="images/org-structure.jpg" alt="Org Structure Visualizer with sample data: upload and export panels, summary counts (629 assignable rows, 21 workflows, 6 group leads), and Project Lead cards for Avery Ward, Jo Ellison and Oakley Patel with group leads, workflows and flagged issues like Not Aligned to the Project">
         <div class="detail-grid">
-          <div>
+          <div class="detail-card">
             <h3>What it does</h3>
             <ul class="detail-list">
               <li>Maps a team list CSV into project, group and team lead structure.</li>
@@ -621,11 +627,15 @@
               <li>Drag, drop and auto-balance teams, then export in the original CSV format.</li>
             </ul>
           </div>
-          <div>
+          <div class="detail-stack">
+            <div class="detail-card">
             <h3>Built with</h3>
             <ul class="tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JavaScript</li><li class="tag">CSV</li></ul>
+            </div>
+            <div class="detail-card">
             <h3>Why I built it</h3>
             <p>Trying to figure out where 629 operators should go across 21 workflows in a spreadsheet? Very hard to see, and even harder to change without breaking something. This tool lays it all out and gives you a place to fix it.</p>
+            </div>
           </div>
         </div>
         <div class="detail-actions">
@@ -641,7 +651,7 @@
         <p class="lede">Projects your balance paycheck to paycheck, with a safety buffer, so shortfalls show up before they happen.</p>
         <img class="detail-shot" src="images/payday.jpg" alt="Payday Budget Calculator showing a $1,840 starting balance, a $500 buffer, and projected balances for each paycheck period from October to December 2026">
         <div class="detail-grid">
-          <div>
+          <div class="detail-card">
             <h3>What it does</h3>
             <ul class="detail-list">
               <li>Starts from your balance and a safety buffer.</li>
@@ -650,11 +660,15 @@
               <li>Saves in your browser, so nothing leaves your device.</li>
             </ul>
           </div>
-          <div>
+          <div class="detail-stack">
+            <div class="detail-card">
             <h3>Built with</h3>
             <ul class="tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JavaScript</li></ul>
+            </div>
+            <div class="detail-card">
             <h3>Why I built it</h3>
             <p>[What prompted it and what it changed.]</p>
+            </div>
           </div>
         </div>
         <div class="detail-actions">
@@ -670,7 +684,7 @@
         <p class="lede">Inspection recommendations from batch size, risk tolerance and defect rate.</p>
         <img class="detail-shot" src="images/sample-size.jpg" alt="Sample Size Calculator with a batch of 2,500 assets, high risk and high quality expectations, recommending 242 assets to inspect (9.7% of the batch)">
         <div class="detail-grid">
-          <div>
+          <div class="detail-card">
             <h3>What it does</h3>
             <ul class="detail-list">
               <li>Enter a batch size, risk tolerance and quality goal.</li>
@@ -678,11 +692,15 @@
               <li>Uses simple random sampling for asset quality control.</li>
             </ul>
           </div>
-          <div>
+          <div class="detail-stack">
+            <div class="detail-card">
             <h3>Built with</h3>
             <ul class="tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JavaScript</li><li class="tag">Statistics</li></ul>
+            </div>
+            <div class="detail-card">
             <h3>Why I built it</h3>
             <p>[What prompted it and what it changed.]</p>
+            </div>
           </div>
         </div>
         <div class="detail-actions">
