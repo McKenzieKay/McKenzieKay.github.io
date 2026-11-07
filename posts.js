@@ -193,5 +193,17 @@ window.ABOUT_POSTS = [
       { src: "images/posts/ireland-09.jpg", alt: "Information board titled The Valentia Tetrapod Trackway, explaining the 385-million-year-old footprints" }
     ],
     caption: "Went to Ireland for a wedding, stayed for the tetrapod track fossils!"
+  },
+  {
+    date: "2025-01-07",
+    category: "adventures",
+    fit: "whole",
+    images: [
+      { src: "images/posts/hut-to-hut-1.jpg", alt: "A cross-country skier in a snowy clearing among snow-laden evergreens, backlit by the sun through clouds" },
+      { src: "images/posts/hut-to-hut-2.jpg", alt: "Three skiers adjusting their gear on a deep snowy trail beside a small wooden hut, surrounded by snow-covered trees" },
+      { src: "images/posts/hut-to-hut-3.jpg", alt: "A wooden backcountry hut at night with two glowing windows, a snowdrift in front and stars overhead" },
+      { src: "images/posts/hut-to-hut-4.jpg", alt: "A gloved hand holding a large cluster of delicate frost crystals above skis in the snow" }
+    ],
+    caption: "Ski all day, cozy hut all night, repeat x3!"
   }
 ];
