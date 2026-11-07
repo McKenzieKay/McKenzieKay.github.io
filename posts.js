@@ -15,6 +15,15 @@
 */
 window.ABOUT_POSTS = [
   {
+    date: "2026-11-06",
+    category: "treats",
+    images: [
+      { src: "images/posts/juniper-smash-cake.jpg",
+        alt: "A small layered smash cake with white frosting, ringed with blueberries and orange sprinkles, on a lace doily under a glass cake dome" }
+    ],
+    caption: "Juniper's First Birthday SMASH cake!"
+  },
+  {
     date: "2026-10-14",
     category: "crafts",
     images: [
