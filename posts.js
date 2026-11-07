@@ -191,8 +191,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/ireland-08.jpg", alt: "A red sweatshirt decorated with rows of felt sheep, one of them black" },
       { src: "images/posts/ireland-06.jpg", alt: "McKenzie and her partner smiling beside a sign reading Tetrapod trackway with a tetrapod silhouette" },
       { src: "images/posts/ireland-10.jpg", alt: "Wide flat rock shelves along the coast where the tetrapod trackway is, with the gray Atlantic beyond" },
-      { src: "images/posts/ireland-09.jpg", alt: "Information board titled The Valentia Tetrapod Trackway, explaining the 385-million-year-old footprints" },
-      { src: "images/posts/ireland-07.jpg", alt: "Flat gray seaside rock with a faint line of fossil footprints, with the coast and sea beyond" }
+      { src: "images/posts/ireland-09.jpg", alt: "Information board titled The Valentia Tetrapod Trackway, explaining the 385-million-year-old footprints" }
     ],
     caption: "Went to Ireland for a wedding, stayed for the tetrapod track fossils!"
   }
