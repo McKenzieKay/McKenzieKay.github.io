@@ -462,9 +462,14 @@
   .detail-shot { display: block; width: 100%; height: auto; margin-top: 28px; border-radius: var(--radius-md); border: 1px solid var(--ink); }
   .detail-grid { display: grid; grid-template-columns: 1fr; gap: 8px 48px; margin-top: 32px; }
   @media (min-width: 760px) { .detail-grid { grid-template-columns: 3fr 2fr; } }
-  .detail-grid h3 { margin: 0 0 10px; font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+  /* Each section starts with a thin ink rule above its heading, so the sections read
+     as separate blocks */
+  .detail-grid h3 {
+    margin: 0 0 12px; padding-top: 14px; border-top: 1px solid var(--ink);
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  }
   .detail-grid h3 + .tags { margin-top: 0; }
-  .detail-grid .tags + h3 { margin-top: 28px; }
+  .detail-grid .tags + h3 { margin-top: 32px; }
   .detail-grid p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
   .detail-list { margin: 0 0 24px; padding-left: 18px; font-size: 15px; line-height: 1.6; color: var(--muted); }
   .detail-list li + li { margin-top: 8px; }
