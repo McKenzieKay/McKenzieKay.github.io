@@ -345,11 +345,14 @@
 
   /* ---------- About feed ---------- */
   /* Filter chips: shown below desktop width, where the side list is hidden */
-  .feed-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; }
+  /* Four chips on one line, each sized to its word and together filling the row
+     (the phone chip says "Treats" to fit) */
+  .feed-chips { display: flex; flex-wrap: nowrap; gap: 6px; margin: 28px 0 0; }
   @media (min-width: 1024px) { .feed-chips { display: none; } }
   .chip {
     font: 500 13px var(--font-mono); color: var(--ink); cursor: pointer;
-    background: var(--paper); border: 1px solid var(--ink); border-radius: 999px; padding: 7px 14px;
+    background: var(--paper); border: 1px solid var(--ink); border-radius: 999px; padding: 7px 8px;
+    flex: 1 1 auto; white-space: nowrap;
   }
   .chip.is-active { background: var(--chartreuse); }
 
@@ -845,7 +848,7 @@
         <button type="button" class="chip" data-filter="dog">Bishop</button>
         <button type="button" class="chip" data-filter="adventures">Adventures</button>
         <button type="button" class="chip" data-filter="crafts">Crafts</button>
-        <button type="button" class="chip" data-filter="treats">Sweet Treats</button>
+        <button type="button" class="chip" data-filter="treats">Treats</button>
       </div>
 
       <!-- Posts come from posts.js (see the instructions at the top of that file) -->
