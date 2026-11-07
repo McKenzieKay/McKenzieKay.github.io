@@ -23,6 +23,19 @@
 window.ABOUT_POSTS = [
   {
     date: "2026-11-06",
+    category: "adventures",
+    images: [
+      { src: "images/posts/john-day-1.jpg",
+        alt: "Camp chairs on a sandy riverbank with Bishop the basset hound standing by the water, a red-banded painted hill reflected in the John Day River at dusk" },
+      { src: "images/posts/john-day-2.jpg",
+        alt: "Sunset over dark hills along the John Day River, with an orange glow on the horizon under scattered clouds" },
+      { src: "images/posts/john-day-3.jpg",
+        alt: "Bishop the basset hound curled up asleep on a pink fleece blanket inside a tent" }
+    ],
+    caption: "Camping on the John Day River!"
+  },
+  {
+    date: "2026-11-06",
     category: "crafts",
     images: [
       { src: "images/posts/hermit-pillow-1.jpg",
