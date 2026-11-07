@@ -25,6 +25,19 @@ window.ABOUT_POSTS = [
     date: "2026-11-06",
     category: "dog",
     images: [
+      { src: "images/posts/bishop-puppy-1.jpg", alt: "Tiny newborn Bishop sniffing a white ceramic pumpkin and a glittery orange pumpkin on a fluffy blanket" },
+      { src: "images/posts/bishop-puppy-2.jpg", alt: "Young Bishop sitting on a red cushion in a wicker basket, ears hanging past his chin" },
+      { src: "images/posts/bishop-puppy-3.jpg", alt: "Puppy Bishop asleep on a blue quilted dog bed beside a bookshelf and a potted plant" },
+      { src: "images/posts/bishop-puppy-4.jpg", alt: "Puppy Bishop sitting on a tile floor in a doorway, looking up with big droopy ears" },
+      { src: "images/posts/bishop-puppy-5.jpg", alt: "Puppy Bishop resting his chin on his paws at the edge of a gray couch with a teal blanket" },
+      { src: "images/posts/bishop-puppy-6.jpg", alt: "Puppy Bishop play-wrestling with a black and white puppy on a dog bed in front of a couch" }
+    ],
+    caption: "Throwback to Bishop as a puppy!"
+  },
+  {
+    date: "2026-11-06",
+    category: "dog",
+    images: [
       { src: "images/posts/bishop-salt-flat.jpg",
         alt: "Bishop the basset hound in a green harness standing on a white salt flat, ears flopping, under a blazing orange and purple sunset" }
     ],
