@@ -165,17 +165,16 @@
     padding-top: 16px; /* open tab stands a little taller */
   }
 
-  /* Four contact buttons in a tidy 2x2 grid of equal widths */
-  .links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding-left: 40px; }
+  /* Four contact buttons on one line, sharing the width equally */
+  .links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
   /* Contact buttons: chartreuse squares with softly rounded corners that match the
      tab strips and the selected-project bar; ink on hover or while open */
   .links .btn {
-    padding: 7.5px 13.5px; font-size: 14px; border-radius: 10px; text-align: center;
+    padding: 7.5px 6px; font-size: 14px; border-radius: 10px; text-align: center; white-space: nowrap;
     background: var(--chartreuse); color: var(--ink);
     transition: background .2s ease, color .2s ease;
   }
   .links .btn:hover, .links .btn[aria-expanded="true"] { background: var(--ink); color: var(--chartreuse); }
-  .links .btn-email { min-width: 74px; } /* same width as GitHub */
 
   /* Link pop-up under the pills: the full address plus a copy button */
   .contact { display: flex; flex-direction: column; gap: 12px; }
