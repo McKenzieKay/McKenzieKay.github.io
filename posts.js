@@ -106,6 +106,6 @@ window.ABOUT_POSTS = [
       { src: "images/posts/flower-blanket.jpg",
         alt: "A large crocheted granny-square blanket laid out on a wood floor, each square a bright flower in a different color combination, with a skein of white yarn beside it" }
     ],
-    caption: "Crocheted a blanket for my long time friend and her new husband! Congrats!"
+    caption: "Mariah and Eric said \"I do,\" so I said \"I'll crochet!\" A flower blanket for the newlyweds. Congrats!"
   }
 ];
