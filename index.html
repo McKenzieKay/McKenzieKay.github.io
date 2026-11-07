@@ -1056,9 +1056,22 @@
     var hash = location.hash.slice(1);
     route(hash);
     document.documentElement.classList.add('tabs-ready');
-    // Opening a #section link: start the tab at the top instead of the browser's anchor jump
-    if ((hash === tabFor(hash) || hash.indexOf('details-') === 0) && window.matchMedia('(min-width: 1024px)').matches) {
-      window.addEventListener('load', function () { window.scrollTo(0, 0); });
+    // Opening a link with a #anchor (a tab, a project, a job, a detail view): always
+    // start at the top of the page instead of the browser's jump to that anchor, on
+    // every screen size. The right tab is already open from route() above.
+    if (hash) {
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      // Jump instantly (the page's smooth scrolling would otherwise animate the anchor
+      // jump after this runs), and again once everything has loaded and settled
+      var toTop = function () {
+        var html = document.documentElement, prev = html.style.scrollBehavior;
+        html.style.scrollBehavior = 'auto';
+        window.scrollTo(0, 0);
+        html.style.scrollBehavior = prev;
+      };
+      toTop();
+      window.addEventListener('load', function () { toTop(); setTimeout(toTop, 60); });
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(toTop);
     }
   })();
 
