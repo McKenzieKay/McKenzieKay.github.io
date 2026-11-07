@@ -115,6 +115,9 @@
   @media (min-width: 1024px) {
     .name img { width: calc(100% + 2 * var(--sidebar-pad)); margin-left: calc(-1 * var(--sidebar-pad)); }
   }
+  /* Tagline under the signature: what McKenzie does, readable at a glance */
+  .tagline { margin: 18px 0 0; text-align: center; font-size: 15px; line-height: 1.4; color: var(--ink); }
+  .tagline strong { display: block; font-weight: 700; } /* title on its own line, phrase below */
 
   /* ---------- Section nav (top of right column, desktop only) ---------- */
   .section-nav { display: none; }
@@ -518,6 +521,7 @@
   <header class="sidebar">
     <div class="sidebar-name">
       <h1 class="name"><img src="images/signature.png" alt="McKenzie Campbell" width="1200" height="389"></h1>
+      <p class="tagline"><strong>Data Scientist</strong><span class="visually-hidden"> · </span> turning messy data into&nbsp;decisions</p>
     </div>
 
     <div class="sidebar-contact">
