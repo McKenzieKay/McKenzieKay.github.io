@@ -98,8 +98,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/bishop-naps-09.jpg", alt: "Bishop asleep upside down in a curl on the couch, paws in the air" },
       { src: "images/posts/bishop-naps-11.jpg", alt: "Bishop flat on his back on a yellow armchair, belly up and paws in the air, looking at the camera" },
       { src: "images/posts/bishop-naps-15.jpg", alt: "Bishop lying on the doormat with his head resting on a pair of red sneakers" },
-      { src: "images/posts/bishop-naps-05.jpg", alt: "Bishop napping with his chin on a mossy boulder between big rocks on a hike" },
-      { src: "images/posts/bishop-naps-13.jpg", alt: "Bishop asleep with his chin resting on the back of a yellow couch" }
+      { src: "images/posts/bishop-naps-05.jpg", alt: "Bishop napping with his chin on a mossy boulder between big rocks on a hike" }
     ],
     caption: "Professional napper. Skills include: any surface, any position, any time."
   },
