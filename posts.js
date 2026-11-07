@@ -17,15 +17,15 @@
 */
 window.ABOUT_POSTS = [
   {
-    date: "2026-11-06",
+    date: "2026-05-05",
     category: "treats",
     images: [
       { src: "images/posts/lemon-cake-1.jpg",
         alt: "A sliced three-layer lemon cake on a wooden cake stand at a sunlit birthday table, with a slice on a plate that says Happy Birthday, candles and vintage floral plates" },
       { src: "images/posts/lemon-cake-2.jpg",
-        alt: "Close-up of the lemon cake's top: yellow piped birthday writing surrounded by little orange and white mushrooms and green moss-like dots" }
+        alt: "Close-up of the lemon cake's top: yellow piped birthday writing surrounded by little orange and white meringue mushrooms and green moss-like dots" }
     ],
-    caption: "Lemon cake for Claire's birthday, complete with little mushrooms on top!"
+    caption: "Lemon cake for Claire's birthday, complete with little meringue mushrooms on top!"
   },
   {
     date: "2026-10-31",
