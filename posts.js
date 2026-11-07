@@ -23,6 +23,17 @@
 window.ABOUT_POSTS = [
   {
     date: "2026-11-06",
+    category: "crafts",
+    images: [
+      { src: "images/posts/hermit-pillow-1.jpg",
+        alt: "A green-eyed tabby cat lounging on a couch beside a puff quilt pillow with an embroidered Hermit tarot card cat, in front of a pillow printed with a cat" },
+      { src: "images/posts/hermit-pillow-2.jpg",
+        alt: "Close-up of the puff quilt pillow: floral and purple fabric puffs around a hand-embroidered tarot card of a cat in a box, labeled The Hermit" }
+    ],
+    caption: "Gift for my cat lady bestie! A puff quilt pillow with a hand-embroidered Hermit tarot cat. Count the cats: one stitched, one printed, one real!"
+  },
+  {
+    date: "2026-11-06",
     category: "adventures",
     images: [
       { src: "images/posts/lake-shastina-2.jpg",
