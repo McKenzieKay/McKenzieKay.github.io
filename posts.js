@@ -197,7 +197,6 @@ window.ABOUT_POSTS = [
   {
     date: "2025-01-07",
     category: "adventures",
-    fit: "whole",
     images: [
       { src: "images/posts/hut-to-hut-1.jpg", alt: "A cross-country skier in a snowy clearing among snow-laden evergreens, backlit by the sun through clouds" },
       { src: "images/posts/hut-to-hut-2.jpg", alt: "Three skiers adjusting their gear on a deep snowy trail beside a small wooden hut, surrounded by snow-covered trees" },
