@@ -25,7 +25,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/tea-party-2.jpg",
         alt: "Overhead view of the tea party table: heart- and flower-shaped tea sandwiches, chocolate cake pops, caprese skewers, scones, shortbread and teacups on a pink tablecloth" }
     ],
-    caption: "Spill the Tea Party!"
+    caption: "Spill the Tea Party! I make the treats and you bring me a fun story!"
   },
   {
     date: "2026-11-06",
