@@ -253,7 +253,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/ireland-03.jpg", alt: "An ivy-covered stone castle with battlements and a wooden arched door, with black iron garden chairs on the lawn" },
       { src: "images/posts/ireland-02.jpg", alt: "McKenzie in a red sheep sweater walking a muddy clifftop path beside dark layered sea cliffs and gray water" },
       { src: "images/posts/ireland-01.jpg", alt: "A tall standing stone on a grassy point by the water, with hills across the bay under a partly cloudy sky" },
-      { src: "images/posts/ireland-06.jpg", alt: "McKenzie and her partner smiling beside a sign reading Tetrapod trackway with a tetrapod silhouette" },
+      { src: "images/posts/ireland-06.jpg", alt: "McKenzie and partner smiling beside a sign reading Tetrapod trackway with a tetrapod silhouette" },
       { src: "images/posts/ireland-10.jpg", alt: "Wide flat rock shelves along the coast where the tetrapod trackway is, with the gray Atlantic beyond" },
       { src: "images/posts/ireland-09.jpg", alt: "Information board titled The Valentia Tetrapod Trackway, explaining the 385-million-year-old footprints" }
     ],
