@@ -17,6 +17,17 @@
 */
 window.ABOUT_POSTS = [
   {
+    date: "2026-02-28",
+    category: "adventures",
+    images: [
+      { src: "images/posts/ski-day-1.jpg",
+        alt: "View from a snowy ski run over dark evergreen forest to a snow-covered volcanic peak under gray clouds" },
+      { src: "images/posts/ski-day-2.jpg",
+        alt: "Ski tips and a pole in the foreground on a chairlift, looking up the lift line through snowy pine trees toward a white mountain peak" }
+    ],
+    caption: "Snow was a little rough, but the views are unmatched!"
+  },
+  {
     date: "2026-02-22",
     category: "treats",
     images: [
