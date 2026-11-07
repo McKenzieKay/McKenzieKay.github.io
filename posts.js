@@ -25,7 +25,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/lemon-cake-2.jpg",
         alt: "Close-up of the lemon cake's top: yellow piped birthday writing surrounded by little orange and white mushrooms and green moss-like dots" }
     ],
-    caption: "Lemon cake for Clair's birthday, complete with little mushrooms on top!"
+    caption: "Lemon cake for Claire's birthday, complete with little mushrooms on top!"
   },
   {
     date: "2026-10-31",
