@@ -273,13 +273,13 @@
   @media (min-width: 1024px) { .bio-label { display: block; margin-bottom: 14px; } }
   .bio-headline { font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--ink); }
   /* "My" is handwritten: the M from the signature plus a matching y
-     (images/signature-my.png, 530x300; 113 image px = 1em). The M's left leg sits where
+     (images/signature-my.png, 575x360; 113 image px = 1em). The M's left leg sits where
      the text starts (x 221) and the letters rest on the baseline (y 189); the lead-in
      stroke reaches left past the card's padding and border, so it starts outside the
      card, and the y's descender hangs below the line. */
   .sig-my {
-    height: 2.655em; width: auto;   /* 300 / 113 */
-    vertical-align: -0.982em;       /* (300 - 189) / 113 */
+    height: 3.186em; width: auto;   /* 360 / 113 */
+    vertical-align: -1.513em;       /* (360 - 189) / 113 */
     margin-left: -1.956em;          /* 221 / 113 */
   }
   /* Phones: no room left of the card, so the card clips the lead-in at its edge */
@@ -748,9 +748,9 @@
         <!-- Two columns: "My" (signature M) on the left; headline and subtitle on the right,
              so the subtitle starts right after "My" -->
         <div class="bio-grid">
-          <span class="bio-my" aria-hidden="true"><img class="sig-my" src="images/signature-my.png" alt="" width="530" height="300"></span>
+          <span class="bio-my" aria-hidden="true"><img class="sig-my" src="images/signature-my.png" alt="" width="575" height="360"></span>
           <div>
-            <p class="bio-headline"><span class="visually-hidden">My </span><mark class="highlight">Hobby</mark> is Having <mark class="highlight">Hobbies</mark></p>
+            <p class="bio-headline"><span class="visually-hidden">My </span><mark class="highlight">Hobby</mark> is having <mark class="highlight">Hobbies</mark></p>
             <p class="bio-sub">Cycle through my hyperfixations with me,<br>except Bishop; my love for my puppy is forever.</p>
           </div>
         </div>
