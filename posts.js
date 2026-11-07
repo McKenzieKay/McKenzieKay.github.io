@@ -63,16 +63,14 @@ window.ABOUT_POSTS = [
     caption: "I crocheted everything The Very Hungry Caterpillar ate, plus the caterpillar himself! Baby shower gift for sweet baby Rainy!"
   },
   {
-    category: "adventures",
+    category: "treats",
     images: [
-      { src: "images/posts/blue-basin-1.jpg",
-        alt: "Blue Basin's blue-green badlands under a blue sky, with juniper trees and dry grass in the foreground and layered hills behind" },
-      { src: "images/posts/blue-basin-2.jpg",
-        alt: "Sunset over a wide valley and distant hills, seen from a grassy ridge under dramatic clouds" },
-      { src: "images/posts/blue-basin-3.jpg",
-        alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
+      { src: "images/posts/lemon-cake-1.jpg",
+        alt: "A sliced three-layer lemon cake on a wooden cake stand at a sunlit birthday table, with a slice on a plate that says Happy Birthday, candles and vintage floral plates" },
+      { src: "images/posts/lemon-cake-2.jpg",
+        alt: "Close-up of the lemon cake's top: yellow piped birthday writing surrounded by little orange and white meringue mushrooms and green moss-like dots" }
     ],
-    caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
+    caption: "Lemon cake for Claire's birthday, complete with little meringue mushrooms on top!"
   },
   {
     category: "dog",
@@ -161,14 +159,16 @@ window.ABOUT_POSTS = [
     caption: "Bishop is ready to make this his profile picture on Dog Meet Dog!"
   },
   {
-    category: "treats",
+    category: "adventures",
     images: [
-      { src: "images/posts/lemon-cake-1.jpg",
-        alt: "A sliced three-layer lemon cake on a wooden cake stand at a sunlit birthday table, with a slice on a plate that says Happy Birthday, candles and vintage floral plates" },
-      { src: "images/posts/lemon-cake-2.jpg",
-        alt: "Close-up of the lemon cake's top: yellow piped birthday writing surrounded by little orange and white meringue mushrooms and green moss-like dots" }
+      { src: "images/posts/blue-basin-1.jpg",
+        alt: "Blue Basin's blue-green badlands under a blue sky, with juniper trees and dry grass in the foreground and layered hills behind" },
+      { src: "images/posts/blue-basin-2.jpg",
+        alt: "Sunset over a wide valley and distant hills, seen from a grassy ridge under dramatic clouds" },
+      { src: "images/posts/blue-basin-3.jpg",
+        alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
     ],
-    caption: "Lemon cake for Claire's birthday, complete with little meringue mushrooms on top!"
+    caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
   },
   {
     category: "adventures",
