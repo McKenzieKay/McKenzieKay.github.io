@@ -204,6 +204,6 @@ window.ABOUT_POSTS = [
       { src: "images/posts/hut-to-hut-3.jpg", alt: "A wooden backcountry hut at night with two glowing windows, a snowdrift in front and stars overhead" },
       { src: "images/posts/hut-to-hut-4.jpg", alt: "A gloved hand holding a large cluster of delicate frost crystals above skis in the snow" }
     ],
-    caption: "Ski all day, cozy hut all night, repeat x3!"
+    caption: "Cross-country skiing is cool, I swear! Three beautiful days skiing from hut to hut."
   }
 ];
