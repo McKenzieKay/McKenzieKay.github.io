@@ -103,8 +103,8 @@ window.ABOUT_POSTS = [
     date: "2026-05-26",
     category: "crafts",
     images: [
-      { src: "images/posts/flower-blanket.jpg", natural: true,
-        alt: "A large crocheted granny-square blanket laid out on a wood floor, each square a bright flower in a different color combination" }
+      { src: "images/posts/flower-blanket.jpg",
+        alt: "A large crocheted granny-square blanket laid out on a wood floor, each square a bright flower in a different color combination, with a skein of white yarn beside it" }
     ],
     caption: "Crocheted a blanket for my long time friend and her new husband! Congrats!"
   }
