@@ -18,6 +18,17 @@
 window.ABOUT_POSTS = [
   {
     date: "2026-11-06",
+    category: "treats",
+    images: [
+      { src: "images/posts/tea-party-1.jpg",
+        alt: "A hand holding a pink-bordered tea party menu listing savory bites and sweets, over a table of treats on a pink polka-dot tablecloth" },
+      { src: "images/posts/tea-party-2.jpg",
+        alt: "Overhead view of the tea party table: heart- and flower-shaped tea sandwiches, chocolate cake pops, caprese skewers, scones, shortbread and teacups on a pink tablecloth" }
+    ],
+    caption: "Spill the Tea Party!"
+  },
+  {
+    date: "2026-11-06",
     category: "dog",
     images: [
       { src: "images/posts/bishop-pep.jpg",
