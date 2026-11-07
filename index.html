@@ -333,6 +333,9 @@
     overflow: hidden; display: flex; flex-direction: column;
   }
   .post-media > * { width: 100%; }
+  /* display: flex above would override the hidden attribute, so filtered-out posts
+     need an explicit rule to disappear */
+  .post[hidden] { display: none; }
   .post-body { margin-top: auto; }
   /* Portrait 4:5, like a social feed: suits phone photos */
   /* Frame shape: 4:5 by default; a post can set ratio (e.g. "4 / 3") in posts.js */
