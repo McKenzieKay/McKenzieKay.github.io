@@ -149,5 +149,18 @@ window.ABOUT_POSTS = [
         alt: "A large crocheted granny-square blanket laid out on a wood floor, each square a bright flower in a different color combination, with a skein of white yarn beside it" }
     ],
     caption: "Mariah and Eric said \"I do,\" so I said \"I'll crochet!\" A flower blanket for the newlyweds. Congrats!"
+  },
+  {
+    date: "2025-12-25",
+    category: "crafts",
+    images: [
+      { src: "images/posts/pink-christmas-1.jpg", natural: true,
+        alt: "A pink Christmas mantel: pink paper mountains and bottle-brush trees, a striped fringe garland, a felt string-light garland and three patchwork stockings over a pink-tiled fireplace" },
+      { src: "images/posts/pink-christmas-2.jpg", natural: true,
+        alt: "Close-up of three handmade quilted patchwork stockings in pink floral fabrics hanging under a felt light-bulb garland" },
+      { src: "images/posts/pink-christmas-3.jpg", natural: true,
+        alt: "Two handmade fabric reindeer, one with floral antlers and one in pink and white stripes, among pink bottle-brush trees" }
+    ],
+    caption: "Pink Christmas, handmade edition! I sewed the stockings, the reindeer and the garland. Santa's got a new favorite color!"
   }
 ];
