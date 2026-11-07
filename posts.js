@@ -171,6 +171,14 @@ window.ABOUT_POSTS = [
     caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
   },
   {
+    category: "treats",
+    images: [
+      { src: "images/posts/christmas-cookies.jpg",
+        alt: "A Christmas tray of homemade cookies and bars: frosted oatmeal cookies, chocolate sandwich cookies, glazed rounds, heart shortbread, sprinkled sugar cookies, sugared molasses cookies and layered chocolate bars" }
+    ],
+    caption: "Christmas cookies for friends and neighbors! Everyone gets a little bit of everything."
+  },
+  {
     category: "adventures",
     images: [
       { src: "images/posts/john-day-1.jpg",
