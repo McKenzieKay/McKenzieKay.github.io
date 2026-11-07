@@ -28,7 +28,7 @@ window.ABOUT_POSTS = [
     caption: "Spill the Tea Party! I'll bring the treats, you bring the fun stories!"
   },
   {
-    date: "2026-11-06",
+    date: "2026-04-24",
     category: "dog",
     images: [
       { src: "images/posts/bishop-pep.jpg",
