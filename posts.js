@@ -35,7 +35,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/bishop-naps-15.jpg", alt: "Bishop lying on the doormat with his head resting on a pair of red sneakers" },
       { src: "images/posts/bishop-naps-05.jpg", alt: "Bishop napping with his chin on a mossy boulder between big rocks on a hike" }
     ],
-    caption: "I'm sorry, were you sleeping? Am I interrupting your professional napping?"
+    caption: "Professional napper. Skills include: any surface, any position, any time."
   },
   {
     date: "2026-11-06",
