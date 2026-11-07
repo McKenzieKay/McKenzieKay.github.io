@@ -17,7 +17,7 @@
 */
 window.ABOUT_POSTS = [
   {
-    date: "2026-11-06",
+    date: "2026-10-14",
     category: "crafts",
     images: [
       { src: "images/posts/crochet-01.jpg", alt: "The full set of crocheted foods from The Very Hungry Caterpillar laid out on a counter, with the striped red and green caterpillar behind them" },
@@ -38,7 +38,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/crochet-16.jpg", alt: "Crocheted cupcake with white frosting and a blue wrapper" },
       { src: "images/posts/crochet-17.jpg", alt: "Crocheted green leaf with a stem" }
     ],
-    caption: "I crocheted everything The Very Hungry Caterpillar ate, plus the caterpillar himself!"
+    caption: "I crocheted everything The Very Hungry Caterpillar ate, plus the caterpillar himself! Baby shower gift for sweet baby Rainy!"
   },
   {
     date: "2026-10-13",
