@@ -75,6 +75,6 @@ window.ABOUT_POSTS = [
       { src: "images/posts/blue-basin-3.jpg",
         alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
     ],
-    caption: "Exploring the Blue Basin and camping out by the fire tower! That sunset though!"
+    caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
   }
 ];
