@@ -12,6 +12,8 @@
                    (use images: [] for no photo yet)
                    add natural: true to show a photo at its own shape instead of
                    the 4:5 frame (good for a single wide shot)
+         fit:      optional; "whole" shows every photo in the post uncropped inside
+                   the 4:5 frame (good for a mix of wide and tall photos)
          caption:  what you want to say about it
     3. Save, refresh the page to check it, then push.
 */
@@ -175,5 +177,23 @@ window.ABOUT_POSTS = [
         alt: "Two handmade fabric reindeer, one with floral antlers and one in pink and white stripes, among pink bottle-brush trees" }
     ],
     caption: "Santa's got a new favorite color! I sewed the stockings, the reindeer and the garland."
+  },
+  {
+    date: "2025-10-10",
+    category: "adventures",
+    fit: "whole",
+    images: [
+      { src: "images/posts/ireland-01.jpg", alt: "A tall standing stone on a grassy point by the water, with hills across the bay under a partly cloudy sky" },
+      { src: "images/posts/ireland-02.jpg", alt: "McKenzie in a red sheep sweater walking a muddy clifftop path beside dark layered sea cliffs and gray water" },
+      { src: "images/posts/ireland-03.jpg", alt: "An ivy-covered stone castle with battlements and a wooden arched door, with black iron garden chairs on the lawn" },
+      { src: "images/posts/ireland-04.jpg", alt: "Wedding guests gathered on the grass beside a ruined stone tower, the bride in a long white gown in sunlight" },
+      { src: "images/posts/ireland-05.jpg", alt: "Wedding guests walking from a ruined castle tower across a green field under a blue sky" },
+      { src: "images/posts/ireland-06.jpg", alt: "McKenzie and her partner smiling beside a sign reading Tetrapod trackway with a tetrapod silhouette" },
+      { src: "images/posts/ireland-07.jpg", alt: "Flat gray seaside rock with a faint line of fossil footprints, with the coast and sea beyond" },
+      { src: "images/posts/ireland-08.jpg", alt: "A red sweatshirt decorated with rows of felt sheep, one of them black" },
+      { src: "images/posts/ireland-09.jpg", alt: "Information board titled The Valentia Tetrapod Trackway, explaining the 385-million-year-old footprints" },
+      { src: "images/posts/ireland-10.jpg", alt: "Wide flat rock shelves along the coast where the tetrapod trackway is, with the gray Atlantic beyond" }
+    ],
+    caption: "Went to Ireland for a wedding, stayed for the tetrapod track fossils!"
   }
 ];
