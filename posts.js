@@ -17,8 +17,6 @@
          ratio:    optional frame shape for the post's photos, e.g. "4 / 3" for a
                    post of mostly wide shots (default is the tall "4 / 5"); crop
                    photos to that shape so they fill the frame with no bands
-         fit:      optional; "whole" shows every photo uncropped inside the frame
-                   (leaves light bands around photos of a different shape)
          caption:  what you want to say about it
     3. Save, refresh the page to check it, then push.
 */

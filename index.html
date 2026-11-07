@@ -347,9 +347,6 @@
   .post-photo { display: block; width: 100%; aspect-ratio: var(--photo-ratio, 4 / 5); object-fit: cover; background: var(--ivory); }
   /* A photo marked natural: true in posts.js keeps its own shape (e.g. a wide shot) */
   .post-photo--natural { aspect-ratio: auto; height: auto; }
-  /* A post with fit: "whole" shows every photo uncropped inside the 4:5 frame,
-     on a light band, so mixed wide and tall photos keep one carousel size */
-  .post--whole .post-photo { object-fit: contain; background: var(--ivory); }
 
   /* Carousel: a scroll-snap track (swipe on phones), arrow buttons, and dots */
   .carousel { position: relative; }
@@ -916,7 +913,6 @@
       var card = document.createElement('article');
       card.className = 'post';
       card.dataset.category = p.category;
-      if (p.fit === 'whole') card.classList.add('post--whole');
       if (p.ratio) card.style.setProperty('--photo-ratio', p.ratio);
 
       var media = document.createElement('div');
