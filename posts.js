@@ -249,5 +249,14 @@ window.ABOUT_POSTS = [
       { src: "images/posts/hut-to-hut-4.jpg", alt: "A gloved hand holding a large cluster of delicate frost crystals above skis in the snow" }
     ],
     caption: "Cross-country skiing is cool, I swear! Three beautiful days skiing from hut to hut."
+  },
+  {
+    date: "2024-04-02",
+    category: "adventures",
+    images: [
+      { src: "images/posts/powder-day.jpg",
+        alt: "McKenzie on skis in a pink-flowered jacket and goggles, standing in fresh powder among heavily snow-covered trees while snow falls" }
+    ],
+    caption: "Nothing like a powder day!"
   }
 ];
