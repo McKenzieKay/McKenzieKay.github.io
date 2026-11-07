@@ -168,7 +168,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/john-day-3.jpg",
         alt: "Bishop the basset hound curled up asleep on a pink fleece blanket inside a tent" }
     ],
-    caption: "Camping on the John Day River!"
+    caption: "Camping on the John Day River! Spending all day on the river!"
   },
   {
     category: "crafts",
