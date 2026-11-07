@@ -17,6 +17,19 @@
 */
 window.ABOUT_POSTS = [
   {
+    date: "2026-11-06",
+    category: "adventures",
+    images: [
+      { src: "images/posts/lake-shastina-1.jpg",
+        alt: "A red caboose numbered 21 with glowing windows at dusk, among pine-covered hills with a rocky peak behind" },
+      { src: "images/posts/lake-shastina-2.jpg",
+        alt: "Snow-capped Mount Shasta reflected in the still water of Lake Shastina under a clear blue sky, with a rocky shore in front" },
+      { src: "images/posts/lake-shastina-3.jpg",
+        alt: "A man in a green sweatshirt standing on the wooden porch of a converted Southern Pacific railcar among tall pines" }
+    ],
+    caption: "Weekend getaway at Lake Shastina!"
+  },
+  {
     date: "2026-02-28",
     category: "adventures",
     images: [
