@@ -251,7 +251,7 @@ window.ABOUT_POSTS = [
     caption: "Cross-country skiing is cool, I swear! Three beautiful days skiing from hut to hut."
   },
   {
-    date: "2024-04-02",
+    date: "2025-04-02",
     category: "adventures",
     images: [
       { src: "images/posts/powder-day.jpg",
