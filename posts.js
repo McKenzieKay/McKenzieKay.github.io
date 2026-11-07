@@ -106,12 +106,14 @@ window.ABOUT_POSTS = [
   {
     category: "adventures",
     images: [
-      { src: "images/posts/painted-hills-1.jpg",
-        alt: "A new tan two-room tent at a gravel campsite at dusk, with a camp chair, fire pit, folding table and picnic table, under streaky clouds and bare trees" },
-      { src: "images/posts/painted-hills-2.jpg",
-        alt: "The Painted Hills under a bright blue sky with puffy clouds, red and tan banded hills beyond a creek, fence posts and a gravel road" }
+      { src: "images/posts/blue-basin-1.jpg",
+        alt: "Blue Basin's blue-green badlands under a blue sky, with juniper trees and dry grass in the foreground and layered hills behind" },
+      { src: "images/posts/blue-basin-2.jpg",
+        alt: "Sunset over a wide valley and distant hills, seen from a grassy ridge under dramatic clouds" },
+      { src: "images/posts/blue-basin-3.jpg",
+        alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
     ],
-    caption: "New tent, who dis? Camping out at the Painted Hills!"
+    caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
   },
   {
     category: "treats",
@@ -157,18 +159,6 @@ window.ABOUT_POSTS = [
         alt: "Bishop the basset hound in a green harness standing on a white salt flat, ears flopping, under a blazing orange and purple sunset" }
     ],
     caption: "Bishop is ready to make this his profile picture on Dog Meet Dog!"
-  },
-  {
-    category: "adventures",
-    images: [
-      { src: "images/posts/blue-basin-1.jpg",
-        alt: "Blue Basin's blue-green badlands under a blue sky, with juniper trees and dry grass in the foreground and layered hills behind" },
-      { src: "images/posts/blue-basin-2.jpg",
-        alt: "Sunset over a wide valley and distant hills, seen from a grassy ridge under dramatic clouds" },
-      { src: "images/posts/blue-basin-3.jpg",
-        alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
-    ],
-    caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
   },
   {
     category: "treats",
