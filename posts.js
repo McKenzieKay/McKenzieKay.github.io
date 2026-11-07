@@ -65,7 +65,7 @@ window.ABOUT_POSTS = [
     caption: "It's a Mario Party this Halloween!! I handmade both onesies, Waluigi and Ninji! Keeping it comfy this year! (Character art © Nintendo.)"
   },
   {
-    date: "2026-10-18",
+    date: "2026-09-23",
     category: "adventures",
     images: [
       { src: "images/posts/blue-basin-1.jpg",
