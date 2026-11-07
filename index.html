@@ -143,6 +143,27 @@
     .tabs-ready section:not(.is-active) { display: none; }
     .tabs-ready section + section { margin-top: 0; }
   }
+  /* Phones and tablets: the same folder tabs, three equal widths, in a bar that sticks
+     to the top of the screen; one section shows at a time, like on desktop */
+  @media (max-width: 1023px) {
+    .section-nav {
+      display: flex; align-items: flex-end; gap: 4px;
+      position: sticky; top: 0; z-index: 5;
+      background: color-mix(in srgb, var(--ivory) 45%, #FFFFFF);
+      margin: 0 -24px 28px; padding: 12px 16px 0;
+      border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink);
+    }
+    .section-nav a { flex: 1 1 0; text-align: center; padding: 10px 4px 8px; font-size: 12px; letter-spacing: .06em; }
+    .section-nav a.active { padding-top: 13px; }
+    .tabs-ready section:not(.is-active) { display: none; }
+    .tabs-ready section + section { margin-top: 0; }
+    /* the tabs name each section, so the stacked section headings aren't needed */
+    .tabs-ready .label--mobile {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap;
+    }
+    .layout { gap: 0; }
+  }
   /* Folder tabs: light tabs with a Vintage Wine strip along the top edge. The open
      tab is page-colored and overlaps the bar's bottom line, so it reads as joined
      to the page; closed tabs sit a shade darker, behind it. */
@@ -1016,7 +1037,12 @@
         var id = a.getAttribute('href').slice(1);
         history.pushState(null, '', '#' + id);
         route(id);
-        window.scrollTo(0, 0);
+        // Desktop: back to the top. Phones: the tab bar sits below the header, so if
+        // you've scrolled past it, land with the tabs at the top of the screen
+        var nav = document.querySelector('.section-nav');
+        var navTop = nav.getBoundingClientRect().top + window.scrollY;
+        if (window.matchMedia('(min-width: 1024px)').matches) window.scrollTo(0, 0);
+        else if (window.scrollY > navTop) window.scrollTo(0, navTop);
       });
     });
     window.addEventListener('popstate', function () { route(location.hash.slice(1)); });
