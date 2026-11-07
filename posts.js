@@ -85,5 +85,14 @@ window.ABOUT_POSTS = [
         alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
     ],
     caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
+  },
+  {
+    date: "2026-05-26",
+    category: "crafts",
+    images: [
+      { src: "images/posts/flower-blanket.jpg",
+        alt: "A large crocheted granny-square blanket laid out on a wood floor, each square a bright flower in a different color combination" }
+    ],
+    caption: "Crocheted a blanket for my long time friend and her new husband! Congrats!"
   }
 ];
