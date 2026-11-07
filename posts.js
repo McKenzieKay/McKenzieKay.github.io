@@ -40,7 +40,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/halloween-onesies-3.jpg",
         alt: "Two handmade, unpainted white clay buttons with two holes each, resting on a tile counter" }
     ],
-    caption: "For Halloween, I sewed onesies of our favorite Mario Party characters, Waluigi and Ninji. Ninji's buttons started as clay I shaped by hand, then painted red. (Character art © Nintendo.)"
+    caption: "It's a Mario Party this Halloween!! I handmade both onesies, Waluigi and Ninji! Keeping it comfy this year! (Character art © Nintendo.)"
   },
   {
     date: "2026-10-18",
