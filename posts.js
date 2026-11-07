@@ -37,7 +37,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/powder-day.jpg",
         alt: "McKenzie on skis in a pink-flowered jacket and goggles, standing in fresh powder among heavily snow-covered trees while snow falls" }
     ],
-    caption: "Sun is gone, skis are on! Nothing like a powder day!"
+    caption: "Sun is gone, skis are on. Nothing like a powder day!"
   },
   {
     category: "crafts",
@@ -51,7 +51,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/crochet-14.jpg", alt: "Crocheted slice of cherry pie with a golden crust" },
       { src: "images/posts/crochet-09.jpg", alt: "Crocheted watermelon slice with pink flesh, black seeds and a green rind" }
     ],
-    caption: "I crocheted everything The Very Hungry Caterpillar ate, plus the caterpillar himself! Baby shower gift for sweet baby Rainy!"
+    caption: "I crocheted everything The Very Hungry Caterpillar ate, plus the caterpillar himself. Baby shower gift for sweet baby Rainy!"
   },
   {
     category: "treats",
@@ -61,7 +61,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/lemon-cake-2.jpg",
         alt: "Close-up of the lemon cake's top: yellow piped birthday writing surrounded by little orange and white meringue mushrooms and green moss-like dots" }
     ],
-    caption: "Lemon cake for Claire's birthday, complete with little meringue mushrooms on top!"
+    caption: "Lemon cake for Claire's birthday, complete with little meringue mushrooms on top."
   },
   {
     category: "crafts",
@@ -103,7 +103,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/blue-basin-3.jpg",
         alt: "A tall metal fire lookout tower on a gravel clearing surrounded by pine trees" }
     ],
-    caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
+    caption: "Exploring the Blue Basin and camping out by the fire tower. Mother Nature flexing on us all!"
   },
   {
     category: "treats",
@@ -113,7 +113,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/tea-party-2.jpg",
         alt: "Overhead view of the tea party table: heart- and flower-shaped tea sandwiches, chocolate cake pops, caprese skewers, scones, shortbread and teacups on a pink tablecloth" }
     ],
-    caption: "Spill the Tea Party! I'll bring the treats, you bring the fun stories!"
+    caption: "Spill the Tea Party! I'll bring the treats, you bring the fun stories."
   },
   {
     category: "crafts",
@@ -148,7 +148,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/christmas-cookies.jpg",
         alt: "A Christmas tray of homemade cookies and bars: frosted oatmeal cookies, chocolate sandwich cookies, glazed rounds, heart shortbread, sprinkled sugar cookies, sugared molasses cookies and layered chocolate bars" }
     ],
-    caption: "You get a cookie and you get a cookie! Christmas cookies for friends and neighbors!"
+    caption: "You get a cookie and you get a cookie! Christmas cookies for friends and neighbors."
   },
   {
     category: "dog",
@@ -156,7 +156,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/bishop-salt-flat.jpg",
         alt: "Bishop the basset hound in a green harness standing on a white salt flat, ears flopping, under a blazing orange and purple sunset" }
     ],
-    caption: "Bishop is ready to make this his profile picture on Dog Meet Dog!"
+    caption: "Bishop is ready to make this his profile picture on Dog Meet Dog."
   },
   {
     category: "adventures",
@@ -168,7 +168,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/john-day-3.jpg",
         alt: "Bishop the basset hound curled up asleep on a pink fleece blanket inside a tent" }
     ],
-    caption: "Camping on the John Day River! Spending all day on the river!"
+    caption: "Camping on the John Day River. Spending all day on the river!"
   },
   {
     category: "crafts",
@@ -178,7 +178,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/hermit-pillow-2.jpg",
         alt: "Close-up of the puff quilt pillow: floral and purple fabric puffs around a hand-embroidered tarot card of a cat in a box, labeled The Hermit" }
     ],
-    caption: "One cat, two cat, real cat, pillow cat! Gift for my cat lady bestie!"
+    caption: "One cat, two cat, real cat, pillow cat! Gift for my cat lady bestie."
   },
   {
     category: "dog",
@@ -186,7 +186,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/bishop-pep.jpg",
         alt: "Bishop the basset hound standing on a gray deck, while a fluffy black dog named Pep holds the end of a long rope leash that loops back to Bishop" }
     ],
-    caption: "Bishop's not listening, but no worries, Pep is on the case and going to drag him over! Everyone needs a friend that is looking out."
+    caption: "Bishop's not listening, but no worries, Pep is on the case and going to drag him over. Everyone needs a friend that is looking out."
   },
   {
     category: "adventures",
