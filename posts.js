@@ -25,8 +25,8 @@ window.ABOUT_POSTS = [
     date: "2026-11-06",
     category: "dog",
     images: [
-      { src: "images/posts/bishop-naps-01.jpg", alt: "Close-up of Bishop half-asleep on a fuzzy gray blanket, nose to the camera" },
       { src: "images/posts/bishop-naps-02.jpg", alt: "Bishop lying in bed with one ear flipped up and his spotted paws over a floral duvet" },
+      { src: "images/posts/bishop-naps-01.jpg", alt: "Close-up of Bishop half-asleep on a fuzzy gray blanket, nose to the camera" },
       { src: "images/posts/bishop-naps-03.jpg", alt: "Bishop asleep face-down on a shaggy yellow rug next to a green dinosaur toy" },
       { src: "images/posts/bishop-naps-04.jpg", alt: "Bishop asleep draped across a couch, his head on the blanket and his ears and front legs dangling" },
       { src: "images/posts/bishop-naps-05.jpg", alt: "Bishop napping with his chin on a mossy boulder between big rocks on a hike" },
