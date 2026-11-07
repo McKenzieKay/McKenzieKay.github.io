@@ -10,6 +10,8 @@
          images:   one or more photos; two or more become a swipeable carousel
                    { src: "images/posts/your-photo.jpg", alt: "what the photo shows" }
                    (use images: [] for no photo yet)
+                   add natural: true to show a photo at its own shape instead of
+                   the 4:5 frame (good for a single wide shot)
          caption:  what you want to say about it
     3. Save, refresh the page to check it, then push.
 */
@@ -101,7 +103,7 @@ window.ABOUT_POSTS = [
     date: "2026-05-26",
     category: "crafts",
     images: [
-      { src: "images/posts/flower-blanket.jpg",
+      { src: "images/posts/flower-blanket.jpg", natural: true,
         alt: "A large crocheted granny-square blanket laid out on a wood floor, each square a bright flower in a different color combination" }
     ],
     caption: "Crocheted a blanket for my long time friend and her new husband! Congrats!"

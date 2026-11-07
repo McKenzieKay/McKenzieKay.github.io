@@ -332,6 +332,8 @@
   }
   /* Portrait 4:5, like a social feed: suits phone photos */
   .post-photo { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--ivory); }
+  /* A photo marked natural: true in posts.js keeps its own shape (e.g. a wide shot) */
+  .post-photo--natural { aspect-ratio: auto; height: auto; }
 
   /* Carousel: a scroll-snap track (swipe on phones), arrow buttons, and dots */
   .carousel { position: relative; }
@@ -802,7 +804,7 @@
 
     function makeImg(im) {
       var img = document.createElement('img');
-      img.className = 'post-photo';
+      img.className = 'post-photo' + (im.natural ? ' post-photo--natural' : '');
       img.src = im.src;
       img.alt = im.alt || '';
       img.loading = 'lazy';
