@@ -32,6 +32,14 @@ window.ABOUT_POSTS = [
     caption: "Bishop turned 6! I'm getting a lot of enjoyment out of calling him a \"Sixy Boy\" in an Australian accent."
   },
   {
+    category: "adventures",
+    images: [
+      { src: "images/posts/powder-day.jpg",
+        alt: "McKenzie on skis in a pink-flowered jacket and goggles, standing in fresh powder among heavily snow-covered trees while snow falls" }
+    ],
+    caption: "Sun is gone, skis are on! Nothing like a powder day!"
+  },
+  {
     category: "crafts",
     images: [
       { src: "images/posts/crochet-01.jpg", alt: "The full set of crocheted foods from The Very Hungry Caterpillar laid out on a counter, with the striped red and green caterpillar behind them" },
@@ -67,6 +75,21 @@ window.ABOUT_POSTS = [
     caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
   },
   {
+    category: "dog",
+    images: [
+      { src: "images/posts/bishop-naps-02.jpg", alt: "Bishop lying in bed with one ear flipped up and his spotted paws over a floral duvet" },
+      { src: "images/posts/bishop-naps-06.jpg", alt: "Extreme close-up of Bishop's nose peeking out from under his own ear while he sleeps" },
+      { src: "images/posts/bishop-naps-11.jpg", alt: "Bishop flat on his back on a yellow armchair, belly up and paws in the air, looking at the camera" },
+      { src: "images/posts/bishop-naps-12.jpg", alt: "Bishop curled up on a small fluffy gray dog bed that is far too small for him, one long ear spilling over the edge" },
+      { src: "images/posts/bishop-naps-13.jpg", alt: "Bishop asleep with his chin resting on the back of a yellow couch" },
+      { src: "images/posts/bishop-naps-14.jpg", alt: "Bishop asleep on a mossy green rug wearing a black hoodie with bat wings" },
+      { src: "images/posts/bishop-naps-09.jpg", alt: "Bishop asleep upside down in a curl on the couch, paws in the air" },
+      { src: "images/posts/bishop-naps-15.jpg", alt: "Bishop lying on the doormat with his head resting on a pair of red sneakers" },
+      { src: "images/posts/bishop-naps-05.jpg", alt: "Bishop napping with his chin on a mossy boulder between big rocks on a hike" }
+    ],
+    caption: "Professional napper. Skills include: any surface, any position, any time."
+  },
+  {
     category: "crafts",
     images: [
       { src: "images/posts/halloween-onesies-1.jpg",
@@ -83,31 +106,6 @@ window.ABOUT_POSTS = [
     caption: "It's a Mario Party this Halloween!! I handmade both onesies, Waluigi and Ninji! Keeping it comfy this year! (Character art © Nintendo.)"
   },
   {
-    category: "dog",
-    images: [
-      { src: "images/posts/bishop-naps-02.jpg", alt: "Bishop lying in bed with one ear flipped up and his spotted paws over a floral duvet" },
-      { src: "images/posts/bishop-naps-06.jpg", alt: "Extreme close-up of Bishop's nose peeking out from under his own ear while he sleeps" },
-      { src: "images/posts/bishop-naps-11.jpg", alt: "Bishop flat on his back on a yellow armchair, belly up and paws in the air, looking at the camera" },
-      { src: "images/posts/bishop-naps-12.jpg", alt: "Bishop curled up on a small fluffy gray dog bed that is far too small for him, one long ear spilling over the edge" },
-      { src: "images/posts/bishop-naps-13.jpg", alt: "Bishop asleep with his chin resting on the back of a yellow couch" },
-      { src: "images/posts/bishop-naps-14.jpg", alt: "Bishop asleep on a mossy green rug wearing a black hoodie with bat wings" },
-      { src: "images/posts/bishop-naps-09.jpg", alt: "Bishop asleep upside down in a curl on the couch, paws in the air" },
-      { src: "images/posts/bishop-naps-15.jpg", alt: "Bishop lying on the doormat with his head resting on a pair of red sneakers" },
-      { src: "images/posts/bishop-naps-05.jpg", alt: "Bishop napping with his chin on a mossy boulder between big rocks on a hike" }
-    ],
-    caption: "Professional napper. Skills include: any surface, any position, any time."
-  },
-  {
-    category: "treats",
-    images: [
-      { src: "images/posts/tea-party-1.jpg",
-        alt: "A hand holding a pink-bordered tea party menu listing savory bites and sweets, over a table of treats on a pink polka-dot tablecloth" },
-      { src: "images/posts/tea-party-2.jpg",
-        alt: "Overhead view of the tea party table: heart- and flower-shaped tea sandwiches, chocolate cake pops, caprese skewers, scones, shortbread and teacups on a pink tablecloth" }
-    ],
-    caption: "Spill the Tea Party! I'll bring the treats, you bring the fun stories!"
-  },
-  {
     category: "adventures",
     images: [
       { src: "images/posts/painted-hills-1.jpg",
@@ -118,12 +116,14 @@ window.ABOUT_POSTS = [
     caption: "New tent, who dis? Camping out at the Painted Hills!"
   },
   {
-    category: "crafts",
+    category: "treats",
     images: [
-      { src: "images/posts/flower-blanket.jpg",
-        alt: "A large crocheted granny-square blanket laid out on a wood floor, each square a bright flower in a different color combination, with a skein of white yarn beside it" }
+      { src: "images/posts/tea-party-1.jpg",
+        alt: "A hand holding a pink-bordered tea party menu listing savory bites and sweets, over a table of treats on a pink polka-dot tablecloth" },
+      { src: "images/posts/tea-party-2.jpg",
+        alt: "Overhead view of the tea party table: heart- and flower-shaped tea sandwiches, chocolate cake pops, caprese skewers, scones, shortbread and teacups on a pink tablecloth" }
     ],
-    caption: "Mariah and Eric said \"I do,\" so I said \"I'll crochet!\" A flower blanket for the newlyweds. Congrats!"
+    caption: "Spill the Tea Party! I'll bring the treats, you bring the fun stories!"
   },
   {
     category: "crafts",
@@ -243,11 +243,11 @@ window.ABOUT_POSTS = [
     caption: "Throwback to Bishop as a puppy! All ears and no legs... I guess things have not changed there."
   },
   {
-    category: "adventures",
+    category: "crafts",
     images: [
-      { src: "images/posts/powder-day.jpg",
-        alt: "McKenzie on skis in a pink-flowered jacket and goggles, standing in fresh powder among heavily snow-covered trees while snow falls" }
+      { src: "images/posts/flower-blanket.jpg",
+        alt: "A large crocheted granny-square blanket laid out on a wood floor, each square a bright flower in a different color combination, with a skein of white yarn beside it" }
     ],
-    caption: "Sun is gone, skis are on! Nothing like a powder day!"
+    caption: "Mariah and Eric said \"I do,\" so I said \"I'll crochet!\" A flower blanket for the newlyweds. Congrats!"
   }
 ];
