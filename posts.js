@@ -36,7 +36,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/bishop-naps-09.jpg", alt: "Bishop asleep upside down in a curl on the couch, paws in the air" },
       { src: "images/posts/bishop-naps-10.jpg", alt: "Bishop sprawled on his back on a cooling mat on a sunny brick patio" }
     ],
-    caption: "I'm sorry, were you sleeping? Bishop has never met a nap position he couldn't commit to."
+    caption: "I'm sorry, were you sleeping? Am I interrupting your professional napping?"
   },
   {
     date: "2026-11-06",
