@@ -109,6 +109,17 @@ window.ABOUT_POSTS = [
     caption: "Exploring the Blue Basin and camping out by the fire tower! Mother Nature flexing on us all!"
   },
   {
+    date: "2026-03-28",
+    category: "adventures",
+    images: [
+      { src: "images/posts/painted-hills-1.jpg",
+        alt: "A new tan two-room tent at a gravel campsite at dusk, with a camp chair, fire pit, folding table and picnic table, under streaky clouds and bare trees" },
+      { src: "images/posts/painted-hills-2.jpg",
+        alt: "The Painted Hills under a bright blue sky with puffy clouds, red and tan banded hills beyond a creek, fence posts and a gravel road" }
+    ],
+    caption: "New tent, who dis? Camping out at the Painted Hills!"
+  },
+  {
     date: "2026-05-26",
     category: "crafts",
     images: [
