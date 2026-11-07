@@ -527,6 +527,7 @@
       <button type="button" data-filter="dog"><span class="title">My Dog</span></button>
       <button type="button" data-filter="adventures"><span class="title">Adventures</span></button>
       <button type="button" data-filter="crafts"><span class="title">Crafts</span></button>
+      <button type="button" data-filter="treats"><span class="title">Sweet Treats</span></button>
     </nav>
     </div>
   </header>
@@ -772,6 +773,7 @@
         <button type="button" class="chip" data-filter="dog">My Dog</button>
         <button type="button" class="chip" data-filter="adventures">Adventures</button>
         <button type="button" class="chip" data-filter="crafts">Crafts</button>
+        <button type="button" class="chip" data-filter="treats">Sweet Treats</button>
       </div>
 
       <!-- Posts come from posts.js (see the instructions at the top of that file) -->
@@ -791,7 +793,7 @@
     var posts = (window.ABOUT_POSTS || []).slice().sort(function (a, b) {
       return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
     });
-    var LABELS = { dog: 'My Dog', adventures: 'Adventures', crafts: 'Crafts' };
+    var LABELS = { dog: 'My Dog', adventures: 'Adventures', crafts: 'Crafts', treats: 'Sweet Treats' };
 
     function fmtDate(iso) {
       var d = new Date(iso + 'T12:00:00');

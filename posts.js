@@ -6,7 +6,7 @@
        Remove location data first: phone photos can include GPS coordinates.
     2. Copy one of the posts below, paste it at the top of the list, and fill it in:
          date:     "YYYY-MM-DD" (the feed shows newest first)
-         category: "dog", "adventures" or "crafts"
+         category: "dog", "adventures", "crafts" or "treats" (Sweet Treats)
          images:   one or more photos; two or more become a swipeable carousel
                    { src: "images/posts/your-photo.jpg", alt: "what the photo shows" }
                    (use images: [] for no photo yet)
