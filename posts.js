@@ -198,7 +198,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/lake-shastina-3.jpg",
         alt: "A man in a green sweatshirt standing on the wooden porch of a converted Southern Pacific railcar among tall pines" }
     ],
-    caption: "Weekend getaway at Lake Shastina!"
+    caption: "Weekend getaway at Lake Shastina! You'll find me in the dining car."
   },
   {
     category: "adventures",
