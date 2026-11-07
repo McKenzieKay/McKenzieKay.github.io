@@ -272,6 +272,19 @@
   }
   @media (min-width: 1024px) { .bio-label { display: block; margin-bottom: 14px; } }
   .bio-headline { font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--ink); }
+  /* The M of "My" is the M from the signature (images/signature-m.png, 479x226).
+     Its left leg sits where the text starts (x 221 of 479) and its legs rest on the
+     baseline (y 189 of 226); the lead-in stroke reaches left past the card's padding
+     and border, so it starts outside the card. */
+  .sig-m {
+    height: 2em; width: auto;
+    vertical-align: -0.327em;   /* (226 - 189) / 226 * 2em */
+    margin-left: -1.956em;      /* 221 / 226 * 2em */
+    margin-right: -0.3em;       /* tuck the y in under the M's top-right tip */
+  }
+  /* Phones: no room left of the card, so the card clips the lead-in at its edge */
+  @media (max-width: 1023px) { .bio { overflow: hidden; } }
+
   /* Highlighter swipe: chartreuse across the lower part of the word (ink text on chartreuse) */
   .highlight {
     color: inherit; padding: 0 .08em;
@@ -731,7 +744,7 @@
       <h2 id="about-heading" class="label label--mobile">About</h2>
       <div class="bio">
         <p class="bio-label">ABOUT ME</p>
-        <p class="bio-headline">My <mark class="highlight">Hobby</mark> is Having <mark class="highlight">Hobbies</mark></p>
+        <p class="bio-headline"><span class="visually-hidden">My</span><span aria-hidden="true"><img class="sig-m" src="images/signature-m.png" alt="" width="479" height="226">y</span> <mark class="highlight">Hobby</mark> is Having <mark class="highlight">Hobbies</mark></p>
         <p class="bio-sub">Cycle through my hyperfixations with me, except Bishop; my love for my puppy is forever.</p>
       </div>
 
