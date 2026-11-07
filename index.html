@@ -297,7 +297,9 @@
   }
   /* Subtitle: right under the headline, in ink (same voice), regular weight; set as two
      lines (the second starts at "except") */
-  .bio .bio-sub { margin-top: 10px; font-size: 18px; line-height: 1.6; color: var(--ink); }
+  .bio .bio-sub { margin-top: 10px; font-size: 18px; line-height: 1.6; color: var(--ink); text-wrap: pretty; }
+  /* The break after "with me," only on wide screens; phones let the sentence flow */
+  @media (max-width: 1023px) { .br-wide { display: none; } }
 
   /* "My" in its own column, so the headline's other words and the subtitle line up
      after it. The column gap stands in for the space after "My". */
@@ -775,7 +777,7 @@
           <span class="bio-my" aria-hidden="true"><img class="sig-my" src="images/signature-my.png" alt="" width="575" height="360"></span>
           <div>
             <p class="bio-headline"><span class="visually-hidden">My </span><mark class="highlight">Hobby</mark> is having <mark class="highlight">Hobbies</mark></p>
-            <p class="bio-sub">Cycle through my hyperfixations with me,<br>except Bishop; my love for my puppy is forever.</p>
+            <p class="bio-sub">Cycle through my hyperfixations with&nbsp;me,<br class="br-wide"> except Bishop; my love for my puppy is&nbsp;forever.</p>
           </div>
         </div>
       </div>
