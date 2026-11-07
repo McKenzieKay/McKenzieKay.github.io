@@ -290,15 +290,16 @@
     color: inherit; padding: 0 .08em;
     background: linear-gradient(transparent 52%, var(--chartreuse) 52%, var(--chartreuse) 92%, transparent 92%);
   }
-  /* Subtitle: right under the headline, in ink (same voice), regular weight */
+  /* Subtitle: right under the headline, in ink (same voice), regular weight; set as two
+     lines (the second starts at "except") */
   .bio .bio-sub { margin-top: 10px; font-size: 18px; line-height: 1.6; color: var(--ink); }
-  /* Wide screens: keep the second sentence on one line, shrinking it slightly when the
-     card is narrow (cqi = 1% of the card's inner width). From 1200px wide it stays
-     about 15px or larger; narrower windows and phones wrap it at full size. */
-  .bio { container-type: inline-size; }
-  @media (min-width: 1200px) {
-    .bio .bio-sub { white-space: nowrap; font-size: min(18px, 2.3cqi); }
-  }
+
+  /* "My" in its own column, so the headline's other words and the subtitle line up
+     after it. The column gap stands in for the space after "My". */
+  /* align-items: baseline lines "My" up with the headline's first line */
+  .bio-grid { display: grid; grid-template-columns: auto 1fr; column-gap: 9px; align-items: baseline; }
+  .bio-my { font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--ink); white-space: nowrap; }
+  .bio-grid .bio-headline { font-size: 34px; }
 
   /* ---------- About feed ---------- */
   /* Filter chips: shown below desktop width, where the side list is hidden */
@@ -744,8 +745,15 @@
       <h2 id="about-heading" class="label label--mobile">About</h2>
       <div class="bio">
         <p class="bio-label">ABOUT ME</p>
-        <p class="bio-headline"><span class="visually-hidden">My</span><span aria-hidden="true"><img class="sig-m" src="images/signature-m.png" alt="" width="479" height="226">y</span> <mark class="highlight">Hobby</mark> is Having <mark class="highlight">Hobbies</mark></p>
-        <p class="bio-sub">Cycle through my hyperfixations with me, except Bishop; my love for my puppy is forever.</p>
+        <!-- Two columns: "My" (signature M) on the left; headline and subtitle on the right,
+             so the subtitle starts right after "My" -->
+        <div class="bio-grid">
+          <span class="bio-my" aria-hidden="true"><img class="sig-m" src="images/signature-m.png" alt="" width="479" height="226">y</span>
+          <div>
+            <p class="bio-headline"><span class="visually-hidden">My </span><mark class="highlight">Hobby</mark> is Having <mark class="highlight">Hobbies</mark></p>
+            <p class="bio-sub">Cycle through my hyperfixations with me,<br>except Bishop; my love for my puppy is forever.</p>
+          </div>
+        </div>
       </div>
 
       <!-- Filter chips: phones and tablets (the side list does this on desktop) -->
