@@ -8,7 +8,7 @@
        it in. The feed shows posts in the order they appear here (no dates).
        On wide screens posts sit two per row (1-2, 3-4, ...); keep a post with
        ratio "4 / 3" paired with another 4:3 post so the row lines up.
-         category: "dog", "adventures", "crafts" or "treats" (Sweet Treats)
+         category: "dog" (shown as Bishop), "adventures", "crafts" or "treats" (Sweet Treats)
          images:   one or more photos; two or more become a swipeable carousel
                    { src: "images/posts/your-photo.jpg", alt: "what the photo shows" }
                    (use images: [] for no photo yet)
