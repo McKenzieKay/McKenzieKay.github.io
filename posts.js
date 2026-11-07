@@ -161,6 +161,6 @@ window.ABOUT_POSTS = [
       { src: "images/posts/pink-christmas-3.jpg", natural: true,
         alt: "Two handmade fabric reindeer, one with floral antlers and one in pink and white stripes, among pink bottle-brush trees" }
     ],
-    caption: "Pink Christmas, handmade edition! I sewed the stockings, the reindeer and the garland. Santa's got a new favorite color!"
+    caption: "Santa's got a new favorite color! I sewed the stockings, the reindeer and the garland."
   }
 ];
