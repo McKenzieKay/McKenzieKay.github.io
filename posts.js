@@ -30,7 +30,7 @@ window.ABOUT_POSTS = [
       { src: "images/posts/hermit-pillow-2.jpg",
         alt: "Close-up of the puff quilt pillow: floral and purple fabric puffs around a hand-embroidered tarot card of a cat in a box, labeled The Hermit" }
     ],
-    caption: "One cat, two cat, real cat, pillow cat!"
+    caption: "One cat, two cat, real cat, pillow cat! Gift for my cat lady bestie!"
   },
   {
     date: "2026-11-06",
