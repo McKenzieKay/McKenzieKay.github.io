@@ -22,7 +22,7 @@
 */
 window.ABOUT_POSTS = [
   {
-    date: "2026-11-06",
+    date: "2025-08-30",
     category: "adventures",
     images: [
       { src: "images/posts/john-day-1.jpg",
