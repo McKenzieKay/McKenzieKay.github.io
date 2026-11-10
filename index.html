@@ -96,7 +96,11 @@
     }
     .sidebar-name { padding: 56px var(--sidebar-pad) 40px; }
     .sidebar-contact { padding: 0 var(--sidebar-pad) 8px; }
-    .sidebar-body { display: flex; flex: 1; padding: 32px var(--sidebar-pad) 48px; }
+    /* The list area scrolls on its own when it's taller than the screen (name and contact stay put) */
+    .sidebar-body {
+      display: flex; flex: 1; min-height: 0; padding: 32px var(--sidebar-pad) 48px;
+      overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin;
+    }
     .content { --content-pad: clamp(40px, 6vw, 112px); flex: 1 1 0; padding: 0 var(--content-pad) 96px; }
     /* Keep line lengths readable on wide screens */
     .content > * { max-width: 920px; }
