@@ -144,9 +144,9 @@ window.ABOUT_POSTS = [
     category: "treats",
     images: [
       { src: "images/posts/christmas-cookies.jpg",
-        alt: "A Christmas tray of homemade cookies and bars: frosted oatmeal cookies, chocolate sandwich cookies, glazed rounds, heart shortbread, sprinkled sugar cookies, sugared molasses cookies and layered chocolate bars" }
+        alt: "A holiday tray of homemade cookies and bars: frosted oatmeal cookies, chocolate sandwich cookies, glazed rounds, heart shortbread, sprinkled sugar cookies, sugared molasses cookies and layered chocolate bars" }
     ],
-    caption: "You get a cookie and you get a cookie! Christmas cookies for friends and neighbors."
+    caption: "You get a cookie and you get a cookie! Holiday cookies for friends and neighbors."
   },
   {
     category: "dog",
