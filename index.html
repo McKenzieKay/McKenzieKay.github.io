@@ -458,6 +458,13 @@
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
   .tag { font-family: var(--font-mono); font-size: 12px; background: var(--ivory); color: var(--ink); padding: 4px 10px; border-radius: 999px; }
 
+  /* Education: its own heading under the jobs, same card style */
+  .edu-label { margin: 20px 0 0; }
+  /* "EDUCATION" sub-heading in the side list; its top line closes off the last job row */
+  .project-nav-label.nav-sublabel {
+    margin: 0 -12px 20px -18px; padding: 36px 0 0 18px; border-top: 1px solid var(--stone);
+  }
+
   .more-link { display: inline-block; padding: 12px 0; margin-top: 8px; font-weight: 700; }
 
   /* ---------- Projects ---------- */
@@ -583,6 +590,9 @@
       <a href="#job-imerit-sa"><span class="num">2022 — 2024</span><span class="title">Solutions Architect<span class="org">iMerit</span></span></a>
       <a href="#job-inference"><span class="num">2021</span><span class="title">Data Science Intern<span class="org">Inference Analytics</span></span></a>
       <a href="#job-jet"><span class="num">2017 — 2020</span><span class="title">Account Manager<span class="org">Jet International</span></span></a>
+      <p class="project-nav-label nav-sublabel">EDUCATION</p>
+      <a href="#edu-uchicago"><span class="num">2022</span><span class="title">MS in Analytics<span class="org">University of Chicago</span></span></a>
+      <a href="#edu-oit"><span class="num">2017</span><span class="title">BS in Operations Management<span class="org">Oregon Tech</span></span></a>
     </nav>
     <nav class="project-nav" data-for="about" aria-labelledby="feed-nav-label">
       <p class="project-nav-label" id="feed-nav-label">FILTER POSTS</p>
@@ -821,6 +831,30 @@
               <li class="tag">Global Trade</li><li class="tag">Market Analysis</li><li class="tag">Asset Valuation</li>
             </ul>
             <p>Before moving into data, I brokered deals with airlines and engine shops around the world to get them the parts they needed, bringing in $2.2M in personal gross sales in 2019. When airlines sold parts in bulk packages or retired-aircraft teardowns, I used our historical sales and market data to help our vice president estimate what would sell and for how much.</p>
+          </div>
+        </article>
+
+        <h3 class="label edu-label" id="education-heading">Education</h3>
+
+        <article class="job" id="edu-uchicago">
+          <p class="job-date">2022</p>
+          <div class="job-body">
+            <h3>MS in Analytics · The University of Chicago</h3>
+            <ul class="tags">
+              <li class="tag">Machine Learning</li><li class="tag">NLP</li><li class="tag">Data Engineering</li><li class="tag">Time Series</li><li class="tag">Linear &amp; Nonlinear Models</li>
+            </ul>
+            <p>The program is now called the MS in Applied Data Science.</p>
+          </div>
+        </article>
+
+        <article class="job" id="edu-oit">
+          <p class="job-date">2017</p>
+          <div class="job-body">
+            <h3>BS in Operations Management · Oregon Institute of Technology</h3>
+            <ul class="tags">
+              <li class="tag">Design of Experiments</li><li class="tag">Applied Statistics</li><li class="tag">Research Methods</li>
+            </ul>
+            <p>Minor in Statistics, plus a Lean Six Sigma Green Belt certification.</p>
           </div>
         </article>
 
